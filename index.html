@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Grade 3 Term 1 practice quizzes in Science, Math, English, Social Studies and Spelling.">
+<meta name="theme-color" content="#EEF5FF">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quiz Quest">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.92em' font-size='92'%3E%E2%AD%90%3C/text%3E%3C/svg%3E">
+<style>
+html,body{margin:0}
+:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>Grade 3 Quiz Quest</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Andika:wght@400;700&display=swap">
+<style>
+:root{
+  --paper:#EEF5FF;
+  --paper2:#FFFFFF;
+  --card:#FFFFFF;
+  --ink:#1B2B49;
+  --ink-soft:#5B6E90;
+  --line:#D5E2F6;
+  --shadow:rgba(27,43,73,.13);
+  --sci:#00A28C;
+  --math:#F4761B;
+  --eng:#7A4DFF;
+  --soc:#DD3F7C;
+  --spell:#2B72D8;
+  --good:#0E9D53;
+  --good-bg:#E0F7EA;
+  --oops:#D64550;
+  --oops-bg:#FDE9EA;
+  --gold:#F0A415;
+  --star-off:#C9D7EC;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#101829;
+    --paper2:#18223A;
+    --card:#1B2740;
+    --ink:#E9F1FF;
+    --ink-soft:#9DAFD0;
+    --line:#2E3E60;
+    --shadow:rgba(0,0,0,.45);
+    --sci:#34DFC2;
+    --math:#FFA04D;
+    --eng:#AE92FF;
+    --soc:#FF75A8;
+    --spell:#79B6FF;
+    --good:#45D98C;
+    --good-bg:#10341F;
+    --oops:#FF8A90;
+    --oops-bg:#3A1C22;
+    --gold:#FFC862;
+    --star-off:#36456A;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101829;
+  --paper2:#18223A;
+  --card:#1B2740;
+  --ink:#E9F1FF;
+  --ink-soft:#9DAFD0;
+  --line:#2E3E60;
+  --shadow:rgba(0,0,0,.45);
+  --sci:#34DFC2;
+  --math:#FFA04D;
+  --eng:#AE92FF;
+  --soc:#FF75A8;
+  --spell:#79B6FF;
+  --good:#45D98C;
+  --good-bg:#10341F;
+  --oops:#FF8A90;
+  --oops-bg:#3A1C22;
+  --gold:#FFC862;
+  --star-off:#36456A;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  background-image:
+    radial-gradient(60vw 40vw at 8% -5%, color-mix(in srgb, var(--eng) 16%, transparent), transparent 70%),
+    radial-gradient(55vw 40vw at 100% 8%, color-mix(in srgb, var(--sci) 16%, transparent), transparent 70%),
+    radial-gradient(70vw 45vw at 50% 105%, color-mix(in srgb, var(--math) 13%, transparent), transparent 70%);
+  background-attachment:fixed;
+  color:var(--ink);
+  font-family:"Andika","Verdana",system-ui,sans-serif;
+  font-size:17px;
+  line-height:1.5;
+  -webkit-text-size-adjust:100%;
+}
+h1,h2,h3,.disp{font-family:"Fredoka","Trebuchet MS",system-ui,sans-serif;font-weight:600;text-wrap:balance;margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--eng);outline-offset:3px;border-radius:8px}
+
+.wrap{max-width:760px;margin:0 auto;padding-inline:18px;padding-block:26px 56px}
+
+/* ---------- home ---------- */
+.eyebrow{
+  font-family:"Fredoka","Trebuchet MS",sans-serif;
+  font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-soft);margin:0 0 10px
+}
+h1{font-size:clamp(2.3rem,9vw,3.4rem);line-height:1.02;font-weight:700;letter-spacing:-.01em}
+h1 .pop{color:var(--math)}
+.sub{color:var(--ink-soft);margin:12px 0 0;max-width:46ch}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+.card:last-child:nth-child(odd){grid-column:1 / -1}
+@media (max-width:540px){.grid{grid-template-columns:1fr}}
+
+.card{
+  --c:var(--sci);
+  display:flex;flex-direction:column;gap:10px;align-items:flex-start;
+  text-align:left;background:var(--card);
+  border:2px solid var(--line);border-bottom-width:5px;
+  border-radius:20px;padding:18px 18px 16px;
+  box-shadow:0 5px 0 -2px var(--shadow);
+  transition:transform .14s ease, border-color .14s ease;
+}
+.card:hover,.card:focus-visible{transform:translateY(-3px);border-color:var(--c)}
+.card:active{transform:translateY(0)}
+.ic{
+  width:52px;height:52px;border-radius:15px;display:grid;place-items:center;
+  background:rgba(125,125,125,.16);
+  background:color-mix(in srgb, var(--c) 17%, transparent);color:var(--c)
+}
+.ic svg{width:29px;height:29px}
+.card .name{font-family:"Fredoka",sans-serif;font-size:1.32rem;font-weight:600;line-height:1.1}
+.card .meta{font-size:.86rem;color:var(--ink-soft);margin:0}
+.best{
+  display:inline-flex;align-items:center;gap:5px;margin-top:2px;
+  font-size:.8rem;font-weight:700;color:var(--gold)
+}
+.best svg{width:15px;height:15px}
+
+.tipbar{
+  display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;
+  margin-top:26px;padding:14px 16px;border-radius:16px;
+  background:var(--paper2);border:2px dashed var(--line);
+  font-size:.88rem;color:var(--ink-soft)
+}
+.ghost{
+  background:transparent;border:2px solid var(--line);border-radius:999px;
+  padding:7px 14px;font-family:"Fredoka",sans-serif;font-size:.85rem;color:var(--ink)
+}
+.ghost:hover{border-color:var(--ink-soft)}
+
+/* ---------- quiz ---------- */
+.topbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.topbar .title{font-family:"Fredoka",sans-serif;font-size:1.15rem;font-weight:600;flex:1;min-width:120px}
+.pill{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--card);border:2px solid var(--line);border-radius:999px;
+  padding:5px 13px;font-family:"Fredoka",sans-serif;font-size:.9rem;font-weight:600
+}
+.pill svg{width:16px;height:16px;color:var(--gold)}
+
+.track{height:14px;border-radius:999px;background:var(--line);margin:18px 0 6px;overflow:hidden}
+.track i{display:block;height:100%;border-radius:999px;background:var(--c,var(--sci));transition:width .35s cubic-bezier(.3,1.4,.5,1)}
+.count{font-size:.83rem;color:var(--ink-soft);margin:0 0 18px;font-weight:700;letter-spacing:.04em}
+
+.qcard{
+  background:var(--card);border:2px solid var(--line);border-bottom-width:5px;
+  border-radius:22px;padding:22px 20px;box-shadow:0 5px 0 -2px var(--shadow)
+}
+.qtext{font-size:clamp(1.3rem,4.6vw,1.72rem);line-height:1.25;font-weight:600}
+
+.opts{display:flex;flex-direction:column;gap:11px;margin-top:20px}
+.opt{
+  display:flex;align-items:center;gap:13px;text-align:left;width:100%;
+  min-height:62px;padding:12px 15px;
+  background:var(--paper2);border:2px solid var(--line);border-radius:16px;
+  font-size:1.02rem;line-height:1.35;
+  transition:border-color .12s ease, background .12s ease, transform .12s ease
+}
+.opt:hover:not(:disabled){border-color:var(--c);transform:translateX(3px)}
+.opt:disabled{cursor:default}
+.opt .ltr{
+  flex:none;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
+  background:rgba(125,125,125,.16);
+  background:color-mix(in srgb, var(--c) 16%, transparent);color:var(--c);
+  font-family:"Fredoka",sans-serif;font-weight:600
+}
+.opt .mark{flex:none;width:24px;height:24px;margin-left:auto;display:none}
+.opt.right{border-color:var(--good);background:var(--good-bg)}
+.opt.right .ltr{background:var(--good);color:#fff}
+.opt.right .mark{display:block;color:var(--good)}
+.opt.wrong{border-color:var(--oops);background:var(--oops-bg)}
+.opt.wrong .ltr{background:var(--oops);color:#fff}
+.opt.wrong .mark{display:block;color:var(--oops)}
+.opt.dim{opacity:.5}
+
+.fb{
+  margin-top:18px;padding:15px 16px;border-radius:16px;border:2px solid;
+  animation:pop .28s cubic-bezier(.3,1.5,.5,1)
+}
+.fb.ok{background:var(--good-bg);border-color:var(--good)}
+.fb.no{background:var(--oops-bg);border-color:var(--oops)}
+.fb h3{font-size:1.1rem;margin-bottom:4px}
+.fb.ok h3{color:var(--good)}
+.fb.no h3{color:var(--oops)}
+.fb p{margin:0;font-size:.95rem}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.big{
+  display:block;width:100%;margin-top:18px;
+  background:var(--c,var(--sci));color:#fff;border:none;border-radius:16px;
+  padding:16px;font-family:"Fredoka",sans-serif;font-size:1.1rem;font-weight:600;
+  box-shadow:0 4px 0 rgba(0,0,0,.3);
+  box-shadow:0 4px 0 color-mix(in srgb, var(--c,var(--sci)) 65%, #000)
+}
+.big:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.3);box-shadow:0 1px 0 color-mix(in srgb, var(--c,var(--sci)) 65%, #000)}
+
+/* ---------- results ---------- */
+.result{text-align:center;padding:30px 20px 26px}
+.ring{
+  width:168px;height:168px;margin:6px auto 4px;border-radius:50%;
+  display:grid;place-items:center;
+  background:conic-gradient(var(--c) calc(var(--pct)*1%), var(--line) 0);
+}
+.ring .inner{
+  width:132px;height:132px;border-radius:50%;background:var(--card);
+  display:grid;place-items:center;align-content:center
+}
+.ring .num{font-family:"Fredoka",sans-serif;font-size:2.6rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.ring .of{font-size:.82rem;color:var(--ink-soft)}
+.stars{display:flex;justify-content:center;gap:8px;margin:16px 0 10px}
+.stars svg{width:42px;height:42px;color:var(--star-off)}
+.stars svg.lit{color:var(--gold);animation:bounce .5s cubic-bezier(.3,1.6,.5,1) backwards}
+.stars svg.lit:nth-child(2){animation-delay:.12s}
+.stars svg.lit:nth-child(3){animation-delay:.24s}
+@keyframes bounce{from{transform:scale(0) rotate(-40deg)}to{transform:none}}
+.result h2{font-size:1.6rem}
+.result .msg{color:var(--ink-soft);margin:8px auto 0;max-width:34ch}
+.row{display:flex;gap:11px;margin-top:22px;flex-wrap:wrap}
+.row>*{flex:1 1 160px}
+.big.alt{background:var(--card);color:var(--ink);border:2px solid var(--line);box-shadow:0 4px 0 -1px var(--shadow)}
+
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+<svg class="sr" aria-hidden="true">
+  <symbol id="ic-sci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <circle cx="12" cy="12" r="4.4"/><path d="M12 1.6v2.6M12 19.8v2.6M22.4 12h-2.6M4.2 12H1.6M19.3 4.7l-1.8 1.8M6.5 17.5l-1.8 1.8M19.3 19.3l-1.8-1.8M6.5 6.5L4.7 4.7"/>
+  </symbol>
+  <symbol id="ic-math" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+    <rect x="2" y="4" width="10" height="10" rx="1.5"/><path d="M2 7.3h10M2 10.7h10M5.4 4v10M8.7 4v10" stroke-width="1.2"/>
+    <rect x="14.5" y="4" width="3.6" height="10" rx="1.3"/><path d="M14.5 7.3h3.6M14.5 10.7h3.6" stroke-width="1.2"/>
+    <rect x="20.4" y="10.4" width="3.6" height="3.6" rx="1.2"/>
+    <path d="M4 18.5h7M7.5 18.5" stroke-linecap="round"/><path d="M14 17.4h7M14 20.6h7" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ic-eng" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M12 7C10 5 6.6 4.4 3 4.9v12.4c3.6-.5 7 .1 9 2.1 2-2 5.4-2.6 9-2.1V4.9C17.4 4.4 14 5 12 7Z"/><path d="M12 7v12.4"/>
+  </symbol>
+  <symbol id="ic-soc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="7.6" r="3.3"/><circle cx="17.4" cy="9" r="2.4"/>
+    <path d="M2.6 19.4c0-3.6 2.9-5.6 6.4-5.6s6.4 2 6.4 5.6"/><path d="M16.2 14.1c3.2-.5 5.2 1.4 5.2 4.6"/>
+  </symbol>
+  <symbol id="ic-spell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.3 17.1L14.9 6.5l2.9 2.9L7.2 20H4.3z"/><path d="M14.9 6.5l1.9-1.9a1.6 1.6 0 0 1 2.3 0l.6.6a1.6 1.6 0 0 1 0 2.3l-1.9 1.9"/><path d="M3 22.4h18"/>
+  </symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2.2l2.9 6.1 6.6.9-4.8 4.7 1.2 6.7-5.9-3.2-5.9 3.2 1.2-6.7L2.5 9.2l6.6-.9z"/>
+  </symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 12.8l5.2 5.2L20 6.6"/>
+  </symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round">
+    <path d="M6 6l12 12M18 6L6 18"/>
+  </symbol>
+</svg>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="wrap" id="app"></div>
+
+<script>
+"use strict";
+
+var SUBJECTS = [
+{
+  id:"sci", name:"Science", topic:"Light, heat and fuels", color:"var(--sci)", icon:"ic-sci",
+  q:[
+    {q:"What is a light source?",
+     o:["Something that makes its own light","Something that is very shiny","Something that feels hot","Something that blocks light"],
+     a:0, why:"A light source produces its own light. Things that only bounce light back, like the Moon, are not light sources."},
+    {q:"Which one is a NATURAL light source?",
+     o:["The Sun","A flashlight","A lamp","A candle"],
+     a:0, why:"Natural light sources happen in nature: the Sun, stars and fire. Candles, lamps and flashlights are made by people."},
+    {q:"Which one is a HUMAN-MADE light source?",
+     o:["A flashlight","The stars","Fire","The Sun"],
+     a:0, why:"Human-made light sources are created by people, like a candle, a lamp or a flashlight."},
+    {q:"Why is the Moon NOT a light source?",
+     o:["It only reflects light from the Sun","It is too far away from us","It only comes out at night","It is smaller than the Sun"],
+     a:0, why:"The Moon does not make its own light. It reflects the Sun's light, so it is not a light source."},
+    {q:"The Sun is Earth's main source of...",
+     o:["Heat and light","Water and air","Food and sleep","Wind and rain"],
+     a:0, why:"The Sun gives Earth the heat and light we need. Its energy also helps plants grow."},
+    {q:"What would Earth be like without the Sun?",
+     o:["Very cold and dark","Very noisy","Much faster","Exactly the same"],
+     a:0, why:"Without the Sun, Earth would be very cold and dark, and most living things could not survive."},
+    {q:"Which everyday job uses HEAT?",
+     o:["Ironing clothes","Reading a traffic light","Looking in a mirror","Switching on a flashlight"],
+     a:0, why:"An iron uses heat to take the wrinkles out of clothes. We also use heat to cook food and to warm water."},
+    {q:"Traffic lights use light to...",
+     o:["Give signals","Cook food","Warm water","Iron clothes"],
+     a:0, why:"Traffic lights give signals so that drivers and people walking know when to stop and when to go."},
+    {q:"In Grenada, which fuel is used in cars and motorcycles?",
+     o:["Gasoline, or petrol","Charcoal","Firewood","LPG cooking gas"],
+     a:0, why:"Gasoline (petrol) is used in cars and motorcycles. Diesel is used in buses, trucks and boats."},
+    {q:"At home in Grenada, charcoal and firewood are mostly used for...",
+     o:["Cooking and heating","Driving vehicles","Lighting street lamps","Making clothes"],
+     a:0, why:"Charcoal is used for cooking and heating, and firewood is used for cooking, especially on outdoor fires."},
+    {q:"What is heat?",
+     o:["A form of energy that makes things warmer","A kind of light","A type of fuel","A cold wind"],
+     a:0, why:"Heat is a form of energy. It makes things warmer and can change materials: ice melts and chocolate melts when they are heated."},
+    {q:"Light passes right through a glass window. The glass is...",
+     o:["Transparent","Opaque","Reflective","Melted"],
+     a:0, why:"Light passing through means transparent. Light being blocked means opaque. Light bouncing off, like off a mirror, means reflective."}
+  ]
+},
+{
+  id:"math", name:"Math", topic:"Place value and rounding", color:"var(--math)", icon:"ic-math",
+  q:[
+    {q:"What is the place value of the 2 in 928?",
+     o:["2 tens, which is 20","2 ones, which is 2","2 hundreds, which is 200","2 thousands, which is 2,000"],
+     a:0, why:"Place value depends on where the digit sits. The 2 in 928 is in the tens place, so it is worth 20."},
+    {q:"What is the FACE value of the 7 in 573?",
+     o:["7","70","700","3"],
+     a:0, why:"Face value is just the digit itself, no matter where it sits in the number. So the face value of 7 is 7."},
+    {q:"Which one shows 4,582 in expanded notation?",
+     o:["4,000 + 500 + 80 + 2","4 + 5 + 8 + 2","400 + 50 + 8 + 2","4,000 + 50 + 8 + 2"],
+     a:0, why:"Expanded notation shows the value of each digit on its own, added together: 4,000 + 500 + 80 + 2."},
+    {q:"Which sign means greater than?",
+     o:["&gt;","&lt;","=","+"],
+     a:0, why:"&gt; means greater than, &lt; means less than, and = means equal to."},
+    {q:"Which sign goes in the box?   462 [ ] 426",
+     o:["&gt;","&lt;","=","+"],
+     a:0, why:"462 is bigger than 426, because 6 tens is more than 2 tens. So 462 &gt; 426."},
+    {q:"How do you write 614 in words?",
+     o:["Six hundred and fourteen","Six hundred and forty","Six hundred and forty-one","Sixty-one and four"],
+     a:0, why:"614 has 6 hundreds, 1 ten and 4 ones, so we write six hundred and fourteen."},
+    {q:"Which number is the largest?",
+     o:["980","908","899","890"],
+     a:0, why:"Three of them have 9 hundreds, so look at the tens next. 980 has 8 tens, which is the most."},
+    {q:"Ms. Tonya is standing 3rd in the line. How do we write 3rd in words?",
+     o:["Third","Three","Thirty","Thirteenth"],
+     a:0, why:"Ordinal numbers tell us position: 1st first, 2nd second, 3rd third, 4th fourth, 5th fifth."},
+    {q:"Round 13 to the nearest ten.",
+     o:["10","20","13","100"],
+     a:0, why:"Underline the tens digit (1) and circle the digit behind it (3). Because 3 is 1, 2, 3 or 4, you round DOWN: 13 becomes 10."},
+    {q:"Round 47 to the nearest ten.",
+     o:["50","40","47","100"],
+     a:0, why:"Circle the 7. Because 7 is 5, 6, 7, 8 or 9, you round UP: add one to the 4 and turn the 7 into a zero, so 47 becomes 50."},
+    {q:"Round 268 to the nearest hundred.",
+     o:["300","200","260","270"],
+     a:0, why:"Underline the hundreds digit (2) and circle the 6. Because 6 is 5 or more, you round UP: 268 becomes 300."},
+    {q:"When the circled number is 5, 6, 7, 8 or 9, you...",
+     o:["Round up","Round down","Leave it the same","Start the number again"],
+     a:0, why:"5, 6, 7, 8 and 9 round UP. 1, 2, 3 and 4 round DOWN."}
+  ]
+},
+{
+  id:"eng", name:"English", topic:"Nouns, verbs and spelling", color:"var(--eng)", icon:"ic-eng",
+  q:[
+    {q:"What does the BEGINNING of a story do?",
+     o:["Introduces the characters and tells what the story is about","Sorts out all the problems","Tells us the lesson that was learnt","Tells us what the characters do all day"],
+     a:0, why:"Beginning: introduces the characters. Middle: what the characters do and the problems they have. End: problems get sorted out and lessons are learnt."},
+    {q:"Where a story takes place is called the...",
+     o:["Setting","Plot","Characters","Title"],
+     a:0, why:"Setting is where. Characters are who. Plot is what happens."},
+    {q:"Which one is a PROPER noun?",
+     o:["Grenada","island","teacher","school"],
+     a:0, why:"Proper nouns name a specific person, place or organisation, and they always begin with a capital letter, like Grenada, March, Friday and Ms. Tonya."},
+    {q:"What is the plural of watch?",
+     o:["watches","watchs","watchies","watch"],
+     a:0, why:"For nouns ending in s, sh, tch or x we add es: bus becomes buses, watch becomes watches, fox becomes foxes."},
+    {q:"What is the plural of fly?",
+     o:["flies","flys","flyes","fly"],
+     a:0, why:"For nouns ending in y, change the y to i and add es: baby becomes babies, grocery becomes groceries, fly becomes flies."},
+    {q:"What is the plural of knife?",
+     o:["knives","knifes","knifees","knife"],
+     a:0, why:"For nouns ending in f, change the f to v and add es: leaf becomes leaves, wolf becomes wolves, knife becomes knives."},
+    {q:"What is the plural of woman?",
+     o:["women","womans","womens","womanes"],
+     a:0, why:"Some nouns have special irregular plurals: man becomes men, woman becomes women, mouse becomes mice."},
+    {q:"Which one is an ABSTRACT noun?",
+     o:["happiness","garden","monkey","chocolate"],
+     a:0, why:"Abstract nouns name feelings and ideas that we cannot see or touch, like trust, courage, anger, honesty, happiness and sadness."},
+    {q:"Which sentence is written correctly?",
+     o:["Ben plays football on Friday.","Ben play football on Friday.","Ben playing football on Friday.","Ben to play football on Friday."],
+     a:0, why:"We add s to a present tense verb when we talk about one person, animal or thing: Ben plays football, and on Saturday he helps at home."},
+    {q:"Finish the question:  ___ he play soccer?",
+     o:["Does","Do","Done","Doing"],
+     a:0, why:"Use does with he, she, it and one person or thing. Use do with I, you, we, they and plural nouns."},
+    {q:"Which one is a QUESTION?",
+     o:["Would you like to come to my party?","Squids live in the sea.","Happy birthday!","Ice-cream and cake on my birthday"],
+     a:0, why:"A question is an asking sentence and ends with a question mark. Squids live in the sea is a statement, and Happy birthday! is an exclamation."},
+    {q:"A group of birds is called a...",
+     o:["flock","herd","swarm","bunch"],
+     a:0, why:"Collective nouns name groups: a flock of birds, a herd of goats, a swarm of bees, a bunch of flowers and a class of children."}
+  ]
+},
+{
+  id:"soc", name:"Social Studies", topic:"Family, heritage and groups", color:"var(--soc)", icon:"ic-soc",
+  q:[
+    {q:"What is a family?",
+     o:["A group of people related by blood, marriage or adoption who care for one another","A group of people who live on the same street","A group of people who go to the same school","A group of friends who like the same games"],
+     a:0, why:"Families are joined by blood, marriage or adoption. A family gives love, protection and nurture, and supports each other in difficult times."},
+    {q:"A traditional or nuclear family has...",
+     o:["Two married parents and their children","Grandparents, aunts, uncles and cousins","One parent and their children","Only stepbrothers and stepsisters"],
+     a:0, why:"Nuclear means two married parents and their children. Every family is different, even when families are alike in some ways."},
+    {q:"Which family includes grandparents, aunts, uncles and cousins?",
+     o:["An extended family","A nuclear family","A single parent family","A school family"],
+     a:0, why:"An extended family includes grandparents, grandchildren, aunts, uncles, cousins, nieces, nephews and other relatives."},
+    {q:"Family traditions are sometimes also called...",
+     o:["Rituals","Rules","Heritage","Chores"],
+     a:0, why:"Traditions, or rituals, are things a family does together. They can be yearly, like Christmas, or often, like sharing a meal every evening."},
+    {q:"What is heritage?",
+     o:["What is handed down to you from your parents, grandparents and ancestors","The house that your family lives in","The money that your family saves","The subjects you study at school"],
+     a:0, why:"Heritage is what is passed down to you, and belonging to a group that shares traditions, beliefs, culture and history. It is part of your identity."},
+    {q:"What is the most common surname in Grenada?",
+     o:["Charles","Joseph","Williams","Clarke"],
+     a:0, why:"Charles is the most common surname in Grenada. In Barbados it is Clarke, and in Dominica, Antigua and Barbuda and St. Lucia it is Joseph."},
+    {q:"The surname Williamson means...",
+     o:["William's son","A person who is strong","A town called William","Someone who bakes"],
+     a:0, why:"Williamson means William's son, and Robertson means Robert's son."},
+    {q:"Surnames like Baker and Miller come from...",
+     o:["Jobs that people used to do","Places on a map","Descriptions of people","A mother's first name"],
+     a:0, why:"Lots of surnames come from work. Wood and Gates come from the landscape, and Strong and Little describe a person."},
+    {q:"Which one is an INFORMAL group?",
+     o:["Friends together on a beach","A political party","A school","Colleagues at work"],
+     a:0, why:"Informal groups can exist just for fun, like children playing a game in a park, people in a hair salon, or friends on a beach."},
+    {q:"A school is which type of group?",
+     o:["Educational","Political","Religious","Ethnic"],
+     a:0, why:"Schools are educational groups. Inside a school, your class and the other students in your grade form a peer group."},
+    {q:"Why do school students wear a uniform?",
+     o:["So everyone is equal and the group has its own identity","So that they can run faster","So that they never get dirty","So that teachers can count them"],
+     a:0, why:"A uniform makes everyone equal, gives the group an identity and a community, and means you do not have to decide what to wear each day."},
+    {q:"One important way that Caribbean culture is expressed is through...",
+     o:["Carnival","Snow festivals","Ice hockey","Tulip parades"],
+     a:0, why:"Carnival is one important way Caribbean culture is expressed. Cultural groups also include choirs, dance troupes, and book and art groups."}
+  ]
+},
+{
+  id:"spell", name:"Spelling", topic:"Week 3: the al and all words", color:"var(--spell)", icon:"ic-spell",
+  q:[
+    {q:"Which one is spelled correctly?",
+     o:["always","alwayz","allways","alwaies"],
+     a:0, why:"Always has only one l: al-ways. It means every time, or all the time."},
+    {q:"Which one is spelled correctly?",
+     o:["although","allthough","althogh","altho"],
+     a:0, why:"Although has one l and ends in -though. It means even though."},
+    {q:"Which one is spelled correctly?",
+     o:["almost","allmost","almoste","olmost"],
+     a:0, why:"Almost has one l: al-most. It means nearly, but not quite."},
+    {q:"Which one is spelled correctly?",
+     o:["altogether","alltogether","altogather","alltogather"],
+     a:0, why:"Altogether has one l: al-together. It means completely, or in total."},
+    {q:"Which one is spelled correctly?",
+     o:["already","allready","alredy","allredy"],
+     a:0, why:"Already has one l: al-ready. It means before now."},
+    {q:"Which one is spelled correctly?",
+     o:["hospital","hospitle","hospitol","hospittal"],
+     a:0, why:"Hospital ends in -al, just like capital, signal, sandal and pedal."},
+    {q:"Which one is spelled correctly?",
+     o:["occasional","occassional","ocasional","occasionel"],
+     a:0, why:"Occasional has two c-letters, one s, and ends in -al. It means happening sometimes, not often."},
+    {q:"Which one is spelled correctly?",
+     o:["accidental","accidentel","acidental","accidentle"],
+     a:0, why:"Accidental has two c-letters and ends in -al. It means happening by accident."},
+    {q:"Which one is spelled correctly?",
+     o:["special","speshal","specail","speciel"],
+     a:0, why:"Special ends in -al even though it sounds like shul. It means better or different from usual."},
+    {q:"Which one is spelled correctly?",
+     o:["pedal","pedle","peddal","pedall"],
+     a:0, why:"Pedal ends in -al. It is the part of a bicycle that you push with your foot."},
+    {q:"Which word means a place where sick people are cared for?",
+     o:["hospital","capital","sandal","signal"],
+     a:0, why:"A hospital cares for sick people. A capital is a main city, a sandal is a shoe, and a signal is a sign."},
+    {q:"Which word means what normally happens?",
+     o:["usual","special","occasional","accidental"],
+     a:0, why:"Usual means normal or ordinary. Its opposite is special, which means different from the usual."},
+    {q:"What is the capital of a country?",
+     o:["The main city, where the government is","The tallest building in it","The biggest shop in it","The oldest church in it"],
+     a:0, why:"A capital is a country main city. St. George is the capital of Grenada. A capital letter is also the big letter at the start of a name."},
+    {q:"Finish the sentence: A giraffe is very ___ .",
+     o:["tall","stall","small","fall"],
+     a:0, why:"Tall means high from bottom to top. The giraffe is the tallest animal in the world."},
+    {q:"Finish the sentence: Be careful on the wet floor or you might ___ .",
+     o:["fall","tall","stall","fill"],
+     a:0, why:"To fall is to drop down to the ground."},
+    {q:"Finish the sentence: A mouse is ___ , but an elephant is huge.",
+     o:["small","stall","smell","tall"],
+     a:0, why:"Small means little. It is the opposite of big."},
+    {q:"Finish the sentence: We bought mangoes from a ___ in the market.",
+     o:["stall","stale","small","tall"],
+     a:0, why:"A stall is a small stand or table where things are sold, like the ones in a market."},
+    {q:"Finish the sentence: I like mangoes and I ___ like bananas.",
+     o:["also","already","always","almost"],
+     a:0, why:"Also means as well, or in addition."},
+    {q:"Finish the sentence: The traffic light gave the ___ to stop.",
+     o:["signal","sandal","special","capital"],
+     a:0, why:"A signal is a sign that tells you something, like a traffic light telling cars to stop."},
+    {q:"Finish the sentence: She wore a ___ on each foot to the beach.",
+     o:["sandal","signal","stall","pedal"],
+     a:0, why:"A sandal is an open shoe with straps. Two of them are a pair of sandals."}
+  ]
+}
+];
+
+/* ---------- storage ---------- */
+var BEST_KEY="qq-best-v1", SND_KEY="qq-sound-v1";
+function loadBest(){ try{ return JSON.parse(localStorage.getItem(BEST_KEY)||"{}")||{}; }catch(e){ return {}; } }
+function saveBest(b){ try{ localStorage.setItem(BEST_KEY, JSON.stringify(b)); }catch(e){} }
+var best = loadBest();
+var soundOn = true;
+try{ if(localStorage.getItem(SND_KEY)==="off") soundOn=false; }catch(e){}
+
+/* ---------- sound ---------- */
+var actx=null;
+function tone(freq, start, dur, type, vol){
+  var o=actx.createOscillator(), g=actx.createGain();
+  o.type=type; o.frequency.value=freq;
+  g.gain.setValueAtTime(0, actx.currentTime+start);
+  g.gain.linearRampToValueAtTime(vol, actx.currentTime+start+0.02);
+  g.gain.exponentialRampToValueAtTime(0.0001, actx.currentTime+start+dur);
+  o.connect(g); g.connect(actx.destination);
+  o.start(actx.currentTime+start); o.stop(actx.currentTime+start+dur+0.02);
+}
+function sfx(kind){
+  if(!soundOn) return;
+  try{
+    if(!actx) actx=new (window.AudioContext||window.webkitAudioContext)();
+    if(actx.state==="suspended") actx.resume();
+    if(kind==="ok"){ tone(659,0,.16,"triangle",.16); tone(988,.1,.26,"triangle",.14); }
+    else if(kind==="no"){ tone(196,0,.22,"sine",.13); }
+    else { [523,659,784,1047].forEach(function(f,i){ tone(f,i*0.1,.3,"triangle",.14); }); }
+  }catch(e){}
+}
+
+/* ---------- confetti ---------- */
+var cv=document.getElementById("fx"), cx=cv.getContext("2d"), bits=[], raf=null;
+var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function sizeCanvas(){ var r=Math.min(window.devicePixelRatio||1,2); cv.width=innerWidth*r; cv.height=innerHeight*r; cx.setTransform(r,0,0,r,0,0); }
+sizeCanvas(); addEventListener("resize", sizeCanvas);
+function burst(n, cols){
+  if(reduce) return;
+  for(var i=0;i<n;i++){
+    bits.push({x:innerWidth*(.2+Math.random()*.6), y:innerHeight*.35+Math.random()*60,
+      vx:(Math.random()-.5)*8, vy:-6-Math.random()*7,
+      s:5+Math.random()*7, r:Math.random()*Math.PI, vr:(Math.random()-.5)*.3,
+      c:cols[i%cols.length], life:90+Math.random()*40});
+  }
+  if(!raf) raf=requestAnimationFrame(tick);
+}
+function tick(){
+  cx.clearRect(0,0,innerWidth,innerHeight);
+  for(var i=bits.length-1;i>=0;i--){
+    var b=bits[i];
+    b.vy+=0.28; b.x+=b.vx; b.y+=b.vy; b.r+=b.vr; b.life--;
+    if(b.life<=0 || b.y>innerHeight+40){ bits.splice(i,1); continue; }
+    cx.save(); cx.translate(b.x,b.y); cx.rotate(b.r); cx.fillStyle=b.c;
+    cx.fillRect(-b.s/2,-b.s/2,b.s,b.s*0.6); cx.restore();
+  }
+  if(bits.length) raf=requestAnimationFrame(tick);
+  else { raf=null; cx.clearRect(0,0,innerWidth,innerHeight); }
+}
+var PARTY=["#F4761B","#7A4DFF","#00A28C","#DD3F7C","#F0A415","#3AA0FF"];
+
+/* ---------- helpers ---------- */
+var app=document.getElementById("app");
+function svg(id, cls){ return '<svg'+(cls?' class="'+cls+'"':'')+' aria-hidden="true"><use href="#'+id+'" xlink:href="#'+id+'"></use></svg>'; }
+function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+
+/* ---------- state ---------- */
+var S=null, order=[], qi=0, score=0, locked=false, optIdx=[];
+
+/* ---------- menu ---------- */
+function renderMenu(){
+  var cards = SUBJECTS.map(function(s){
+    var b = best[s.id];
+    return '<button class="card" style="--c:'+s.color+'" data-go="'+s.id+'">'+
+      '<span class="ic">'+svg(s.icon)+'</span>'+
+      '<span class="name">'+s.name+'</span>'+
+      '<p class="meta">'+s.topic+'<br>'+s.q.length+' questions</p>'+
+      (b!==undefined ? '<span class="best">'+svg("ic-star")+'Best: '+b+' / '+s.q.length+'</span>' : '')+
+    '</button>';
+  }).join("");
+
+  app.innerHTML =
+    '<p class="eyebrow">Divine Savior Academy &middot; Grade 3 &middot; Term 1</p>'+
+    '<h1>Quiz <span class="pop">Quest</span></h1>'+
+    '<p class="sub">Pick a subject and collect stars. Every question comes straight from your own class notes, so this is real practice.</p>'+
+    '<div class="grid">'+cards+'</div>'+
+    '<div class="tipbar"><span>Tip: answers are shuffled every time, so you have to really know it.</span>'+
+      '<button class="ghost" data-snd>Sound: '+(soundOn?"on":"off")+'</button></div>';
+  scrollTo(0,0);
+}
+
+/* ---------- quiz ---------- */
+function startQuiz(id){
+  S = SUBJECTS.filter(function(s){ return s.id===id; })[0];
+  order = shuffle(S.q.map(function(_,i){ return i; }));
+  qi=0; score=0;
+  renderQuestion();
+}
+
+function renderQuestion(){
+  locked=false;
+  var q = S.q[order[qi]];
+  optIdx = shuffle(q.o.map(function(_,i){ return i; }));
+  var letters="ABCD";
+  var opts = optIdx.map(function(orig,pos){
+    return '<button class="opt" data-pick="'+pos+'"><span class="ltr">'+letters[pos]+'</span>'+
+           '<span class="txt">'+q.o[orig]+'</span><span class="mark">'+svg("ic-check")+'</span></button>';
+  }).join("");
+
+  app.innerHTML =
+    '<div style="--c:'+S.color+'">'+
+      '<div class="topbar">'+
+        '<button class="ghost" data-menu>&larr; Menu</button>'+
+        '<span class="title">'+S.name+'</span>'+
+        '<span class="pill">'+svg("ic-star")+'<span>'+score+'</span></span>'+
+      '</div>'+
+      '<div class="track"><i style="width:'+(qi/S.q.length*100)+'%"></i></div>'+
+      '<p class="count">QUESTION '+(qi+1)+' OF '+S.q.length+'</p>'+
+      '<div class="qcard">'+
+        '<h2 class="qtext">'+q.q+'</h2>'+
+        '<div class="opts">'+opts+'</div>'+
+        '<div id="fbslot" aria-live="polite"></div>'+
+      '</div>'+
+    '</div>';
+  scrollTo(0,0);
+}
+
+function pick(pos){
+  if(locked) return;
+  locked=true;
+  var q = S.q[order[qi]];
+  var right = optIdx[pos]===q.a;
+  var nodes = app.querySelectorAll(".opt");
+  for(var i=0;i<nodes.length;i++){
+    nodes[i].disabled = true;
+    if(optIdx[i]===q.a){ nodes[i].classList.add("right"); nodes[i].querySelector(".mark").innerHTML=svg("ic-check"); }
+    else if(i===pos){ nodes[i].classList.add("wrong"); nodes[i].querySelector(".mark").innerHTML=svg("ic-x"); }
+    else nodes[i].classList.add("dim");
+  }
+  if(right){ score++; sfx("ok"); burst(26, PARTY); }
+  else sfx("no");
+
+  var head = right
+    ? ["Yes! Nailed it.","Correct! Well done.","That is right!","Exactly right!"][Math.floor(Math.random()*4)]
+    : "Not this time - the answer is " + q.o[q.a];
+  app.querySelector(".pill span").textContent = score;
+  app.querySelector(".track i").style.width = ((qi+1)/S.q.length*100)+"%";
+  app.querySelector("#fbslot").innerHTML =
+    '<div class="fb '+(right?"ok":"no")+'"><h3>'+head+'</h3><p>'+q.why+'</p></div>'+
+    '<button class="big" data-next>'+(qi+1<S.q.length ? "Next question &rarr;" : "See my score &rarr;")+'</button>';
+}
+
+function next(){
+  qi++;
+  if(qi < S.q.length) renderQuestion();
+  else renderResult();
+}
+
+function renderResult(){
+  var total=S.q.length, pct=Math.round(score/total*100);
+  var stars = pct>=90?3 : pct>=70?2 : pct>=50?1 : 0;
+  if(best[S.id]===undefined || score>best[S.id]){ best[S.id]=score; saveBest(best); }
+
+  var msg;
+  if(stars===3) msg="You have really learned this. Three stars is the top score.";
+  else if(stars===2) msg="Strong work. Read the blue notes on the ones you missed and try for three stars.";
+  else if(stars===1) msg="Good start. Go through it once more - the explanations tell you exactly why.";
+  else msg="This one is still new. Try it again and read each explanation carefully. You will get there.";
+
+  var starRow="";
+  for(var i=0;i<3;i++) starRow += svg("ic-star", i<stars ? "lit" : "");
+
+  if(stars>=2){ sfx("win"); burst(70, PARTY); }
+
+  app.innerHTML =
+    '<div style="--c:'+S.color+'">'+
+      '<div class="topbar"><button class="ghost" data-menu>&larr; Menu</button>'+
+        '<span class="title">'+S.name+' &middot; finished</span></div>'+
+      '<div class="qcard result">'+
+        '<div class="ring" style="--pct:'+pct+'"><div class="inner">'+
+          '<span class="num">'+score+'</span><span class="of">out of '+total+'</span></div></div>'+
+        '<div class="stars">'+starRow+'</div>'+
+        '<h2>'+(stars===3?"Perfect run!":stars===2?"Nicely done!":stars===1?"Keep going!":"Let us try again")+'</h2>'+
+        '<p class="msg">'+msg+'</p>'+
+        '<div class="row">'+
+          '<button class="big" data-again>Try this one again</button>'+
+          '<button class="big alt" data-menu>Pick another subject</button>'+
+        '</div>'+
+      '</div>'+
+    '</div>';
+  scrollTo(0,0);
+}
+
+/* ---------- events ---------- */
+app.addEventListener("click", function(e){
+  var t = e.target.closest("button");
+  if(!t) return;
+  if(t.dataset.go)            startQuiz(t.dataset.go);
+  else if(t.dataset.menu!==undefined)  renderMenu();
+  else if(t.dataset.pick!==undefined)  pick(+t.dataset.pick);
+  else if(t.dataset.next!==undefined)  next();
+  else if(t.dataset.again!==undefined) startQuiz(S.id);
+  else if(t.dataset.snd!==undefined){
+    soundOn=!soundOn;
+    try{ localStorage.setItem(SND_KEY, soundOn?"on":"off"); }catch(err){}
+    t.textContent="Sound: "+(soundOn?"on":"off");
+    if(soundOn) sfx("ok");
+  }
+});
+
+renderMenu();
+</script>
+</body>
+</html>
