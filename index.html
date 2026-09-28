@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Grade 3 Term 1 practice quizzes in Science, Math, English, Social Studies and Spelling.">
+<meta name="description" content="Grade 3 Term 1 practice quizzes in Science, Math, English, Social Studies, Spelling and Christ Light.">
 <meta name="theme-color" content="#EEF5FF">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Quiz Quest">
@@ -31,6 +31,7 @@ img{max-width:100%}
   --eng:#7A4DFF;
   --soc:#DD3F7C;
   --spell:#2B72D8;
+  --christ:#B5821A;
   --good:#0E9D53;
   --good-bg:#E0F7EA;
   --oops:#D64550;
@@ -52,6 +53,7 @@ img{max-width:100%}
     --eng:#AE92FF;
     --soc:#FF75A8;
     --spell:#79B6FF;
+    --christ:#F0C368;
     --good:#45D98C;
     --good-bg:#10341F;
     --oops:#FF8A90;
@@ -73,6 +75,7 @@ img{max-width:100%}
   --eng:#AE92FF;
   --soc:#FF75A8;
   --spell:#79B6FF;
+  --christ:#F0C368;
   --good:#45D98C;
   --good-bg:#10341F;
   --oops:#FF8A90;
@@ -270,6 +273,10 @@ h1 .pop{color:var(--math)}
   <symbol id="ic-spell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4.3 17.1L14.9 6.5l2.9 2.9L7.2 20H4.3z"/><path d="M14.9 6.5l1.9-1.9a1.6 1.6 0 0 1 2.3 0l.6.6a1.6 1.6 0 0 1 0 2.3l-1.9 1.9"/><path d="M3 22.4h18"/>
   </symbol>
+  <symbol id="ic-christ" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2.6c2.8 2.9 4.4 5 4.4 7.3a4.4 4.4 0 0 1-8.8 0c0-2.3 1.6-4.4 4.4-7.3z"/>
+    <path d="M9.4 14.6v4.8h5.2v-4.8"/><path d="M6.8 21.6h10.4"/>
+  </symbol>
   <symbol id="ic-star" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2.2l2.9 6.1 6.6.9-4.8 4.7 1.2 6.7-5.9-3.2-5.9 3.2 1.2-6.7L2.5 9.2l6.6-.9z"/>
   </symbol>
@@ -297,9 +304,9 @@ var SUBJECTS = [
     {q:"Which one is a NATURAL light source?",
      o:["The Sun","A flashlight","A lamp","A candle"],
      a:0, why:"Natural light sources happen in nature: the Sun, stars and fire. Candles, lamps and flashlights are made by people."},
-    {q:"Which one is a HUMAN-MADE light source?",
-     o:["A flashlight","The stars","Fire","The Sun"],
-     a:0, why:"Human-made light sources are created by people, like a candle, a lamp or a flashlight."},
+    {q:"Which one is made by people, not found in nature?",
+     o:["A candle","The Sun","The stars","Fire"],
+     a:0, why:"Human-made light sources are created by people: a candle, a lamp or a flashlight. The Sun, stars and fire are natural."},
     {q:"Why is the Moon NOT a light source?",
      o:["It only reflects light from the Sun","It is too far away from us","It only comes out at night","It is smaller than the Sun"],
      a:0, why:"The Moon does not make its own light. It reflects the Sun's light, so it is not a light source."},
@@ -309,32 +316,32 @@ var SUBJECTS = [
     {q:"What would Earth be like without the Sun?",
      o:["Very cold and dark","Very noisy","Much faster","Exactly the same"],
      a:0, why:"Without the Sun, Earth would be very cold and dark, and most living things could not survive."},
-    {q:"Which everyday job uses HEAT?",
-     o:["Ironing clothes","Reading a traffic light","Looking in a mirror","Switching on a flashlight"],
-     a:0, why:"An iron uses heat to take the wrinkles out of clothes. We also use heat to cook food and to warm water."},
+    {q:"Which one of these uses HEAT?",
+     o:["An iron","A mirror","A window","A pair of glasses"],
+     a:0, why:"An iron uses heat to take the wrinkles out of clothes. Stoves and ovens use heat to cook, and heaters warm our water."},
     {q:"Traffic lights use light to...",
      o:["Give signals","Cook food","Warm water","Iron clothes"],
      a:0, why:"Traffic lights give signals so that drivers and people walking know when to stop and when to go."},
     {q:"In Grenada, which fuel is used in cars and motorcycles?",
      o:["Gasoline, or petrol","Charcoal","Firewood","LPG cooking gas"],
-     a:0, why:"Gasoline (petrol) is used in cars and motorcycles. Diesel is used in buses, trucks and boats."},
-    {q:"At home in Grenada, charcoal and firewood are mostly used for...",
-     o:["Cooking and heating","Driving vehicles","Lighting street lamps","Making clothes"],
-     a:0, why:"Charcoal is used for cooking and heating, and firewood is used for cooking, especially on outdoor fires."},
+     a:0, why:"Gasoline (petrol) is used in cars and motorcycles."},
+    {q:"Which fuel is used in buses, trucks and boats?",
+     o:["Diesel","Firewood","Charcoal","LPG cooking gas"],
+     a:0, why:"Diesel powers buses, trucks and boats. It is also used to run machines and generators."},
     {q:"What is heat?",
      o:["A form of energy that makes things warmer","A kind of light","A type of fuel","A cold wind"],
      a:0, why:"Heat is a form of energy. It makes things warmer and can change materials: ice melts and chocolate melts when they are heated."},
-    {q:"Light passes right through a glass window. The glass is...",
-     o:["Transparent","Opaque","Reflective","Melted"],
-     a:0, why:"Light passing through means transparent. Light being blocked means opaque. Light bouncing off, like off a mirror, means reflective."}
+    {q:"Light cannot pass through a wooden door. The door is...",
+     o:["Opaque","Transparent","Reflective","Melted"],
+     a:0, why:"Light being blocked means opaque. Light passing through means transparent. Light bouncing off, like off a mirror, means reflective."}
   ]
 },
 {
-  id:"math", name:"Math", topic:"Place value and rounding", color:"var(--math)", icon:"ic-math",
+  id:"math", name:"Math", topic:"Place value, rounding and patterns", color:"var(--math)", icon:"ic-math",
   q:[
-    {q:"What is the place value of the 2 in 928?",
-     o:["2 tens, which is 20","2 ones, which is 2","2 hundreds, which is 200","2 thousands, which is 2,000"],
-     a:0, why:"Place value depends on where the digit sits. The 2 in 928 is in the tens place, so it is worth 20."},
+    {q:"What is the place value of the 5 in 352?",
+     o:["5 tens, which is 50","5 ones, which is 5","5 hundreds, which is 500","5 thousands, which is 5,000"],
+     a:0, why:"Place value depends on where the digit sits. The 5 in 352 is in the tens place, so it is worth 50."},
     {q:"What is the FACE value of the 7 in 573?",
      o:["7","70","700","3"],
      a:0, why:"Face value is just the digit itself, no matter where it sits in the number. So the face value of 7 is 7."},
@@ -356,22 +363,40 @@ var SUBJECTS = [
     {q:"Ms. Tonya is standing 3rd in the line. How do we write 3rd in words?",
      o:["Third","Three","Thirty","Thirteenth"],
      a:0, why:"Ordinal numbers tell us position: 1st first, 2nd second, 3rd third, 4th fourth, 5th fifth."},
-    {q:"Round 13 to the nearest ten.",
-     o:["10","20","13","100"],
-     a:0, why:"Underline the tens digit (1) and circle the digit behind it (3). Because 3 is 1, 2, 3 or 4, you round DOWN: 13 becomes 10."},
-    {q:"Round 47 to the nearest ten.",
-     o:["50","40","47","100"],
-     a:0, why:"Circle the 7. Because 7 is 5, 6, 7, 8 or 9, you round UP: add one to the 4 and turn the 7 into a zero, so 47 becomes 50."},
-    {q:"Round 268 to the nearest hundred.",
-     o:["300","200","260","270"],
-     a:0, why:"Underline the hundreds digit (2) and circle the 6. Because 6 is 5 or more, you round UP: 268 becomes 300."},
+    {q:"Round 24 to the nearest ten.",
+     o:["20","30","24","100"],
+     a:0, why:"Underline the tens digit (2) and circle the digit behind it (4). Because 4 is 1, 2, 3 or 4, you round DOWN: 24 becomes 20."},
+    {q:"Round 76 to the nearest ten.",
+     o:["80","70","76","100"],
+     a:0, why:"Circle the 6. Because 6 is 5, 6, 7, 8 or 9, you round UP: add one to the 7 and turn the 6 into a zero, so 76 becomes 80."},
+    {q:"Round 341 to the nearest hundred.",
+     o:["300","400","340","350"],
+     a:0, why:"Underline the hundreds digit (3) and circle the 4. Because 4 is less than 5, you round DOWN: 341 becomes 300."},
     {q:"When the circled number is 5, 6, 7, 8 or 9, you...",
      o:["Round up","Round down","Leave it the same","Start the number again"],
-     a:0, why:"5, 6, 7, 8 and 9 round UP. 1, 2, 3 and 4 round DOWN."}
+     a:0, why:"5, 6, 7, 8 and 9 round UP. 1, 2, 3 and 4 round DOWN."},
+    {q:"Ascending order means arranging numbers from...",
+     o:["Smallest to largest","Largest to smallest","Odd to even","Longest to shortest"],
+     a:0, why:"Ascending means going up: 245, 378, 512, 690. Descending means going down."},
+    {q:"Which list is in DESCENDING order?",
+     o:["690, 512, 378, 245","245, 378, 512, 690","245, 690, 378, 512","378, 245, 690, 512"],
+     a:0, why:"Descending order goes from largest to smallest: 690, 512, 378, 245."},
+    {q:"Complete the sequence:   21, 23, 25, ___",
+     o:["27","26","28","30"],
+     a:0, why:"This pattern adds 2 each time, so after 25 comes 27."},
+    {q:"Complete the sequence:   5, 10, ___, 20",
+     o:["15","12","16","25"],
+     a:0, why:"This pattern counts in fives: 5, 10, 15, 20."},
+    {q:"Complete the sequence:   200, 150, 100, ___",
+     o:["50","125","75","0"],
+     a:0, why:"This pattern goes DOWN by 50 each time: 200, 150, 100, 50."},
+    {q:"Complete the pattern:   2a, 4b, 6c, 8d, ___",
+     o:["10e","9e","10d","12e"],
+     a:0, why:"The numbers go up by 2 (2, 4, 6, 8, 10) and the letters follow in order (a, b, c, d, e), so the answer is 10e."}
   ]
 },
 {
-  id:"eng", name:"English", topic:"Nouns, verbs and spelling", color:"var(--eng)", icon:"ic-eng",
+  id:"eng", name:"English", topic:"Nouns, verbs and sentences", color:"var(--eng)", icon:"ic-eng",
   q:[
     {q:"What does the BEGINNING of a story do?",
      o:["Introduces the characters and tells what the story is about","Sorts out all the problems","Tells us the lesson that was learnt","Tells us what the characters do all day"],
@@ -382,17 +407,17 @@ var SUBJECTS = [
     {q:"Which one is a PROPER noun?",
      o:["Grenada","island","teacher","school"],
      a:0, why:"Proper nouns name a specific person, place or organisation, and they always begin with a capital letter, like Grenada, March, Friday and Ms. Tonya."},
-    {q:"What is the plural of watch?",
-     o:["watches","watchs","watchies","watch"],
+    {q:"What is the plural of fox?",
+     o:["foxes","foxs","foxies","fox"],
      a:0, why:"For nouns ending in s, sh, tch or x we add es: bus becomes buses, watch becomes watches, fox becomes foxes."},
-    {q:"What is the plural of fly?",
-     o:["flies","flys","flyes","fly"],
+    {q:"What is the plural of baby?",
+     o:["babies","babys","babyes","baby"],
      a:0, why:"For nouns ending in y, change the y to i and add es: baby becomes babies, grocery becomes groceries, fly becomes flies."},
     {q:"What is the plural of knife?",
      o:["knives","knifes","knifees","knife"],
-     a:0, why:"For nouns ending in f, change the f to v and add es: leaf becomes leaves, wolf becomes wolves, knife becomes knives."},
-    {q:"What is the plural of woman?",
-     o:["women","womans","womens","womanes"],
+     a:0, why:"For nouns ending in f, change the f to v and add es: leaf becomes leaves, wolf becomes wolves, knife becomes knives. Knife is also one of your silent k spelling words."},
+    {q:"What is the plural of mouse?",
+     o:["mice","mouses","mices","mouse"],
      a:0, why:"Some nouns have special irregular plurals: man becomes men, woman becomes women, mouse becomes mice."},
     {q:"Which one is an ABSTRACT noun?",
      o:["happiness","garden","monkey","chocolate"],
@@ -403,9 +428,12 @@ var SUBJECTS = [
     {q:"Finish the question:  ___ he play soccer?",
      o:["Does","Do","Done","Doing"],
      a:0, why:"Use does with he, she, it and one person or thing. Use do with I, you, we, they and plural nouns."},
-    {q:"Which one is a QUESTION?",
-     o:["Would you like to come to my party?","Squids live in the sea.","Happy birthday!","Ice-cream and cake on my birthday"],
-     a:0, why:"A question is an asking sentence and ends with a question mark. Squids live in the sea is a statement, and Happy birthday! is an exclamation."},
+    {q:"Which one is a STATEMENT, a telling sentence?",
+     o:["Squids live in the sea.","Would you like to come to my party?","Happy birthday!","Ice-cream and cake on my birthday"],
+     a:0, why:"A statement tells us something and ends with a full stop. A question ends with a question mark, and an exclamation mark shows strong feelings or shouting."},
+    {q:"In a dictionary, which word comes first?",
+     o:["play","poem","port","push"],
+     a:0, why:"Dictionary words are in alphabetical order. These all start with p, so look at the second letter: l comes before o, r and u."},
     {q:"A group of birds is called a...",
      o:["flock","herd","swarm","bunch"],
      a:0, why:"Collective nouns name groups: a flock of birds, a herd of goats, a swarm of bees, a bunch of flowers and a class of children."}
@@ -429,92 +457,151 @@ var SUBJECTS = [
     {q:"What is heritage?",
      o:["What is handed down to you from your parents, grandparents and ancestors","The house that your family lives in","The money that your family saves","The subjects you study at school"],
      a:0, why:"Heritage is what is passed down to you, and belonging to a group that shares traditions, beliefs, culture and history. It is part of your identity."},
+    {q:"Amerindian people are...",
+     o:["The descendants of the first people who lived in the Caribbean","People whose ancestors came from India","People whose ancestors came from Europe","People whose ancestors came from China"],
+     a:0, why:"Amerindians are descended from the original inhabitants of the Caribbean, who lived here before the Europeans arrived about 600 years ago."},
+    {q:"Many Caribbean people have ancestors who were brought from...",
+     o:["Africa, during enslavement","Canada, to build roads","Australia, to farm","Japan, to fish"],
+     a:0, why:"Many Caribbean people have ancestors brought from Africa during enslavement. Later many labourers came from India, and others came from Europe, South America and China."},
     {q:"What is the most common surname in Grenada?",
      o:["Charles","Joseph","Williams","Clarke"],
      a:0, why:"Charles is the most common surname in Grenada. In Barbados it is Clarke, and in Dominica, Antigua and Barbuda and St. Lucia it is Joseph."},
-    {q:"The surname Williamson means...",
-     o:["William's son","A person who is strong","A town called William","Someone who bakes"],
-     a:0, why:"Williamson means William's son, and Robertson means Robert's son."},
-    {q:"Surnames like Baker and Miller come from...",
-     o:["Jobs that people used to do","Places on a map","Descriptions of people","A mother's first name"],
-     a:0, why:"Lots of surnames come from work. Wood and Gates come from the landscape, and Strong and Little describe a person."},
-    {q:"Which one is an INFORMAL group?",
-     o:["Friends together on a beach","A political party","A school","Colleagues at work"],
-     a:0, why:"Informal groups can exist just for fun, like children playing a game in a park, people in a hair salon, or friends on a beach."},
+    {q:"Which surname comes from the landscape, not from a job?",
+     o:["Wood","Baker","Miller","Robertson"],
+     a:0, why:"Wood and Gates come from features of the landscape. Baker and Miller come from jobs, Strong and Little describe a person, and Robertson means Robert's son."},
+    {q:"Which one is a FORMAL group?",
+     o:["A political party","Friends together on a beach","Children playing in a park","People waiting in a hair salon"],
+     a:0, why:"Formal groups, like political parties, can be important parts of communities and countries. Informal groups often exist just for fun."},
     {q:"A school is which type of group?",
      o:["Educational","Political","Religious","Ethnic"],
      a:0, why:"Schools are educational groups. Inside a school, your class and the other students in your grade form a peer group."},
     {q:"Why do school students wear a uniform?",
      o:["So everyone is equal and the group has its own identity","So that they can run faster","So that they never get dirty","So that teachers can count them"],
      a:0, why:"A uniform makes everyone equal, gives the group an identity and a community, and means you do not have to decide what to wear each day."},
+    {q:"People who work together are sometimes called...",
+     o:["Colleagues","Cousins","Ancestors","Neighbours"],
+     a:0, why:"People who work together are colleagues. Some groups of workers wear a uniform too."},
     {q:"One important way that Caribbean culture is expressed is through...",
      o:["Carnival","Snow festivals","Ice hockey","Tulip parades"],
      a:0, why:"Carnival is one important way Caribbean culture is expressed. Cultural groups also include choirs, dance troupes, and book and art groups."}
   ]
 },
 {
-  id:"spell", name:"Spelling", topic:"Week 3: the al and all words", color:"var(--spell)", icon:"ic-spell",
+  id:"spell", name:"Spelling", topic:"Week 5: silent k and silent b", color:"var(--spell)", icon:"ic-spell",
   q:[
     {q:"Which one is spelled correctly?",
-     o:["always","alwayz","allways","alwaies"],
-     a:0, why:"Always has only one l: al-ways. It means every time, or all the time."},
+     o:["lamb","lam","lambe","llamb"],
+     a:0, why:"Lamb ends with a silent b. We say lam. A lamb is a baby sheep."},
     {q:"Which one is spelled correctly?",
-     o:["although","allthough","althogh","altho"],
-     a:0, why:"Although has one l and ends in -though. It means even though."},
+     o:["climb","clim","climbe","klimb"],
+     a:0, why:"Climb ends with a silent b. To climb is to go up something, like a tree."},
     {q:"Which one is spelled correctly?",
-     o:["almost","allmost","almoste","olmost"],
-     a:0, why:"Almost has one l: al-most. It means nearly, but not quite."},
+     o:["knife","nife","knive","knifh"],
+     a:0, why:"Knife begins with a silent k. Remember its plural changes too: knife becomes knives."},
     {q:"Which one is spelled correctly?",
-     o:["altogether","alltogether","altogather","alltogather"],
-     a:0, why:"Altogether has one l: al-together. It means completely, or in total."},
+     o:["knock","nock","knok","cnock"],
+     a:0, why:"Knock begins with a silent k. To knock is to hit something, like a door."},
     {q:"Which one is spelled correctly?",
-     o:["already","allready","alredy","allredy"],
-     a:0, why:"Already has one l: al-ready. It means before now."},
+     o:["thumb","thum","thumbe","thomb"],
+     a:0, why:"Thumb ends with a silent b. Your thumb is the short, thick finger on your hand."},
     {q:"Which one is spelled correctly?",
-     o:["hospital","hospitle","hospitol","hospittal"],
-     a:0, why:"Hospital ends in -al, just like capital, signal, sandal and pedal."},
+     o:["knew","knue","kneu","knewe"],
+     a:0, why:"Knew begins with a silent k. Knew means you already understood something. Do not mix it up with new, which means not old."},
     {q:"Which one is spelled correctly?",
-     o:["occasional","occassional","ocasional","occasionel"],
-     a:0, why:"Occasional has two c-letters, one s, and ends in -al. It means happening sometimes, not often."},
+     o:["crumb","crum","crumbe","krumb"],
+     a:0, why:"Crumb ends with a silent b. A crumb is a tiny piece of bread or cake."},
     {q:"Which one is spelled correctly?",
-     o:["accidental","accidentel","acidental","accidentle"],
-     a:0, why:"Accidental has two c-letters and ends in -al. It means happening by accident."},
+     o:["kneel","neel","kneal","knele"],
+     a:0, why:"Kneel begins with a silent k. To kneel is to go down on your knees."},
     {q:"Which one is spelled correctly?",
-     o:["special","speshal","specail","speciel"],
-     a:0, why:"Special ends in -al even though it sounds like shul. It means better or different from usual."},
+     o:["comb","coom","combe","kohm"],
+     a:0, why:"Comb ends with a silent b. You use a comb to tidy your hair."},
     {q:"Which one is spelled correctly?",
-     o:["pedal","pedle","peddal","pedall"],
-     a:0, why:"Pedal ends in -al. It is the part of a bicycle that you push with your foot."},
-    {q:"Which word means a place where sick people are cared for?",
-     o:["hospital","capital","sandal","signal"],
-     a:0, why:"A hospital cares for sick people. A capital is a main city, a sandal is a shoe, and a signal is a sign."},
-    {q:"Which word means what normally happens?",
-     o:["usual","special","occasional","accidental"],
-     a:0, why:"Usual means normal or ordinary. Its opposite is special, which means different from the usual."},
-    {q:"What is the capital of a country?",
-     o:["The main city, where the government is","The tallest building in it","The biggest shop in it","The oldest church in it"],
-     a:0, why:"A capital is a country's main city. St. George's is the capital of Grenada. A capital letter is also the big letter at the start of a name."},
-    {q:"Finish the sentence: A giraffe is very ___ .",
-     o:["tall","stall","small","fall"],
-     a:0, why:"Tall means high from bottom to top. The giraffe is the tallest animal in the world."},
-    {q:"Finish the sentence: Be careful on the wet floor or you might ___ .",
-     o:["fall","tall","stall","fill"],
-     a:0, why:"To fall is to drop down to the ground."},
-    {q:"Finish the sentence: A mouse is ___ , but an elephant is huge.",
-     o:["small","stall","smell","tall"],
-     a:0, why:"Small means little. It is the opposite of big."},
-    {q:"Finish the sentence: We bought mangoes from a ___ in the market.",
-     o:["stall","stale","small","tall"],
-     a:0, why:"A stall is a small stand or table where things are sold, like the ones in a market."},
-    {q:"Finish the sentence: I like mangoes and I ___ like bananas.",
-     o:["also","already","always","almost"],
-     a:0, why:"Also means as well, or in addition."},
-    {q:"Finish the sentence: The traffic light gave the ___ to stop.",
-     o:["signal","sandal","special","capital"],
-     a:0, why:"A signal is a sign that tells you something, like a traffic light telling cars to stop."},
-    {q:"Finish the sentence: She wore a ___ on each foot to the beach.",
-     o:["sandal","signal","stall","pedal"],
-     a:0, why:"A sandal is an open shoe with straps. Two of them are a pair of sandals."}
+     o:["knot","knott","knote","knopt"],
+     a:0, why:"Knot begins with a silent k. A knot is a tie in a rope or a string. Do not mix it up with not, which means no."},
+    {q:"Which one is spelled correctly?",
+     o:["knit","nitt","knitt","kniet"],
+     a:0, why:"Knit begins with a silent k. To knit is to make clothes from wool using needles."},
+    {q:"Which letter is SILENT in the word lamb?",
+     o:["b","l","a","m"],
+     a:0, why:"The b at the end of lamb is silent, so we say lam. Comb, climb, crumb and thumb all have a silent b too."},
+    {q:"Which letter is SILENT in the word knee?",
+     o:["k","n","e","None of them"],
+     a:0, why:"The k at the start of knee is silent, so we say nee. Kneel, knew, knife, knit, knot and knock all have a silent k too."},
+    {q:"Which group of words ALL have a silent b?",
+     o:["lamb, comb, climb","knee, knife, knot","knock, knit, knew","lamb, knee, knit"],
+     a:0, why:"Lamb, comb, climb, crumb and thumb all end with a silent b."},
+    {q:"Which group of words ALL begin with a silent k?",
+     o:["knee, knife, knock","lamb, comb, thumb","climb, crumb, knit","thumb, knee, comb"],
+     a:0, why:"Knee, kneel, knew, knife, knit, knot and knock all begin with a silent k."},
+    {q:"Finish the sentence: A baby sheep is called a ___ .",
+     o:["lamb","comb","crumb","climb"],
+     a:0, why:"A lamb is a baby sheep. The b at the end is silent."},
+    {q:"Finish the sentence: She used a ___ to tidy her hair.",
+     o:["comb","climb","crumb","lamb"],
+     a:0, why:"A comb tidies your hair. The b at the end is silent."},
+    {q:"Finish the sentence: He went down on one ___ to tie his shoe.",
+     o:["knee","knew","knit","knock"],
+     a:0, why:"Your knee is the joint in the middle of your leg. The k at the start is silent."},
+    {q:"Finish the sentence: Please ___ on the door before you come in.",
+     o:["knock","knot","knit","knee"],
+     a:0, why:"To knock is to hit the door so people know you are there. The k at the start is silent."},
+    {q:"Finish the sentence: Grandma likes to ___ scarves out of wool.",
+     o:["knit","knot","knee","knew"],
+     a:0, why:"To knit is to make clothes from wool using needles. The k at the start is silent."}
+  ]
+},
+{
+  id:"christ", name:"Christ Light", topic:"Term 1 lessons and memory treasures", color:"var(--christ)", icon:"ic-christ",
+  q:[
+    {q:"Who announced the births of John and Jesus?",
+     o:["The angel Gabriel","Zechariah","Simeon","John the Baptist"],
+     a:0, why:"Gabriel announced the births of John and Jesus. God reminded Zechariah and Mary that his promises always come true."},
+    {q:"What did God remind Zechariah and Mary about?",
+     o:["That his promises always come true","That they should travel to Egypt","That they should build a temple","That they should go to Nazareth"],
+     a:0, why:"God reminded them that his promises always come true, and he reminds us of the same thing. We trust God's promises and encourage others to do the same."},
+    {q:"How did Zechariah show his faith in God?",
+     o:["He obeyed God, praised him and proclaimed his Word","He stayed quiet and told nobody","He travelled to Egypt","He brought gifts to the temple"],
+     a:0, why:"Zechariah obeyed God, praised him and proclaimed his Word. We can show our faith the same way, with the Holy Spirit's help."},
+    {q:"How did the shepherds show their joy at Jesus' birth?",
+     o:["They searched for their Savior, told others and praised God","They stayed in the fields with the sheep","They brought gold to the temple","They wrote a song about him"],
+     a:0, why:"The shepherds searched for their Savior, told others about him, and praised God. The birth of our Savior is the most important reason for Christmas joy."},
+    {q:"Who praised God and proclaimed that Jesus was the Savior when he was brought to the temple?",
+     o:["Simeon and Anna","Mary and Joseph","The shepherds","The wise men"],
+     a:0, why:"Simeon and Anna praised God and proclaimed Jesus to be the Savior. God wants us to celebrate Christmas by doing the same."},
+    {q:"How did the wise men honour the child Jesus?",
+     o:["They worshiped him as their King and brought him precious gifts","They wrote his name in the temple","They took him to Egypt","They taught him to read"],
+     a:0, why:"The wise men worshiped Jesus as their King and brought him precious gifts. God leads us to know our Savior and worship him as our King."},
+    {q:"Where did God lead Joseph to keep Jesus safe?",
+     o:["Egypt, and later Nazareth","Bethlehem","Jerusalem","The temple"],
+     a:0, why:"In The Escape to Egypt, God led Joseph to keep Jesus our Savior safe in Egypt and Nazareth."},
+    {q:"In the lesson about the escape to Egypt, who does God use to keep us safe?",
+     o:["Our parents","Our teachers","Our friends","Our neighbours"],
+     a:0, why:"God uses our parents to keep us safe. We thank God for our parents and pray for them."},
+    {q:"How old was Jesus in the lesson about him staying at the temple?",
+     o:["Twelve","Eight","Ten","Thirty"],
+     a:0, why:"The lesson is called The Twelve-Year-Old Jesus. He obeyed both his earthly parents and his heavenly Father."},
+    {q:"Which commandments did Jesus obey for us?",
+     o:["The Third and Fourth Commandments","The First and Second","The Fifth and Sixth","The Ninth and Tenth"],
+     a:0, why:"Jesus obeyed the Third and Fourth Commandments for us. We thank him by following his example of obedience."},
+    {q:"How did John the Baptist prepare the way for Jesus?",
+     o:["He showed people that they were sinners who needed Jesus the Savior","He built a road to Jerusalem","He brought gifts to the temple","He wrote the Apostles' Creed"],
+     a:0, why:"John showed the people that they were sinners who needed Jesus the Savior. We are thankful for spiritual leaders who remind us of our sins and tell us about our Savior."},
+    {q:"Memory Treasure: I believe in God, the Father Almighty, Maker of ___ .",
+     o:["heaven and earth","land and sea","day and night","sun and moon"],
+     a:0, why:"Apostles' Creed, Part 1: I believe in God, the Father Almighty, Maker of heaven and earth."},
+    {q:"Memory Treasure: Jesus suffered under ___ , was crucified, died and was buried.",
+     o:["Pontius Pilate","King Herod","Caesar Augustus","Simeon"],
+     a:0, why:"Apostles' Creed, Part 1: who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried."},
+    {q:"Memory Treasure: The third day He ___ again from the dead.",
+     o:["rose","came","spoke","walked"],
+     a:0, why:"Apostles' Creed, Part 2: He descended into hell. The third day He rose again from the dead."},
+    {q:"Memory Treasure: I believe in the Holy Spirit, the Holy Christian Church, the communion of Saints, the forgiveness of sins, the ___ of the body.",
+     o:["resurrection","protection","blessing","healing"],
+     a:0, why:"Apostles' Creed, Part 3: ... the forgiveness of sins, the resurrection of the body; and in life everlasting. Amen."},
+    {q:"Memory Treasure from 2 Corinthians 5:21 says God made him who had no sin to be sin for us, so that in him we might become the ___ of God.",
+     o:["righteousness","kingdom","children","promise"],
+     a:0, why:"2 Corinthians 5:21: God made him who had no sin to be sin for us, so that in him we might become the righteousness of God."}
   ]
 }
 ];
@@ -603,7 +690,7 @@ function renderMenu(){
     '<h1>Quiz <span class="pop">Quest</span></h1>'+
     '<p class="sub">Pick a subject and collect stars. Every question comes straight from your own class notes, so this is real practice.</p>'+
     '<div class="grid">'+cards+'</div>'+
-    '<div class="tipbar"><span>Tip: answers are shuffled every time, so you have to really know it.</span>'+
+    '<div class="tipbar"><span><b>Word Study test: Friday 2nd October.</b><br>This week&rsquo;s silent k and silent b words are in the Spelling deck.</span>'+
       '<button class="ghost" data-snd>Sound: '+(soundOn?"on":"off")+'</button></div>';
   scrollTo(0,0);
 }
