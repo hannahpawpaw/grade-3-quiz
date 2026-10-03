@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Grade 3 Term 1 practice quizzes in Science, Math, English, Social Studies, Spelling and Christ Light.">
+<meta name="description" content="Grade 3 Term 1 practice quizzes in Science, Math, Fractions, English, Social Studies, Spelling and Christ Light.">
 <meta name="theme-color" content="#EEF5FF">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Quiz Quest">
@@ -32,6 +32,7 @@ img{max-width:100%}
   --soc:#DD3F7C;
   --spell:#2B72D8;
   --christ:#B5821A;
+  --frac:#2E9E5B;
   --good:#0E9D53;
   --good-bg:#E0F7EA;
   --oops:#D64550;
@@ -54,6 +55,7 @@ img{max-width:100%}
     --soc:#FF75A8;
     --spell:#79B6FF;
     --christ:#F0C368;
+    --frac:#5FD98A;
     --good:#45D98C;
     --good-bg:#10341F;
     --oops:#FF8A90;
@@ -76,6 +78,7 @@ img{max-width:100%}
   --soc:#FF75A8;
   --spell:#79B6FF;
   --christ:#F0C368;
+  --frac:#5FD98A;
   --good:#45D98C;
   --good-bg:#10341F;
   --oops:#FF8A90;
@@ -277,6 +280,10 @@ h1 .pop{color:var(--math)}
     <path d="M12 2.6c2.8 2.9 4.4 5 4.4 7.3a4.4 4.4 0 0 1-8.8 0c0-2.3 1.6-4.4 4.4-7.3z"/>
     <path d="M9.4 14.6v4.8h5.2v-4.8"/><path d="M6.8 21.6h10.4"/>
   </symbol>
+  <symbol id="ic-frac" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+    <path d="M12 12V3a9 9 0 0 1 9 9z" fill="currentColor" stroke="none"/>
+    <circle cx="12" cy="12" r="9"/><path d="M12 12V3M12 12h9"/>
+  </symbol>
   <symbol id="ic-star" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2.2l2.9 6.1 6.6.9-4.8 4.7 1.2 6.7-5.9-3.2-5.9 3.2 1.2-6.7L2.5 9.2l6.6-.9z"/>
   </symbol>
@@ -333,7 +340,19 @@ var SUBJECTS = [
      a:0, why:"Heat is a form of energy. It makes things warmer and can change materials: ice melts and chocolate melts when they are heated."},
     {q:"Light cannot pass through a wooden door. The door is...",
      o:["Opaque","Transparent","Reflective","Melted"],
-     a:0, why:"Light being blocked means opaque. Light passing through means transparent. Light bouncing off, like off a mirror, means reflective."}
+     a:0, why:"Light being blocked means opaque. Light passing through means transparent. Light bouncing off, like off a mirror, means reflective."},
+    {q:"Our new unit is called Waves, Light and ___ .",
+     o:["Sound","Water","Colour","Shadows"],
+     a:0, why:"The new unit is Waves, Light and Sound. We will learn what a wave is, how vibrations make sound, and how different materials sound different."},
+    {q:"What does a wave carry from one place to another?",
+     o:["Energy","Water","Air","Light bulbs"],
+     a:0, why:"A wave moves energy from one place to another."},
+    {q:"Sound is made when something...",
+     o:["Vibrates","Melts","Freezes","Reflects"],
+     a:0, why:"Vibrations make sound. When something vibrates, it shakes back and forth very quickly, and that makes a sound."},
+    {q:"Do all materials make the SAME sound when they vibrate?",
+     o:["No, different materials make different sounds","Yes, every material sounds the same","Only metals make sound","Only wood makes sound"],
+     a:0, why:"Different materials vibrate in different ways, so they make different sounds. We will investigate this with vibrating materials."}
   ]
 },
 {
@@ -601,7 +620,69 @@ var SUBJECTS = [
      a:0, why:"Apostles' Creed, Part 3: ... the forgiveness of sins, the resurrection of the body; and in life everlasting. Amen."},
     {q:"Memory Treasure from 2 Corinthians 5:21 says God made him who had no sin to be sin for us, so that in him we might become the ___ of God.",
      o:["righteousness","kingdom","children","promise"],
-     a:0, why:"2 Corinthians 5:21: God made him who had no sin to be sin for us, so that in him we might become the righteousness of God."}
+     a:0, why:"2 Corinthians 5:21: God made him who had no sin to be sin for us, so that in him we might become the righteousness of God."},
+    {q:"What did the baptism of Jesus show?",
+     o:["That he was the Savior who would take the place of all sinners","That he was ready to go to Egypt","That he was twelve years old","That he was a teacher at the temple"],
+     a:0, why:"Jesus' baptism showed that he was the Savior who would take the place of all sinners. Jesus took our place so that he could save us."},
+    {q:"Memory Treasure, John 1:29: Look, the ___ of God, who takes away the sins of the world!",
+     o:["Lamb","Light","Son","Word"],
+     a:0, why:"John 1:29. John saw Jesus coming towards him and said, Look, the Lamb of God, who takes away the sins of the world! Lamb is one of your silent b spelling words too."},
+    {q:"The gift of salvation is made ours through...",
+     o:["Baptism","Reading","Singing","Travelling"],
+     a:0, why:"We thank Jesus for the gift of salvation, which is made ours through Baptism."}
+  ]
+},
+{
+  id:"frac", name:"Fractions", topic:"Proportional reasoning", color:"var(--frac)", icon:"ic-frac",
+  q:[
+    {q:"What is a fraction?",
+     o:["An equal part of a whole","A number bigger than 100","A way of adding numbers","A number with no value"],
+     a:0, why:"A fraction is an equal part of a whole."},
+    {q:"In a fraction, what is the NUMERATOR?",
+     o:["The top number, which shows the amount we are counting","The bottom number","The line in the middle","The answer"],
+     a:0, why:"The numerator is the upper number. It shows the considered or shaded amount."},
+    {q:"In a fraction, what is the DENOMINATOR?",
+     o:["The bottom number, which shows how many pieces the whole is cut into","The top number","The line in the middle","The whole number in front"],
+     a:0, why:"The denominator is the lower number. It shows the total number of pieces the whole is cut into."},
+    {q:"What is the FRACTION BAR?",
+     o:["The line that separates the two numbers","The top number","The bottom number","A bar of chocolate cut in half"],
+     a:0, why:"The fraction bar is the line that separates the numerator and the denominator."},
+    {q:"In the fraction 3/4, which number is the DENOMINATOR?",
+     o:["4","3","7","1"],
+     a:0, why:"In 3/4 the denominator is 4, the lower number. It tells you the whole was cut into 4 equal pieces."},
+    {q:"In the fraction 3/4, which number is the NUMERATOR?",
+     o:["3","4","34","1"],
+     a:0, why:"In 3/4 the numerator is 3, the upper number. It tells you that 3 of the pieces are being counted."},
+    {q:"What is a UNIT fraction?",
+     o:["A fraction whose numerator is always one","A fraction whose numerator is always bigger","A fraction equal to one whole","A fraction with a whole number in front"],
+     a:0, why:"A unit fraction always has 1 as its numerator, like 1/2, 1/3 or 1/5."},
+    {q:"Which one is a UNIT fraction?",
+     o:["1/5","3/5","5/5","7/2"],
+     a:0, why:"1/5 is a unit fraction because its numerator is 1."},
+    {q:"What is a PROPER fraction?",
+     o:["Its numerator is smaller than its denominator","Its numerator is larger than its denominator","Its numerator equals its denominator","It has a whole number in front"],
+     a:0, why:"In a proper fraction the numerator is always smaller than the denominator, like 2/7."},
+    {q:"Which one is a PROPER fraction?",
+     o:["2/7","9/4","6/6","3 1/2"],
+     a:0, why:"2/7 is proper because 2 is smaller than 7. 9/4 is improper, 6/6 equals one whole, and 3 1/2 is a mixed number."},
+    {q:"What is an IMPROPER fraction?",
+     o:["Its numerator is larger than its denominator","Its numerator is smaller than its denominator","Its numerator is always one","It is written with words"],
+     a:0, why:"In an improper fraction the numerator is always larger than the denominator, like 9/4."},
+    {q:"Which one is an IMPROPER fraction?",
+     o:["9/4","4/9","1/4","4/4"],
+     a:0, why:"9/4 is improper because 9 is larger than 4."},
+    {q:"A fraction whose numerator is the SAME as its denominator is equal to...",
+     o:["One whole","Zero","One half","Two wholes"],
+     a:0, why:"When the numerator and denominator are the same, like 5/5, the fraction is equal to 1 whole."},
+    {q:"Which fraction is equal to ONE WHOLE?",
+     o:["5/5","1/5","5/1","4/5"],
+     a:0, why:"5/5 equals one whole, because the numerator and the denominator are the same."},
+    {q:"What is a MIXED NUMBER fraction?",
+     o:["A whole number and a fraction together","Two fractions added together","A fraction with 1 on top","A fraction turned upside down"],
+     a:0, why:"A mixed number is made up of a whole number and a fraction, like 2 1/3."},
+    {q:"Which one is a MIXED NUMBER?",
+     o:["2 1/3","2/3","3/2","1/2"],
+     a:0, why:"2 1/3 is a mixed number: the whole number 2 together with the fraction 1/3."}
   ]
 }
 ];
@@ -690,7 +771,7 @@ function renderMenu(){
     '<h1>Quiz <span class="pop">Quest</span></h1>'+
     '<p class="sub">Pick a subject and collect stars. Every question comes straight from your own class notes, so this is real practice.</p>'+
     '<div class="grid">'+cards+'</div>'+
-    '<div class="tipbar"><span><b>Word Study test: Friday 2nd October.</b><br>This week&rsquo;s silent k and silent b words are in the Spelling deck.</span>'+
+    '<div class="tipbar"><span><b>New this week:</b> Fractions, and sound in Science.<br>Spelling still has the silent k and silent b words to practise.</span>'+
       '<button class="ghost" data-snd>Sound: '+(soundOn?"on":"off")+'</button></div>';
   scrollTo(0,0);
 }
