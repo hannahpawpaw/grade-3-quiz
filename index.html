@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Grade 3 Term 1 practice quizzes in Science, Math, Fractions, English, Social Studies, Spelling and Christ Light.">
+<meta name="description" content="Grade 3 Term 1 practice quizzes: Science, Sound, Math, Fractions, English, Spelling, Social Studies, My Caribbean and Christ Light.">
 <meta name="theme-color" content="#EEF5FF">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Quiz Quest">
@@ -33,6 +33,8 @@ img{max-width:100%}
   --spell:#2B72D8;
   --christ:#B5821A;
   --frac:#2E9E5B;
+  --sound:#D63A2F;
+  --carib:#0E7C9E;
   --good:#0E9D53;
   --good-bg:#E0F7EA;
   --oops:#D64550;
@@ -56,6 +58,8 @@ img{max-width:100%}
     --spell:#79B6FF;
     --christ:#F0C368;
     --frac:#5FD98A;
+    --sound:#FF8A80;
+    --carib:#5AC8E8;
     --good:#45D98C;
     --good-bg:#10341F;
     --oops:#FF8A90;
@@ -79,6 +83,8 @@ img{max-width:100%}
   --spell:#79B6FF;
   --christ:#F0C368;
   --frac:#5FD98A;
+  --sound:#FF8A80;
+  --carib:#5AC8E8;
   --good:#45D98C;
   --good-bg:#10341F;
   --oops:#FF8A90;
@@ -284,6 +290,15 @@ h1 .pop{color:var(--math)}
     <path d="M12 12V3a9 9 0 0 1 9 9z" fill="currentColor" stroke="none"/>
     <circle cx="12" cy="12" r="9"/><path d="M12 12V3M12 12h9"/>
   </symbol>
+  <symbol id="ic-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 9.2h3.2L12 5.2v13.6L7.2 14.8H4z" fill="currentColor" stroke="none"/>
+    <path d="M15.6 8.6a5 5 0 0 1 0 6.8"/><path d="M18.4 6a9 9 0 0 1 0 12"/>
+  </symbol>
+  <symbol id="ic-carib" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6.4 12.4L11 5.6l4.6 6.8z" fill="currentColor" stroke="none"/>
+    <path d="M2.4 16.2c1.8-1.4 3.4-1.4 5.2 0s3.4 1.4 5.2 0 3.4-1.4 5.2 0 2 .6 3.6-.4"/>
+    <path d="M2.4 20.2c1.8-1.4 3.4-1.4 5.2 0s3.4 1.4 5.2 0 3.4-1.4 5.2 0 2 .6 3.6-.4"/>
+  </symbol>
   <symbol id="ic-star" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2.2l2.9 6.1 6.6.9-4.8 4.7 1.2 6.7-5.9-3.2-5.9 3.2 1.2-6.7L2.5 9.2l6.6-.9z"/>
   </symbol>
@@ -340,19 +355,60 @@ var SUBJECTS = [
      a:0, why:"Heat is a form of energy. It makes things warmer and can change materials: ice melts and chocolate melts when they are heated."},
     {q:"Light cannot pass through a wooden door. The door is...",
      o:["Opaque","Transparent","Reflective","Melted"],
-     a:0, why:"Light being blocked means opaque. Light passing through means transparent. Light bouncing off, like off a mirror, means reflective."},
-    {q:"Our new unit is called Waves, Light and ___ .",
-     o:["Sound","Water","Colour","Shadows"],
-     a:0, why:"The new unit is Waves, Light and Sound. We will learn what a wave is, how vibrations make sound, and how different materials sound different."},
-    {q:"What does a wave carry from one place to another?",
+     a:0, why:"Light being blocked means opaque. Light passing through means transparent. Light bouncing off, like off a mirror, means reflective."}
+  ]
+},
+{
+  id:"sound", name:"Sound", topic:"Waves, vibrations and pitch", color:"var(--sound)", icon:"ic-sound",
+  q:[
+    {q:"What is a wave?",
+     o:["A movement that carries energy from one place to another","A big splash in the sea","A kind of loud noise","A piece of string that shakes"],
+     a:0, why:"A wave is a movement that carries energy from one place to another. Waves can travel through air, water and other materials."},
+    {q:"What do waves carry from one place to another?",
      o:["Energy","Water","Air","Light bulbs"],
-     a:0, why:"A wave moves energy from one place to another."},
-    {q:"Sound is made when something...",
-     o:["Vibrates","Melts","Freezes","Reflects"],
-     a:0, why:"Vibrations make sound. When something vibrates, it shakes back and forth very quickly, and that makes a sound."},
-    {q:"Do all materials make the SAME sound when they vibrate?",
-     o:["No, different materials make different sounds","Yes, every material sounds the same","Only metals make sound","Only wood makes sound"],
-     a:0, why:"Different materials vibrate in different ways, so they make different sounds. We will investigate this with vibrating materials."}
+     a:0, why:"Waves carry energy. Some waves can be seen and some can be heard."},
+    {q:"When you throw a stone into water, what spreads across the water?",
+     o:["Ripples","Bubbles","Sand","Steam"],
+     a:0, why:"Ripples spread across the water. That is a wave moving energy from one place to another."},
+    {q:"What is sound?",
+     o:["A type of energy that we can hear","A type of light that we can see","A kind of material","A sort of wind"],
+     a:0, why:"Sound is a type of energy that we can hear. It is made when an object vibrates."},
+    {q:"Sound is made when an object...",
+     o:["Vibrates","Melts","Freezes","Reflects light"],
+     a:0, why:"Sound is made when an object vibrates. A drum skin vibrates, a guitar string vibrates, and your vocal cords vibrate when you speak."},
+    {q:"What is a vibration?",
+     o:["A quick back and forth movement","A slow melting","A bright flash","A loud shout"],
+     a:0, why:"A vibration is a quick back and forth movement."},
+    {q:"What happens to the sound when the vibrations STOP?",
+     o:["The sound stops too","The sound gets louder","The sound gets higher","Nothing changes"],
+     a:0, why:"When vibrations stop, the sound also stops."},
+    {q:"Sound waves can travel through...",
+     o:["Air, liquids and solids","Only air","Only water","Nothing at all"],
+     a:0, why:"Sound travels as waves, and sound waves can travel through the air, through a liquid and even through a solid."},
+    {q:"You can hear whales and dolphins underwater. This shows that sound can travel through...",
+     o:["A liquid","A solid","Empty space","Only air"],
+     a:0, why:"Hearing whales and dolphins underwater shows sound travelling through a liquid."},
+    {q:"You can hear someone knocking on a door. This shows that sound can travel through...",
+     o:["A solid","A liquid","Empty space","Only air"],
+     a:0, why:"Hearing a knock through a door shows sound travelling through a solid."},
+    {q:"Which material can produce a RINGING sound?",
+     o:["Metal","Wood","Rubber","Paper"],
+     a:0, why:"Metal can produce ringing sounds. Wood produces tapping or knocking sounds, and plastic produces tapping or clicking sounds."},
+    {q:"Wood usually produces what kind of sound?",
+     o:["Tapping or knocking sounds","Ringing sounds","Whistling sounds","No sound at all"],
+     a:0, why:"Wood produces tapping or knocking sounds, because of the way it vibrates."},
+    {q:"If you hit a drum HARDER, the sound becomes...",
+     o:["Louder","Softer","Higher","Slower"],
+     a:0, why:"Hitting a drum gently produces a softer sound. Hitting it harder produces a louder sound."},
+    {q:"FAST vibrations produce a sound that is...",
+     o:["Higher-pitched","Lower-pitched","Softer","Silent"],
+     a:0, why:"Fast vibrations produce a higher-pitched sound. Slow vibrations produce a lower-pitched sound."},
+    {q:"SLOW vibrations produce a sound that is...",
+     o:["Lower-pitched","Higher-pitched","Louder","Silent"],
+     a:0, why:"Slow vibrations produce a lower-pitched sound. Fast vibrations produce a higher-pitched sound."},
+    {q:"Why do different materials make different sounds?",
+     o:["Because they vibrate in different ways","Because they are different colours","Because they are different sizes only","Because some have no energy"],
+     a:0, why:"Different materials vibrate in different ways, and that changes the sound they produce. Some materials vibrate easily and others do not."}
   ]
 },
 {
@@ -415,6 +471,65 @@ var SUBJECTS = [
   ]
 },
 {
+  id:"frac", name:"Fractions", topic:"Proportional reasoning", color:"var(--frac)", icon:"ic-frac",
+  q:[
+    {q:"What is a fraction?",
+     o:["An equal part of a whole","A number bigger than 100","A way of adding numbers","A number with no value"],
+     a:0, why:"A fraction is an equal part of a whole."},
+    {q:"In a fraction, what is the NUMERATOR?",
+     o:["The top number, which shows the amount we are counting","The bottom number","The line in the middle","The answer"],
+     a:0, why:"The numerator is the upper number. It shows the considered or shaded amount."},
+    {q:"In a fraction, what is the DENOMINATOR?",
+     o:["The bottom number, which shows how many pieces the whole is cut into","The top number","The line in the middle","The whole number in front"],
+     a:0, why:"The denominator is the lower number. It shows the total number of pieces the whole is cut into."},
+    {q:"What is the FRACTION BAR?",
+     o:["The line that separates the two numbers","The top number","The bottom number","A bar of chocolate cut in half"],
+     a:0, why:"The fraction bar is the line that separates the numerator and the denominator."},
+    {q:"In the fraction 3/4, which number is the DENOMINATOR?",
+     o:["4","3","7","1"],
+     a:0, why:"In 3/4 the denominator is 4, the lower number. It tells you the whole was cut into 4 equal pieces."},
+    {q:"In the fraction 3/4, which number is the NUMERATOR?",
+     o:["3","4","34","1"],
+     a:0, why:"In 3/4 the numerator is 3, the upper number. It tells you that 3 of the pieces are being counted."},
+    {q:"What is a UNIT fraction?",
+     o:["A fraction whose numerator is always one","A fraction whose numerator is always bigger","A fraction equal to one whole","A fraction with a whole number in front"],
+     a:0, why:"A unit fraction always has 1 as its numerator, like 1/2, 1/3 or 1/5."},
+    {q:"Which one is a UNIT fraction?",
+     o:["1/5","3/5","5/5","7/2"],
+     a:0, why:"1/5 is a unit fraction because its numerator is 1."},
+    {q:"What is a PROPER fraction?",
+     o:["Its numerator is smaller than its denominator","Its numerator is larger than its denominator","Its numerator equals its denominator","It has a whole number in front"],
+     a:0, why:"In a proper fraction the numerator is always smaller than the denominator, like 2/7."},
+    {q:"Which one is a PROPER fraction?",
+     o:["2/7","9/4","6/6","3 1/2"],
+     a:0, why:"2/7 is proper because 2 is smaller than 7. 9/4 is improper, 6/6 equals one whole, and 3 1/2 is a mixed number."},
+    {q:"What is an IMPROPER fraction?",
+     o:["Its numerator is larger than its denominator","Its numerator is smaller than its denominator","Its numerator is always one","It is written with words"],
+     a:0, why:"In an improper fraction the numerator is always larger than the denominator, like 9/4."},
+    {q:"Which one is an IMPROPER fraction?",
+     o:["9/4","4/9","1/4","4/4"],
+     a:0, why:"9/4 is improper because 9 is larger than 4."},
+    {q:"A fraction whose numerator is the SAME as its denominator is equal to...",
+     o:["One whole","Zero","One half","Two wholes"],
+     a:0, why:"When the numerator and denominator are the same, like 5/5, the fraction is equal to 1 whole."},
+    {q:"Which fraction is equal to ONE WHOLE?",
+     o:["5/5","1/5","5/1","4/5"],
+     a:0, why:"5/5 equals one whole, because the numerator and the denominator are the same."},
+    {q:"What is a MIXED NUMBER fraction?",
+     o:["A whole number and a fraction together","Two fractions added together","A fraction with 1 on top","A fraction turned upside down"],
+     a:0, why:"A mixed number is made up of a whole number and a fraction, like 2 1/3."},
+    {q:"Which one is a MIXED NUMBER?",
+     o:["2 1/3","2/3","3/2","1/2"],
+     a:0, why:"2 1/3 is a mixed number: the whole number 2 together with the fraction 1/3."},
+    {q:"What are EQUIVALENT fractions?",
+     o:["Fractions that look different but have the same value","Fractions that are always bigger than one","Fractions with one on top","Fractions written in words"],
+     a:0, why:"Equivalent fractions have different numerators and denominators, but they represent the same value."},
+    {q:"1/2 and 2/4 are an example of...",
+     o:["Equivalent fractions","Improper fractions","Mixed numbers","Unit fractions only"],
+     a:0, why:"1/2 and 2/4 look different but they are worth the same amount, so they are equivalent fractions."}
+  ]
+},
+{
   id:"eng", name:"English", topic:"Nouns, verbs and sentences", color:"var(--eng)", icon:"ic-eng",
   q:[
     {q:"What does the BEGINNING of a story do?",
@@ -456,6 +571,71 @@ var SUBJECTS = [
     {q:"A group of birds is called a...",
      o:["flock","herd","swarm","bunch"],
      a:0, why:"Collective nouns name groups: a flock of birds, a herd of goats, a swarm of bees, a bunch of flowers and a class of children."}
+  ]
+},
+{
+  id:"spell", name:"Spelling", topic:"Week 7: soft g, ge and dge", color:"var(--spell)", icon:"ic-spell",
+  q:[
+    {q:"Which one is spelled correctly?",
+     o:["bridge","brige","bridje","bridgh"],
+     a:0, why:"Bridge is spelled with dge. A bridge carries a road or path over a river."},
+    {q:"Which one is spelled correctly?",
+     o:["fridge","frige","frije","fridg"],
+     a:0, why:"Fridge is spelled with dge. A fridge keeps your food cold."},
+    {q:"Which one is spelled correctly?",
+     o:["judge","juge","judje","jugde"],
+     a:0, why:"Judge is spelled with dge. A judge decides what is fair."},
+    {q:"Which one is spelled correctly?",
+     o:["garage","garrage","garaje","garag"],
+     a:0, why:"Garage ends in ge, with one r. A garage is where a car is kept or repaired."},
+    {q:"Which one is spelled correctly?",
+     o:["damage","damige","damaje","dammage"],
+     a:0, why:"Damage ends in ge. Damage is harm done to something."},
+    {q:"Which one is spelled correctly?",
+     o:["lodger","lodjer","loger","lodgger"],
+     a:0, why:"Lodger is spelled with dge plus er. A lodger pays to live in someone else's house."},
+    {q:"Which one is spelled correctly?",
+     o:["fudge","fuge","fudje","fudg"],
+     a:0, why:"Fudge is spelled with dge. Fudge is a soft, sweet treat."},
+    {q:"After a SHORT vowel sound, as in bridge and judge, which ending do we use?",
+     o:["dge","ge","j","gg"],
+     a:0, why:"After a short vowel sound we use dge: edge, ledge, bridge, judge, fudge. Otherwise we use ge: cage, page, wage, garage."},
+    {q:"Which word ends in 'ge', NOT 'dge'?",
+     o:["page","ridge","dodge","ledge"],
+     a:0, why:"Page ends in ge. Ridge, dodge and ledge all end in dge."},
+    {q:"Which word ends in 'dge'?",
+     o:["ridge","wage","cage","garage"],
+     a:0, why:"Ridge ends in dge. Wage, cage and garage all end in ge."},
+    {q:"In all of this week's words, the letter g sounds like...",
+     o:["j","the g in go","k","s"],
+     a:0, why:"A soft g sounds like j, as in judge, cage and garage. A hard g sounds like the g in go."},
+    {q:"Which word means a person who pays to live in someone else's house?",
+     o:["lodger","judge","ridge","wage"],
+     a:0, why:"A lodger pays to live in someone else's house. A lodge is a small house, often in the countryside."},
+    {q:"Which word means the money a person is paid for their work?",
+     o:["wage","page","cage","edge"],
+     a:0, why:"A wage is the money someone is paid for the work they do."},
+    {q:"Which word means a place where a car is kept or repaired?",
+     o:["garage","lodge","bridge","ridge"],
+     a:0, why:"A garage is where a car is kept or repaired."},
+    {q:"Finish the sentence: Be careful, do not sit on the ___ of the chair.",
+     o:["edge","cage","page","wage"],
+     a:0, why:"The edge is the part right at the end or the side of something."},
+    {q:"Finish the sentence: The books were lined up on a narrow ___ on the wall.",
+     o:["ledge","lodge","fudge","bridge"],
+     a:0, why:"A ledge is a narrow shelf, either on a wall or on a cliff."},
+    {q:"Finish the sentence: He had to ___ the ball so that it did not hit him.",
+     o:["dodge","lodge","judge","badge"],
+     a:0, why:"To dodge is to move quickly out of the way."},
+    {q:"Finish the sentence: They stayed in a little ___ up in the mountains.",
+     o:["lodge","ledge","ridge","fridge"],
+     a:0, why:"A lodge is a small house, often in the countryside or the mountains."},
+    {q:"Finish the sentence: The parrot sang inside its ___ .",
+     o:["cage","page","wage","edge"],
+     a:0, why:"A cage is a box made of bars that keeps an animal or a bird inside."},
+    {q:"Finish the sentence: Grandma made chocolate ___ for the party.",
+     o:["fudge","judge","ridge","lodge"],
+     a:0, why:"Fudge is a soft, sweet treat made with sugar. It is spelled with dge."}
   ]
 },
 {
@@ -506,68 +686,47 @@ var SUBJECTS = [
   ]
 },
 {
-  id:"spell", name:"Spelling", topic:"Week 5: silent k and silent b", color:"var(--spell)", icon:"ic-spell",
+  id:"carib", name:"My Caribbean", topic:"Grenada, water bodies and water links", color:"var(--carib)", icon:"ic-carib",
   q:[
-    {q:"Which one is spelled correctly?",
-     o:["lamb","lam","lambe","llamb"],
-     a:0, why:"Lamb ends with a silent b. We say lam. A lamb is a baby sheep."},
-    {q:"Which one is spelled correctly?",
-     o:["climb","clim","climbe","klimb"],
-     a:0, why:"Climb ends with a silent b. To climb is to go up something, like a tree."},
-    {q:"Which one is spelled correctly?",
-     o:["knife","nife","knive","knifh"],
-     a:0, why:"Knife begins with a silent k. Remember its plural changes too: knife becomes knives."},
-    {q:"Which one is spelled correctly?",
-     o:["knock","nock","knok","cnock"],
-     a:0, why:"Knock begins with a silent k. To knock is to hit something, like a door."},
-    {q:"Which one is spelled correctly?",
-     o:["thumb","thum","thumbe","thomb"],
-     a:0, why:"Thumb ends with a silent b. Your thumb is the short, thick finger on your hand."},
-    {q:"Which one is spelled correctly?",
-     o:["knew","knue","kneu","knewe"],
-     a:0, why:"Knew begins with a silent k. Knew means you already understood something. Do not mix it up with new, which means not old."},
-    {q:"Which one is spelled correctly?",
-     o:["crumb","crum","crumbe","krumb"],
-     a:0, why:"Crumb ends with a silent b. A crumb is a tiny piece of bread or cake."},
-    {q:"Which one is spelled correctly?",
-     o:["kneel","neel","kneal","knele"],
-     a:0, why:"Kneel begins with a silent k. To kneel is to go down on your knees."},
-    {q:"Which one is spelled correctly?",
-     o:["comb","coom","combe","kohm"],
-     a:0, why:"Comb ends with a silent b. You use a comb to tidy your hair."},
-    {q:"Which one is spelled correctly?",
-     o:["knot","knott","knote","knopt"],
-     a:0, why:"Knot begins with a silent k. A knot is a tie in a rope or a string. Do not mix it up with not, which means no."},
-    {q:"Which one is spelled correctly?",
-     o:["knit","nitt","knitt","kniet"],
-     a:0, why:"Knit begins with a silent k. To knit is to make clothes from wool using needles."},
-    {q:"Which letter is SILENT in the word lamb?",
-     o:["b","l","a","m"],
-     a:0, why:"The b at the end of lamb is silent, so we say lam. Comb, climb, crumb and thumb all have a silent b too."},
-    {q:"Which letter is SILENT in the word knee?",
-     o:["k","n","e","None of them"],
-     a:0, why:"The k at the start of knee is silent, so we say nee. Kneel, knew, knife, knit, knot and knock all have a silent k too."},
-    {q:"Which group of words ALL have a silent b?",
-     o:["lamb, comb, climb","knee, knife, knot","knock, knit, knew","lamb, knee, knit"],
-     a:0, why:"Lamb, comb, climb, crumb and thumb all end with a silent b."},
-    {q:"Which group of words ALL begin with a silent k?",
-     o:["knee, knife, knock","lamb, comb, thumb","climb, crumb, knit","thumb, knee, comb"],
-     a:0, why:"Knee, kneel, knew, knife, knit, knot and knock all begin with a silent k."},
-    {q:"Finish the sentence: A baby sheep is called a ___ .",
-     o:["lamb","comb","crumb","climb"],
-     a:0, why:"A lamb is a baby sheep. The b at the end is silent."},
-    {q:"Finish the sentence: She used a ___ to tidy her hair.",
-     o:["comb","climb","crumb","lamb"],
-     a:0, why:"A comb tidies your hair. The b at the end is silent."},
-    {q:"Finish the sentence: He went down on one ___ to tie his shoe.",
-     o:["knee","knew","knit","knock"],
-     a:0, why:"Your knee is the joint in the middle of your leg. The k at the start is silent."},
-    {q:"Finish the sentence: Please ___ on the door before you come in.",
-     o:["knock","knot","knit","knee"],
-     a:0, why:"To knock is to hit the door so people know you are there. The k at the start is silent."},
-    {q:"Finish the sentence: Grandma likes to ___ scarves out of wool.",
-     o:["knit","knot","knee","knew"],
-     a:0, why:"To knit is to make clothes from wool using needles. The k at the start is silent."}
+    {q:"Grenada is in which part of the Caribbean?",
+     o:["The southern Caribbean","The northern Caribbean","The middle of the Atlantic","The Pacific"],
+     a:0, why:"Grenada is in the southern Caribbean, and it is part of the Lesser Antilles."},
+    {q:"Grenada is part of which island group?",
+     o:["The Lesser Antilles","The Greater Antilles","The Bahamas","The Galapagos"],
+     a:0, why:"Grenada is part of the Lesser Antilles."},
+    {q:"Which islands are NEAREST to Grenada?",
+     o:["Saint Vincent and the Grenadines, Trinidad and Tobago, and Barbados","Belize and Guatemala","Jamaica and Cuba","Haiti and the Bahamas"],
+     a:0, why:"The nearest islands are Saint Vincent and the Grenadines, Trinidad and Tobago, and Barbados."},
+    {q:"Grenada is NORTH of which country?",
+     o:["Trinidad and Tobago","Saint Vincent and the Grenadines","Barbados","Belize"],
+     a:0, why:"Grenada is north of Trinidad and Tobago, and south of Saint Vincent and the Grenadines."},
+    {q:"Grenada is SOUTH of which country?",
+     o:["Saint Vincent and the Grenadines","Trinidad and Tobago","Guatemala","Barbados"],
+     a:0, why:"Grenada is south of Saint Vincent and the Grenadines, and north of Trinidad and Tobago."},
+    {q:"Grenada is SOUTHWEST of which island?",
+     o:["Barbados","Trinidad and Tobago","Belize","Jamaica"],
+     a:0, why:"Grenada is southwest of Barbados."},
+    {q:"Which Caribbean places are FURTHEST away from Grenada?",
+     o:["Belize and Guatemala","Barbados and Trinidad","Saint Vincent and Saint Lucia","Tobago and Carriacou"],
+     a:0, why:"The Caribbean places furthest from Grenada are Belize and Guatemala."},
+    {q:"Grenada is surrounded by...",
+     o:["The Caribbean Sea and the Atlantic Ocean","The Pacific Ocean only","The Indian Ocean","The Mediterranean Sea"],
+     a:0, why:"Grenada is an island surrounded by the Caribbean Sea and the Atlantic Ocean."},
+    {q:"What is a water body?",
+     o:["A large area of water","A boat that carries people","A kind of fish","A beach made of sand"],
+     a:0, why:"A water body is a large area of water. Oceans, seas, rivers and lakes are all water bodies."},
+    {q:"Which one is an example of a water body?",
+     o:["A lake","A mountain","A forest","A road"],
+     a:0, why:"Oceans, seas, rivers and lakes are water bodies. Grenada is an island surrounded by water."},
+    {q:"Ships carrying goods from one island to the next is an example of...",
+     o:["Trade","Fishing","Tourism","Cultural exchange"],
+     a:0, why:"Trade is one of the four ways water connects Caribbean people. Ships transport goods from one island to the next."},
+    {q:"Sharing food, music, languages and traditions between islands is called...",
+     o:["Cultural exchange","Trade","Fishing","Travel"],
+     a:0, why:"Cultural exchange happens when people travel and interact, and share food, music, languages and traditions."},
+    {q:"What are the FOUR ways water connects Caribbean people?",
+     o:["Travel, trade, fishing and cultural exchange","Rain, rivers, lakes and seas","Boats, ships, planes and cars","Food, music, language and dance"],
+     a:0, why:"The four ways are travel, trade, fishing and cultural exchange."}
   ]
 },
 {
@@ -629,60 +788,16 @@ var SUBJECTS = [
      a:0, why:"John 1:29. John saw Jesus coming towards him and said, Look, the Lamb of God, who takes away the sins of the world! Lamb is one of your silent b spelling words too."},
     {q:"The gift of salvation is made ours through...",
      o:["Baptism","Reading","Singing","Travelling"],
-     a:0, why:"We thank Jesus for the gift of salvation, which is made ours through Baptism."}
-  ]
-},
-{
-  id:"frac", name:"Fractions", topic:"Proportional reasoning", color:"var(--frac)", icon:"ic-frac",
-  q:[
-    {q:"What is a fraction?",
-     o:["An equal part of a whole","A number bigger than 100","A way of adding numbers","A number with no value"],
-     a:0, why:"A fraction is an equal part of a whole."},
-    {q:"In a fraction, what is the NUMERATOR?",
-     o:["The top number, which shows the amount we are counting","The bottom number","The line in the middle","The answer"],
-     a:0, why:"The numerator is the upper number. It shows the considered or shaded amount."},
-    {q:"In a fraction, what is the DENOMINATOR?",
-     o:["The bottom number, which shows how many pieces the whole is cut into","The top number","The line in the middle","The whole number in front"],
-     a:0, why:"The denominator is the lower number. It shows the total number of pieces the whole is cut into."},
-    {q:"What is the FRACTION BAR?",
-     o:["The line that separates the two numbers","The top number","The bottom number","A bar of chocolate cut in half"],
-     a:0, why:"The fraction bar is the line that separates the numerator and the denominator."},
-    {q:"In the fraction 3/4, which number is the DENOMINATOR?",
-     o:["4","3","7","1"],
-     a:0, why:"In 3/4 the denominator is 4, the lower number. It tells you the whole was cut into 4 equal pieces."},
-    {q:"In the fraction 3/4, which number is the NUMERATOR?",
-     o:["3","4","34","1"],
-     a:0, why:"In 3/4 the numerator is 3, the upper number. It tells you that 3 of the pieces are being counted."},
-    {q:"What is a UNIT fraction?",
-     o:["A fraction whose numerator is always one","A fraction whose numerator is always bigger","A fraction equal to one whole","A fraction with a whole number in front"],
-     a:0, why:"A unit fraction always has 1 as its numerator, like 1/2, 1/3 or 1/5."},
-    {q:"Which one is a UNIT fraction?",
-     o:["1/5","3/5","5/5","7/2"],
-     a:0, why:"1/5 is a unit fraction because its numerator is 1."},
-    {q:"What is a PROPER fraction?",
-     o:["Its numerator is smaller than its denominator","Its numerator is larger than its denominator","Its numerator equals its denominator","It has a whole number in front"],
-     a:0, why:"In a proper fraction the numerator is always smaller than the denominator, like 2/7."},
-    {q:"Which one is a PROPER fraction?",
-     o:["2/7","9/4","6/6","3 1/2"],
-     a:0, why:"2/7 is proper because 2 is smaller than 7. 9/4 is improper, 6/6 equals one whole, and 3 1/2 is a mixed number."},
-    {q:"What is an IMPROPER fraction?",
-     o:["Its numerator is larger than its denominator","Its numerator is smaller than its denominator","Its numerator is always one","It is written with words"],
-     a:0, why:"In an improper fraction the numerator is always larger than the denominator, like 9/4."},
-    {q:"Which one is an IMPROPER fraction?",
-     o:["9/4","4/9","1/4","4/4"],
-     a:0, why:"9/4 is improper because 9 is larger than 4."},
-    {q:"A fraction whose numerator is the SAME as its denominator is equal to...",
-     o:["One whole","Zero","One half","Two wholes"],
-     a:0, why:"When the numerator and denominator are the same, like 5/5, the fraction is equal to 1 whole."},
-    {q:"Which fraction is equal to ONE WHOLE?",
-     o:["5/5","1/5","5/1","4/5"],
-     a:0, why:"5/5 equals one whole, because the numerator and the denominator are the same."},
-    {q:"What is a MIXED NUMBER fraction?",
-     o:["A whole number and a fraction together","Two fractions added together","A fraction with 1 on top","A fraction turned upside down"],
-     a:0, why:"A mixed number is made up of a whole number and a fraction, like 2 1/3."},
-    {q:"Which one is a MIXED NUMBER?",
-     o:["2 1/3","2/3","3/2","1/2"],
-     a:0, why:"2 1/3 is a mixed number: the whole number 2 together with the fraction 1/3."}
+     a:0, why:"We thank Jesus for the gift of salvation, which is made ours through Baptism."},
+    {q:"What did Jesus do at the wedding at Cana?",
+     o:["He provided wine for the guests and strengthened his disciples' faith","He taught in the temple","He walked on the water","He healed a blind man"],
+     a:0, why:"At the wedding at Cana, Jesus provided wine for the wedding guests and strengthened his disciples' faith."},
+    {q:"Jesus still uses his power today to...",
+     o:["Provide for our bodily and spiritual needs","Build houses for us","Choose our friends","Make us rich"],
+     a:0, why:"Jesus still uses his power today to provide for our bodily and spiritual needs, so we ask him for all of them."},
+    {q:"Memory Treasure, Ephesians 3:20: Now to him who is able to do immeasurably more than all we ___ or imagine.",
+     o:["ask","see","build","carry"],
+     a:0, why:"Ephesians 3:20: Now to him who is able to do immeasurably more than all we ask or imagine, according to his power that is at work within us."}
   ]
 }
 ];
@@ -771,7 +886,7 @@ function renderMenu(){
     '<h1>Quiz <span class="pop">Quest</span></h1>'+
     '<p class="sub">Pick a subject and collect stars. Every question comes straight from your own class notes, so this is real practice.</p>'+
     '<div class="grid">'+cards+'</div>'+
-    '<div class="tipbar"><span><b>New this week:</b> Fractions, and sound in Science.<br>Spelling still has the silent k and silent b words to practise.</span>'+
+    '<div class="tipbar"><span><b>Word Study test: Friday 16th October.</b><br>Spelling has the soft g words. The Sound deck helps with your science project.</span>'+
       '<button class="ghost" data-snd>Sound: '+(soundOn?"on":"off")+'</button></div>';
   scrollTo(0,0);
 }
