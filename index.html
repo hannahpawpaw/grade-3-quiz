@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Grade 3 Term 1 practice quizzes: Science, Sound, Math, Fractions, English, Spelling, Social Studies, My Caribbean and Christ Light.">
+<meta name="description" content="Grade 3 Term 1 practice quizzes across science, maths, English, social studies and Christ Light, including every week's spelling list.">
 <meta name="theme-color" content="#EEF5FF">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Quiz Quest">
@@ -35,6 +35,9 @@ img{max-width:100%}
   --frac:#2E9E5B;
   --sound:#D63A2F;
   --carib:#0E7C9E;
+  --times:#A32FB5;
+  --symbols:#7A9E1F;
+  --memory:#C9811B;
   --good:#0E9D53;
   --good-bg:#E0F7EA;
   --oops:#D64550;
@@ -60,6 +63,9 @@ img{max-width:100%}
     --frac:#5FD98A;
     --sound:#FF8A80;
     --carib:#5AC8E8;
+    --times:#DE8CF0;
+    --symbols:#C3DB72;
+    --memory:#F3C889;
     --good:#45D98C;
     --good-bg:#10341F;
     --oops:#FF8A90;
@@ -85,6 +91,9 @@ img{max-width:100%}
   --frac:#5FD98A;
   --sound:#FF8A80;
   --carib:#5AC8E8;
+  --times:#DE8CF0;
+  --symbols:#C3DB72;
+  --memory:#F3C889;
   --good:#45D98C;
   --good-bg:#10341F;
   --oops:#FF8A90;
@@ -125,6 +134,13 @@ h1 .pop{color:var(--math)}
 .sub{color:var(--ink-soft);margin:12px 0 0;max-width:46ch}
 
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+.group{margin-top:30px}
+.group .grid{margin-top:0}
+.grouphead{
+  font-family:"Fredoka","Trebuchet MS",sans-serif;font-size:.78rem;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);
+  margin:0 0 11px;padding-bottom:8px;border-bottom:2px solid var(--line)
+}
 .card:last-child:nth-child(odd){grid-column:1 / -1}
 @media (max-width:540px){.grid{grid-template-columns:1fr}}
 
@@ -299,6 +315,15 @@ h1 .pop{color:var(--math)}
     <path d="M2.4 16.2c1.8-1.4 3.4-1.4 5.2 0s3.4 1.4 5.2 0 3.4-1.4 5.2 0 2 .6 3.6-.4"/>
     <path d="M2.4 20.2c1.8-1.4 3.4-1.4 5.2 0s3.4 1.4 5.2 0 3.4-1.4 5.2 0 2 .6 3.6-.4"/>
   </symbol>
+  <symbol id="ic-times" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="5"/><path d="M8.6 8.6l6.8 6.8M15.4 8.6l-6.8 6.8"/>
+  </symbol>
+  <symbol id="ic-symbols" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5.2 3.2v17.6"/><path d="M5.2 4.6h13.4l-2.7 4 2.7 4H5.2z" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="ic-memory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 3.4h11.4a2 2 0 0 1 2 2v15.2l-4-2.6-4 2.6V3.4"/><path d="M5 3.4a2 2 0 0 0-2 2v12.4a2 2 0 0 0 2 2h5.4"/>
+  </symbol>
   <symbol id="ic-star" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2.2l2.9 6.1 6.6.9-4.8 4.7 1.2 6.7-5.9-3.2-5.9 3.2 1.2-6.7L2.5 9.2l6.6-.9z"/>
   </symbol>
@@ -318,7 +343,7 @@ h1 .pop{color:var(--math)}
 
 var SUBJECTS = [
 {
-  id:"sci", name:"Science", topic:"Light, heat and fuels", color:"var(--sci)", icon:"ic-sci",
+  id:"sci", group:"Science", name:"Science", topic:"Light, heat and fuels", color:"var(--sci)", icon:"ic-sci",
   q:[
     {q:"What is a light source?",
      o:["Something that makes its own light","Something that is very shiny","Something that feels hot","Something that blocks light"],
@@ -359,7 +384,7 @@ var SUBJECTS = [
   ]
 },
 {
-  id:"sound", name:"Sound", topic:"Waves, vibrations and pitch", color:"var(--sound)", icon:"ic-sound",
+  id:"sound", group:"Science", name:"Sound", topic:"Waves, vibrations and pitch", color:"var(--sound)", icon:"ic-sound",
   q:[
     {q:"What is a wave?",
      o:["A movement that carries energy from one place to another","A big splash in the sea","A kind of loud noise","A piece of string that shakes"],
@@ -412,7 +437,7 @@ var SUBJECTS = [
   ]
 },
 {
-  id:"math", name:"Math", topic:"Place value, rounding and patterns", color:"var(--math)", icon:"ic-math",
+  id:"math", group:"Maths", name:"Math", topic:"Place value, rounding and patterns", color:"var(--math)", icon:"ic-math",
   q:[
     {q:"What is the place value of the 5 in 352?",
      o:["5 tens, which is 50","5 ones, which is 5","5 hundreds, which is 500","5 thousands, which is 5,000"],
@@ -471,7 +496,7 @@ var SUBJECTS = [
   ]
 },
 {
-  id:"frac", name:"Fractions", topic:"Proportional reasoning", color:"var(--frac)", icon:"ic-frac",
+  id:"frac", group:"Maths", name:"Fractions", topic:"Proportional reasoning", color:"var(--frac)", icon:"ic-frac",
   q:[
     {q:"What is a fraction?",
      o:["An equal part of a whole","A number bigger than 100","A way of adding numbers","A number with no value"],
@@ -530,7 +555,90 @@ var SUBJECTS = [
   ]
 },
 {
-  id:"eng", name:"English", topic:"Nouns, verbs and sentences", color:"var(--eng)", icon:"ic-eng",
+  id:"times", group:"Maths", name:"Times Tables", topic:"Multiplying by 1, 2, 3 and 4", color:"var(--times)", icon:"ic-times",
+  q:[
+    {q:"What does 3 &times; 4 mean?",
+     o:["3 groups of 4","3 added to 4","4 take away 3","3 shared between 4"],
+     a:0, why:"3 &times; 4 means 3 groups of 4, which is 4 + 4 + 4 = 12."},
+    {q:"Multiplication is a quick way of doing...",
+     o:["Repeated addition","Repeated subtraction","Counting backwards","Sharing equally"],
+     a:0, why:"Multiplying is a fast way to add the same number again and again. 4 &times; 5 is the same as 5 + 5 + 5 + 5."},
+    {q:"Does 4 &times; 2 give the same answer as 2 &times; 4?",
+     o:["Yes, the order does not change the answer","No, they are always different","Only for even numbers","Only for small numbers"],
+     a:0, why:"Both equal 8. You can multiply two numbers in either order and the answer stays the same."},
+    {q:"Which one is the same as 4 + 4 + 4 + 4 + 4?",
+     o:["5 &times; 4","4 &times; 4","5 + 4","4 &times; 10"],
+     a:0, why:"There are five 4s added together, so it is 5 &times; 4 = 20."},
+    {q:"1 &times; 8 = ?",
+     o:["8","1","9","18"],
+     a:0, why:"Any number multiplied by 1 stays the same, so 1 &times; 8 = 8."},
+    {q:"2 &times; 5 = ?",
+     o:["10","7","12","25"],
+     a:0, why:"2 &times; 5 = 10. Counting in twos: 2, 4, 6, 8, 10."},
+    {q:"2 &times; 7 = ?",
+     o:["14","12","16","9"],
+     a:0, why:"2 &times; 7 = 14. Double 7 is 14."},
+    {q:"2 &times; 9 = ?",
+     o:["18","16","20","11"],
+     a:0, why:"2 &times; 9 = 18. Double 9 is 18."},
+    {q:"2 &times; 12 = ?",
+     o:["24","22","26","14"],
+     a:0, why:"2 &times; 12 = 24. Double 12 is 24."},
+    {q:"3 &times; 3 = ?",
+     o:["9","6","12","33"],
+     a:0, why:"3 &times; 3 = 9. Three groups of three: 3 + 3 + 3 = 9."},
+    {q:"3 &times; 6 = ?",
+     o:["18","15","21","24"],
+     a:0, why:"3 &times; 6 = 18. Counting in threes: 3, 6, 9, 12, 15, 18."},
+    {q:"3 &times; 8 = ?",
+     o:["24","21","27","18"],
+     a:0, why:"3 &times; 8 = 24. Counting in threes to the eighth number: 3, 6, 9, 12, 15, 18, 21, 24."},
+    {q:"3 &times; 9 = ?",
+     o:["27","24","30","21"],
+     a:0, why:"3 &times; 9 = 27."},
+    {q:"3 &times; 12 = ?",
+     o:["36","33","39","30"],
+     a:0, why:"3 &times; 12 = 36."},
+    {q:"4 &times; 4 = ?",
+     o:["16","12","20","8"],
+     a:0, why:"4 &times; 4 = 16. Four groups of four."},
+    {q:"4 &times; 6 = ?",
+     o:["24","20","28","18"],
+     a:0, why:"4 &times; 6 = 24. Double 6 is 12, and double 12 is 24."},
+    {q:"4 &times; 7 = ?",
+     o:["28","24","32","21"],
+     a:0, why:"4 &times; 7 = 28. Double 7 is 14, and double 14 is 28."},
+    {q:"4 &times; 8 = ?",
+     o:["32","28","36","24"],
+     a:0, why:"4 &times; 8 = 32. Double 8 is 16, and double 16 is 32."},
+    {q:"4 &times; 9 = ?",
+     o:["36","32","40","27"],
+     a:0, why:"4 &times; 9 = 36."},
+    {q:"4 &times; 11 = ?",
+     o:["44","40","48","41"],
+     a:0, why:"4 &times; 11 = 44."},
+    {q:"4 &times; 12 = ?",
+     o:["48","44","52","36"],
+     a:0, why:"4 &times; 12 = 48. It is the largest fact in the 4 times table."},
+    {q:"Find the missing number:   4 &times; ___ = 20",
+     o:["5","4","6","16"],
+     a:0, why:"4 &times; 5 = 20, so the missing number is 5."},
+    {q:"Find the missing number:   3 &times; ___ = 21",
+     o:["7","6","8","18"],
+     a:0, why:"3 &times; 7 = 21, so the missing number is 7."},
+    {q:"A car has 4 wheels. How many wheels are on 3 cars?",
+     o:["12","7","10","16"],
+     a:0, why:"3 cars &times; 4 wheels = 12 wheels."},
+    {q:"Willow puts 3 mangoes into each of 4 bags. How many mangoes is that?",
+     o:["12","7","9","16"],
+     a:0, why:"4 bags &times; 3 mangoes = 12 mangoes."},
+    {q:"A nutmeg tree has 4 branches with 9 nutmegs on each branch. How many nutmegs?",
+     o:["36","32","13","40"],
+     a:0, why:"4 branches &times; 9 nutmegs = 36 nutmegs."}
+  ]
+},
+{
+  id:"eng", group:"English", name:"English", topic:"Nouns, verbs and sentences", color:"var(--eng)", icon:"ic-eng",
   q:[
     {q:"What does the BEGINNING of a story do?",
      o:["Introduces the characters and tells what the story is about","Sorts out all the problems","Tells us the lesson that was learnt","Tells us what the characters do all day"],
@@ -574,7 +682,72 @@ var SUBJECTS = [
   ]
 },
 {
-  id:"spell", name:"Spelling", topic:"Week 7: soft g, ge and dge", color:"var(--spell)", icon:"ic-spell",
+  id:"spell8", group:"English", name:"Spelling: wa and qua", topic:"Week 8 &middot; test Friday 30th", color:"var(--spell)", icon:"ic-spell",
+  q:[
+    {q:"Which one is spelled correctly?",
+     o:["wasp","wosp","whasp","wassp"],
+     a:0, why:"Wasp is spelled with wa, even though the a sounds like o. A wasp is an insect that can sting."},
+    {q:"Which one is spelled correctly?",
+     o:["wander","wandar","wandre","wannder"],
+     a:0, why:"Wander is spelled with wa. To wander is to walk about with no particular place to go. Do not mix it up with wonder, which means to think about something."},
+    {q:"Which one is spelled correctly?",
+     o:["wallet","walet","wollet","wallit"],
+     a:0, why:"Wallet has wa and a double l. A wallet holds money and cards."},
+    {q:"Which one is spelled correctly?",
+     o:["swamp","swomp","swammp","swampe"],
+     a:0, why:"Swamp is spelled with wa, even though it sounds like swomp. A swamp is soft, wet ground."},
+    {q:"Which one is spelled correctly?",
+     o:["quantity","quanity","quantety","quontity"],
+     a:0, why:"Quantity begins with qua. Quantity means how much of something there is."},
+    {q:"Which one is spelled correctly?",
+     o:["quality","qualety","quolity","qualitty"],
+     a:0, why:"Quality begins with qua. Quality means how good something is."},
+    {q:"Which one is spelled correctly?",
+     o:["squash","squosh","sqash","squashe"],
+     a:0, why:"Squash has qua inside it, and the a sounds like o. Squash is a vegetable, and it also means to press something flat."},
+    {q:"Which one is spelled correctly?",
+     o:["afterward","afterwerd","aftward","afterwird"],
+     a:0, why:"Afterward is spelled with wa, and here the ar sounds like the or in for. Afterward means later on."},
+    {q:"In which group of words does the 'a' after w sound like 'o'?",
+     o:["was, wash, want","war, warm, ward","wake, wave, wait","wing, win, with"],
+     a:0, why:"In was, wash, want, watch, water, swan, swap and swamp the a after w sounds like o."},
+    {q:"In words like war, warm and ward, the letters 'ar' after w sound like...",
+     o:["or, as in for","ar, as in car","air, as in hair","ur, as in fur"],
+     a:0, why:"After a w, ar usually sounds like or: war, ward, warn, warm, toward and afterward."},
+    {q:"Which word means a fight between countries?",
+     o:["war","ward","warn","warm"],
+     a:0, why:"War is a fight between countries. Be careful, because war, ward, warn and warm all look very alike."},
+    {q:"Which word means a room or section in a hospital?",
+     o:["ward","war","warn","wander"],
+     a:0, why:"A ward is a room or section in a hospital where patients are cared for."},
+    {q:"Finish the sentence: Please ___ your hands before dinner.",
+     o:["wash","watch","wasp","swap"],
+     a:0, why:"To wash is to clean something with water. The a sounds like o."},
+    {q:"Finish the sentence: The white ___ glided across the lake.",
+     o:["swan","swap","swamp","wasp"],
+     a:0, why:"A swan is a large white water bird. The a after w sounds like o."},
+    {q:"Finish the sentence: I will ___ my apple for your orange.",
+     o:["swap","swan","swamp","wasp"],
+     a:0, why:"To swap is to trade one thing for another."},
+    {q:"Finish the sentence: Put on a jumper to keep ___ .",
+     o:["warm","warn","war","ward"],
+     a:0, why:"Warm means a little bit hot. Remember the ar sounds like or."},
+    {q:"Finish the sentence: The sign is there to ___ us about the cliff.",
+     o:["warn","warm","war","ward"],
+     a:0, why:"To warn is to tell someone about danger."},
+    {q:"Finish the sentence: They walked ___ the beach.",
+     o:["toward","afterward","wander","warn"],
+     a:0, why:"Toward means in the direction of something."},
+    {q:"Finish the sentence: She looked at her ___ to check the time.",
+     o:["watch","wash","wallet","water"],
+     a:0, why:"A watch tells you the time. Watch is also one of the nouns that adds es to become watches."},
+    {q:"Finish the sentence: Please drink some ___ .",
+     o:["water","wallet","wander","wasp"],
+     a:0, why:"Water is what we drink. The a after w sounds like o."}
+  ]
+},
+{
+  id:"spell7", group:"English", name:"Spelling: soft g", topic:"Week 7 &middot; 15 words", color:"var(--spell)", icon:"ic-spell",
   q:[
     {q:"Which one is spelled correctly?",
      o:["bridge","brige","bridje","bridgh"],
@@ -639,7 +812,137 @@ var SUBJECTS = [
   ]
 },
 {
-  id:"soc", name:"Social Studies", topic:"Family, heritage and groups", color:"var(--soc)", icon:"ic-soc",
+  id:"spell5", group:"English", name:"Spelling: silent k and b", topic:"Week 5 &middot; 12 words", color:"var(--spell)", icon:"ic-spell",
+  q:[
+    {q:"Which one is spelled correctly?",
+     o:["lamb","lam","lambe","llamb"],
+     a:0, why:"Lamb ends with a silent b. We say lam. A lamb is a baby sheep."},
+    {q:"Which one is spelled correctly?",
+     o:["climb","clim","climbe","klimb"],
+     a:0, why:"Climb ends with a silent b. To climb is to go up something, like a tree."},
+    {q:"Which one is spelled correctly?",
+     o:["knife","nife","knive","knifh"],
+     a:0, why:"Knife begins with a silent k. Remember its plural changes too: knife becomes knives."},
+    {q:"Which one is spelled correctly?",
+     o:["knock","nock","knok","cnock"],
+     a:0, why:"Knock begins with a silent k. To knock is to hit something, like a door."},
+    {q:"Which one is spelled correctly?",
+     o:["thumb","thum","thumbe","thomb"],
+     a:0, why:"Thumb ends with a silent b. Your thumb is the short, thick finger on your hand."},
+    {q:"Which one is spelled correctly?",
+     o:["knew","knue","kneu","knewe"],
+     a:0, why:"Knew begins with a silent k. Knew means you already understood something. Do not mix it up with new, which means not old."},
+    {q:"Which one is spelled correctly?",
+     o:["crumb","crum","crumbe","krumb"],
+     a:0, why:"Crumb ends with a silent b. A crumb is a tiny piece of bread or cake."},
+    {q:"Which one is spelled correctly?",
+     o:["kneel","neel","kneal","knele"],
+     a:0, why:"Kneel begins with a silent k. To kneel is to go down on your knees."},
+    {q:"Which one is spelled correctly?",
+     o:["comb","coom","combe","kohm"],
+     a:0, why:"Comb ends with a silent b. You use a comb to tidy your hair."},
+    {q:"Which one is spelled correctly?",
+     o:["knot","knott","knote","knopt"],
+     a:0, why:"Knot begins with a silent k. A knot is a tie in a rope or a string. Do not mix it up with not, which means no."},
+    {q:"Which one is spelled correctly?",
+     o:["knit","nitt","knitt","kniet"],
+     a:0, why:"Knit begins with a silent k. To knit is to make clothes from wool using needles."},
+    {q:"Which letter is SILENT in the word lamb?",
+     o:["b","l","a","m"],
+     a:0, why:"The b at the end of lamb is silent, so we say lam. Comb, climb, crumb and thumb all have a silent b too."},
+    {q:"Which letter is SILENT in the word knee?",
+     o:["k","n","e","None of them"],
+     a:0, why:"The k at the start of knee is silent, so we say nee. Kneel, knew, knife, knit, knot and knock all have a silent k too."},
+    {q:"Which group of words ALL have a silent b?",
+     o:["lamb, comb, climb","knee, knife, knot","knock, knit, knew","lamb, knee, knit"],
+     a:0, why:"Lamb, comb, climb, crumb and thumb all end with a silent b."},
+    {q:"Which group of words ALL begin with a silent k?",
+     o:["knee, knife, knock","lamb, comb, thumb","climb, crumb, knit","thumb, knee, comb"],
+     a:0, why:"Knee, kneel, knew, knife, knit, knot and knock all begin with a silent k."},
+    {q:"Finish the sentence: A baby sheep is called a ___ .",
+     o:["lamb","comb","crumb","climb"],
+     a:0, why:"A lamb is a baby sheep. The b at the end is silent."},
+    {q:"Finish the sentence: She used a ___ to tidy her hair.",
+     o:["comb","climb","crumb","lamb"],
+     a:0, why:"A comb tidies your hair. The b at the end is silent."},
+    {q:"Finish the sentence: He went down on one ___ to tie his shoe.",
+     o:["knee","knew","knit","knock"],
+     a:0, why:"Your knee is the joint in the middle of your leg. The k at the start is silent."},
+    {q:"Finish the sentence: Please ___ on the door before you come in.",
+     o:["knock","knot","knit","knee"],
+     a:0, why:"To knock is to hit the door so people know you are there. The k at the start is silent."},
+    {q:"Finish the sentence: Grandma likes to ___ scarves out of wool.",
+     o:["knit","knot","knee","knew"],
+     a:0, why:"To knit is to make clothes from wool using needles. The k at the start is silent."}
+  ]
+},
+{
+  id:"spell3", group:"English", name:"Spelling: al and all", topic:"Week 3 &middot; 19 words", color:"var(--spell)", icon:"ic-spell",
+  q:[
+    {q:"Which one is spelled correctly?",
+     o:["always","alwayz","allways","alwaies"],
+     a:0, why:"Always has only one l: al-ways. It means every time, or all the time."},
+    {q:"Which one is spelled correctly?",
+     o:["although","allthough","althogh","altho"],
+     a:0, why:"Although has one l and ends in -though. It means even though."},
+    {q:"Which one is spelled correctly?",
+     o:["almost","allmost","almoste","olmost"],
+     a:0, why:"Almost has one l: al-most. It means nearly, but not quite."},
+    {q:"Which one is spelled correctly?",
+     o:["altogether","alltogether","altogather","alltogather"],
+     a:0, why:"Altogether has one l: al-together. It means completely, or in total."},
+    {q:"Which one is spelled correctly?",
+     o:["already","allready","alredy","allredy"],
+     a:0, why:"Already has one l: al-ready. It means before now."},
+    {q:"Which one is spelled correctly?",
+     o:["hospital","hospitle","hospitol","hospittal"],
+     a:0, why:"Hospital ends in -al, just like capital, signal, sandal and pedal."},
+    {q:"Which one is spelled correctly?",
+     o:["occasional","occassional","ocasional","occasionel"],
+     a:0, why:"Occasional has two c-letters, one s, and ends in -al. It means happening sometimes, not often."},
+    {q:"Which one is spelled correctly?",
+     o:["accidental","accidentel","acidental","accidentle"],
+     a:0, why:"Accidental has two c-letters and ends in -al. It means happening by accident."},
+    {q:"Which one is spelled correctly?",
+     o:["special","speshal","specail","speciel"],
+     a:0, why:"Special ends in -al even though it sounds like shul. It means better or different from usual."},
+    {q:"Which one is spelled correctly?",
+     o:["pedal","pedle","peddal","pedall"],
+     a:0, why:"Pedal ends in -al. It is the part of a bicycle that you push with your foot."},
+    {q:"Which word means a place where sick people are cared for?",
+     o:["hospital","capital","sandal","signal"],
+     a:0, why:"A hospital cares for sick people. A capital is a main city, a sandal is a shoe, and a signal is a sign."},
+    {q:"Which word means what normally happens?",
+     o:["usual","special","occasional","accidental"],
+     a:0, why:"Usual means normal or ordinary. Its opposite is special, which means different from the usual."},
+    {q:"What is the capital of a country?",
+     o:["The main city, where the government is","The tallest building in it","The biggest shop in it","The oldest church in it"],
+     a:0, why:"A capital is a country's main city. St. George's is the capital of Grenada. A capital letter is also the big letter at the start of a name."},
+    {q:"Finish the sentence: A giraffe is very ___ .",
+     o:["tall","stall","small","fall"],
+     a:0, why:"Tall means high from bottom to top. The giraffe is the tallest animal in the world."},
+    {q:"Finish the sentence: Be careful on the wet floor or you might ___ .",
+     o:["fall","tall","stall","fill"],
+     a:0, why:"To fall is to drop down to the ground."},
+    {q:"Finish the sentence: A mouse is ___ , but an elephant is huge.",
+     o:["small","stall","smell","tall"],
+     a:0, why:"Small means little. It is the opposite of big."},
+    {q:"Finish the sentence: We bought mangoes from a ___ in the market.",
+     o:["stall","stale","small","tall"],
+     a:0, why:"A stall is a small stand or table where things are sold, like the ones in a market."},
+    {q:"Finish the sentence: I like mangoes and I ___ like bananas.",
+     o:["also","already","always","almost"],
+     a:0, why:"Also means as well, or in addition."},
+    {q:"Finish the sentence: The traffic light gave the ___ to stop.",
+     o:["signal","sandal","special","capital"],
+     a:0, why:"A signal is a sign that tells you something, like a traffic light telling cars to stop."},
+    {q:"Finish the sentence: She wore a ___ on each foot to the beach.",
+     o:["sandal","signal","stall","pedal"],
+     a:0, why:"A sandal is an open shoe with straps. Two of them are a pair of sandals."}
+  ]
+},
+{
+  id:"soc", group:"Social Studies", name:"Social Studies", topic:"Family, heritage and groups", color:"var(--soc)", icon:"ic-soc",
   q:[
     {q:"What is a family?",
      o:["A group of people related by blood, marriage or adoption who care for one another","A group of people who live on the same street","A group of people who go to the same school","A group of friends who like the same games"],
@@ -686,7 +989,7 @@ var SUBJECTS = [
   ]
 },
 {
-  id:"carib", name:"My Caribbean", topic:"Grenada, water bodies and water links", color:"var(--carib)", icon:"ic-carib",
+  id:"carib", group:"Social Studies", name:"My Caribbean", topic:"Grenada, water bodies and water links", color:"var(--carib)", icon:"ic-carib",
   q:[
     {q:"Grenada is in which part of the Caribbean?",
      o:["The southern Caribbean","The northern Caribbean","The middle of the Atlantic","The Pacific"],
@@ -730,7 +1033,72 @@ var SUBJECTS = [
   ]
 },
 {
-  id:"christ", name:"Christ Light", topic:"Term 1 lessons and memory treasures", color:"var(--christ)", icon:"ic-christ",
+  id:"symbols", group:"Social Studies", name:"National Symbols", topic:"Anthem, pledge, flag and coat of arms", color:"var(--symbols)", icon:"ic-symbols",
+  q:[
+    {q:"What is Grenada's national anthem called?",
+     o:["Hail Grenada","Isle of Spice","Our Grenada","Spice Island Song"],
+     a:0, why:"Grenada's national anthem is called Hail Grenada."},
+    {q:"The national ANTHEM is...",
+     o:["A patriotic song that expresses love and pride for our country","A promise we make","A law we must obey","A poem about the sea"],
+     a:0, why:"The national anthem is a patriotic song that expresses love and pride for our country."},
+    {q:"The national PLEDGE is...",
+     o:["A promise expressing loyalty and commitment to Grenada","A song we sing","A flag we raise","A story about our history"],
+     a:0, why:"The national pledge is a promise that expresses loyalty and commitment to Grenada."},
+    {q:"Do we SING or RECITE the national pledge?",
+     o:["We recite it","We sing it","We dance to it","We write it"],
+     a:0, why:"We recite the pledge and say the words thoughtfully. The anthem is sung or listened to."},
+    {q:"Which one is a reason we sing the national anthem?",
+     o:["To unite us as one people","To start the school day","To choose a leader","To learn new songs"],
+     a:0, why:"We sing it to show love, pride and respect for our country, to unite us as one people, and to remember our country's values and hopes."},
+    {q:"Which one is a reason we recite the national pledge?",
+     o:["To promise loyalty and remind us of our responsibilities","To win a prize","To change the law","To end the school day"],
+     a:0, why:"Reciting the pledge promises loyalty, reminds us of our responsibilities, encourages good behaviour, shows love for our country and encourages unity."},
+    {q:"Who designed Grenada's national flag?",
+     o:["Anthony C. George","Irva Blackette","Louis Masanto","Christopher Columbus"],
+     a:0, why:"Anthony C. George designed Grenada's national flag."},
+    {q:"Who wrote the WORDS of the national anthem?",
+     o:["Irva Blackette, born Baptiste","Anthony C. George","Louis Masanto","Christopher Columbus"],
+     a:0, why:"Irva Blackette (nee Baptiste) wrote the words for the national anthem. Louis Masanto arranged it."},
+    {q:"Who ARRANGED the national anthem?",
+     o:["Louis Masanto","Irva Blackette","Anthony C. George","Christopher Columbus"],
+     a:0, why:"Louis Masanto arranged the anthem, and Irva Blackette wrote the words."},
+    {q:"What does the RED on Grenada's flag represent?",
+     o:["Courage, vitality and the desire for freedom","Wisdom and sunshine","Fertile land and agriculture","The seven parishes"],
+     a:0, why:"Red stands for courage, vitality and the desire for freedom."},
+    {q:"What does the GOLD, or yellow, on the flag represent?",
+     o:["Wisdom, sunshine, warmth and friendliness","Courage and freedom","Fertile land and vegetation","The spice industry"],
+     a:0, why:"Gold stands for wisdom, sunshine, warmth and friendliness."},
+    {q:"What does the GREEN on the flag represent?",
+     o:["Fertile land, vegetation and agriculture","Courage and freedom","Wisdom and sunshine","The seven parishes"],
+     a:0, why:"Green stands for our fertile land, vegetation and agriculture."},
+    {q:"What do the SEVEN GOLD STARS represent?",
+     o:["The seven parishes and the hopes of the nation","Seven islands","Seven spices","Seven years of freedom"],
+     a:0, why:"The seven gold stars represent the seven parishes and the hopes and aspirations of the nation."},
+    {q:"What does the NUTMEG on the flag represent?",
+     o:["Grenada's reputation as the Isle of Spice","The colour of the land","The courage of the people","The seven parishes"],
+     a:0, why:"The nutmeg represents Grenada's reputation as the Isle of Spice and its connection to the spice industry."},
+    {q:"The shield on the Coat of Arms is divided into how many sections?",
+     o:["Four","Two","Seven","Three"],
+     a:0, why:"The shield is divided into four sections, with pictures representing parts of Grenada's history and heritage."},
+    {q:"What does the SHIP on the Coat of Arms represent?",
+     o:["Christopher Columbus's arrival in Grenada","Fishing boats of today","Trade with Barbados","The Atlantic Ocean"],
+     a:0, why:"The ship represents Christopher Columbus's arrival in Grenada and the island's historical past."},
+    {q:"What does the LION on the Coat of Arms represent?",
+     o:["Strength","Wisdom","Friendliness","Farming"],
+     a:0, why:"The lion represents strength, and is part of the historical imagery on the coat of arms."},
+    {q:"What does the CROSS on the Coat of Arms reflect?",
+     o:["The island's historical and religious heritage","The four parishes","The spice trade","The shape of the island"],
+     a:0, why:"The cross reflects the island's historical and religious heritage."},
+    {q:"What does the MOTTO encourage us to do?",
+     o:["Be mindful of God, work towards progress and live together in unity","Travel the world","Grow only nutmeg","Keep to ourselves"],
+     a:0, why:"The motto encourages us to be mindful of God, work towards progress and live together in unity."},
+    {q:"Why should we appreciate our national symbols?",
+     o:["They remind us of our history and culture and unite us as Grenadians","They are worth a lot of money","They are printed on our books","They are new inventions"],
+     a:0, why:"National symbols represent our country, remind us of our history and culture, help unite us as Grenadians and make us feel proud."}
+  ]
+},
+{
+  id:"christ", group:"Christ Light", name:"Christ Light", topic:"Term 1 lessons", color:"var(--christ)", icon:"ic-christ",
   q:[
     {q:"Who announced the births of John and Jesus?",
      o:["The angel Gabriel","Zechariah","Simeon","John the Baptist"],
@@ -765,6 +1133,35 @@ var SUBJECTS = [
     {q:"How did John the Baptist prepare the way for Jesus?",
      o:["He showed people that they were sinners who needed Jesus the Savior","He built a road to Jerusalem","He brought gifts to the temple","He wrote the Apostles' Creed"],
      a:0, why:"John showed the people that they were sinners who needed Jesus the Savior. We are thankful for spiritual leaders who remind us of our sins and tell us about our Savior."},
+    {q:"What did the baptism of Jesus show?",
+     o:["That he was the Savior who would take the place of all sinners","That he was ready to go to Egypt","That he was twelve years old","That he was a teacher at the temple"],
+     a:0, why:"Jesus' baptism showed that he was the Savior who would take the place of all sinners. Jesus took our place so that he could save us."},
+    {q:"The gift of salvation is made ours through...",
+     o:["Baptism","Reading","Singing","Travelling"],
+     a:0, why:"We thank Jesus for the gift of salvation, which is made ours through Baptism."},
+    {q:"What did Jesus do at the wedding at Cana?",
+     o:["He provided wine for the guests and strengthened his disciples' faith","He taught in the temple","He walked on the water","He healed a blind man"],
+     a:0, why:"At the wedding at Cana, Jesus provided wine for the wedding guests and strengthened his disciples' faith."},
+    {q:"Jesus still uses his power today to...",
+     o:["Provide for our bodily and spiritual needs","Build houses for us","Choose our friends","Make us rich"],
+     a:0, why:"Jesus still uses his power today to provide for our bodily and spiritual needs, so we ask him for all of them."},
+    {q:"What did Jesus tell Nicodemus about eternal life?",
+     o:["That the Holy Spirit brings people to faith, and through faith they receive eternal life","That he must travel to Samaria","That he must give away his money","That he must be baptised twice"],
+     a:0, why:"Jesus told Nicodemus that the Holy Spirit brings people to faith and that through faith they receive eternal life."},
+    {q:"Who works faith in us so that we believe in Jesus?",
+     o:["God the Holy Spirit","Our teachers","The disciples","Nicodemus"],
+     a:0, why:"God the Holy Spirit works faith in us so that we believe in Jesus and have eternal life. We treasure the gifts of faith and eternal life."},
+    {q:"How did many Samaritans come to faith in Jesus as their Savior?",
+     o:["When they heard his Word","When they saw the wedding at Cana","When they read the Creed","When they travelled to Egypt"],
+     a:0, why:"Many Samaritans came to faith in Jesus as their Savior when they heard his Word."},
+    {q:"What does God want us to do with his Word?",
+     o:["Share it with others so that they come to faith in Jesus","Keep it to ourselves","Only read it on Sundays","Write it out ten times"],
+     a:0, why:"God wants us to share his Word with many other people so that they come to faith in Jesus. We eagerly share it and invite others to learn about the Savior."}
+  ]
+},
+{
+  id:"memory", group:"Christ Light", name:"Memory Treasures", topic:"The verses to learn by heart", color:"var(--memory)", icon:"ic-memory",
+  q:[
     {q:"Memory Treasure: I believe in God, the Father Almighty, Maker of ___ .",
      o:["heaven and earth","land and sea","day and night","sun and moon"],
      a:0, why:"Apostles' Creed, Part 1: I believe in God, the Father Almighty, Maker of heaven and earth."},
@@ -780,24 +1177,15 @@ var SUBJECTS = [
     {q:"Memory Treasure from 2 Corinthians 5:21 says God made him who had no sin to be sin for us, so that in him we might become the ___ of God.",
      o:["righteousness","kingdom","children","promise"],
      a:0, why:"2 Corinthians 5:21: God made him who had no sin to be sin for us, so that in him we might become the righteousness of God."},
-    {q:"What did the baptism of Jesus show?",
-     o:["That he was the Savior who would take the place of all sinners","That he was ready to go to Egypt","That he was twelve years old","That he was a teacher at the temple"],
-     a:0, why:"Jesus' baptism showed that he was the Savior who would take the place of all sinners. Jesus took our place so that he could save us."},
     {q:"Memory Treasure, John 1:29: Look, the ___ of God, who takes away the sins of the world!",
      o:["Lamb","Light","Son","Word"],
      a:0, why:"John 1:29. John saw Jesus coming towards him and said, Look, the Lamb of God, who takes away the sins of the world! Lamb is one of your silent b spelling words too."},
-    {q:"The gift of salvation is made ours through...",
-     o:["Baptism","Reading","Singing","Travelling"],
-     a:0, why:"We thank Jesus for the gift of salvation, which is made ours through Baptism."},
-    {q:"What did Jesus do at the wedding at Cana?",
-     o:["He provided wine for the guests and strengthened his disciples' faith","He taught in the temple","He walked on the water","He healed a blind man"],
-     a:0, why:"At the wedding at Cana, Jesus provided wine for the wedding guests and strengthened his disciples' faith."},
-    {q:"Jesus still uses his power today to...",
-     o:["Provide for our bodily and spiritual needs","Build houses for us","Choose our friends","Make us rich"],
-     a:0, why:"Jesus still uses his power today to provide for our bodily and spiritual needs, so we ask him for all of them."},
     {q:"Memory Treasure, Ephesians 3:20: Now to him who is able to do immeasurably more than all we ___ or imagine.",
      o:["ask","see","build","carry"],
-     a:0, why:"Ephesians 3:20: Now to him who is able to do immeasurably more than all we ask or imagine, according to his power that is at work within us."}
+     a:0, why:"Ephesians 3:20: Now to him who is able to do immeasurably more than all we ask or imagine, according to his power that is at work within us."},
+    {q:"Memory Treasure, John 3:16: For God so loved the world, that he gave his only begotten ___ .",
+     o:["Son","Word","Lamb","Spirit"],
+     a:0, why:"John 3:16: For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."}
   ]
 }
 ];
@@ -871,7 +1259,7 @@ var S=null, order=[], qi=0, score=0, locked=false, optIdx=[];
 
 /* ---------- menu ---------- */
 function renderMenu(){
-  var cards = SUBJECTS.map(function(s){
+  function cardHTML(s){
     var b = best[s.id];
     return '<button class="card" style="--c:'+s.color+'" data-go="'+s.id+'">'+
       '<span class="ic">'+svg(s.icon)+'</span>'+
@@ -879,14 +1267,21 @@ function renderMenu(){
       '<p class="meta">'+s.topic+'<br>'+s.q.length+' questions</p>'+
       (b!==undefined ? '<span class="best">'+svg("ic-star")+'Best: '+b+' / '+s.q.length+'</span>' : '')+
     '</button>';
-  }).join("");
+  }
+  var sections="", cur=null, buf="";
+  function flush(){ if(cur!==null) sections+='<section class="group"><h2 class="grouphead">'+cur+'</h2><div class="grid">'+buf+'</div></section>'; }
+  for(var gi=0; gi<SUBJECTS.length; gi++){
+    if(SUBJECTS[gi].group!==cur){ flush(); cur=SUBJECTS[gi].group; buf=""; }
+    buf+=cardHTML(SUBJECTS[gi]);
+  }
+  flush();
 
   app.innerHTML =
     '<p class="eyebrow">Grade 3 &middot; Term 1</p>'+
     '<h1>Quiz <span class="pop">Quest</span></h1>'+
     '<p class="sub">Pick a subject and collect stars. Every question comes straight from your own class notes, so this is real practice.</p>'+
-    '<div class="grid">'+cards+'</div>'+
-    '<div class="tipbar"><span><b>Word Study test: Friday 16th October.</b><br>Spelling has the soft g words. The Sound deck helps with your science project.</span>'+
+    sections+
+    '<div class="tipbar"><span><b>Word Study test: Friday 30th October.</b><br>Every week&rsquo;s spelling list is here, so you can go back over the old ones too.</span>'+
       '<button class="ghost" data-snd>Sound: '+(soundOn?"on":"off")+'</button></div>';
   scrollTo(0,0);
 }
