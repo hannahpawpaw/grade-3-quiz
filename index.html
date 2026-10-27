@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Grade 3 Term 1 practice quizzes across science, maths, English, social studies and Christ Light, including every week's spelling list.">
+<meta name="description" content="Grade 3 Term 1 practice quizzes across science, maths, English, French, social studies and Christ Light, including every week's spelling list.">
 <meta name="theme-color" content="#EEF5FF">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Quiz Quest">
@@ -38,6 +38,7 @@ img{max-width:100%}
   --times:#A32FB5;
   --symbols:#7A9E1F;
   --memory:#C9811B;
+  --french:#3F4FA3;
   --good:#0E9D53;
   --good-bg:#E0F7EA;
   --oops:#D64550;
@@ -66,6 +67,7 @@ img{max-width:100%}
     --times:#DE8CF0;
     --symbols:#C3DB72;
     --memory:#F3C889;
+    --french:#93A2F0;
     --good:#45D98C;
     --good-bg:#10341F;
     --oops:#FF8A90;
@@ -94,6 +96,7 @@ img{max-width:100%}
   --times:#DE8CF0;
   --symbols:#C3DB72;
   --memory:#F3C889;
+  --french:#93A2F0;
   --good:#45D98C;
   --good-bg:#10341F;
   --oops:#FF8A90;
@@ -323,6 +326,10 @@ h1 .pop{color:var(--math)}
   </symbol>
   <symbol id="ic-memory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M5 3.4h11.4a2 2 0 0 1 2 2v15.2l-4-2.6-4 2.6V3.4"/><path d="M5 3.4a2 2 0 0 0-2 2v12.4a2 2 0 0 0 2 2h5.4"/>
+  </symbol>
+  <symbol id="ic-french" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.4 6.6A2.4 2.4 0 0 1 5.8 4.2h9.6a2.4 2.4 0 0 1 2.4 2.4v4.8a2.4 2.4 0 0 1-2.4 2.4H9.2L5 17.2v-3.4a2.4 2.4 0 0 1-1.6-2.4z"/>
+    <path d="M19.2 9.4h1.4a2 2 0 0 1 2 2v3.8a2 2 0 0 1-2 2v2.6l-3-2.6h-2.4" stroke-width="1.6"/>
   </symbol>
   <symbol id="ic-star" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2.2l2.9 6.1 6.6.9-4.8 4.7 1.2 6.7-5.9-3.2-5.9 3.2 1.2-6.7L2.5 9.2l6.6-.9z"/>
@@ -951,6 +958,71 @@ var SUBJECTS = [
     {q:"Finish the sentence: She wore a ___ on each foot to the beach.",
      o:["sandal","signal","stall","pedal"],
      a:0, why:"A sandal is an open shoe with straps. Two of them are a pair of sandals."}
+  ]
+},
+{
+  id:"french", group:"French", name:"Français", topic:"Greetings, family and feelings", color:"var(--french)", icon:"ic-french",
+  q:[
+    {q:"What does <b>Bonne nuit</b> mean?",
+     o:["Goodnight, said before bed","Good morning","Good afternoon","See you soon"],
+     a:0, why:"Bonne nuit means goodnight, and you say it before going to bed."},
+    {q:"How do you ask <b>How are you?</b> in French?",
+     o:["Comment ça va?","Bonne nuit","A la prochaine!","Pas mal, merci"],
+     a:0, why:"Comment ça va? means How are you? You can also simply say Ça va?"},
+    {q:"Which is ANOTHER way to ask how somebody is?",
+     o:["Tu vas bien?","Bonne nuit","Comme ci, comme ça","J'ai la grippe"],
+     a:0, why:"Tu vas bien? also means How are you? Both Comment ça va? and Tu vas bien? work."},
+    {q:"What does <b>A la prochaine!</b> mean?",
+     o:["Until we see each other again","Goodnight","I am sick","So so"],
+     a:0, why:"A la prochaine! means until we see each other again. It is a way of saying goodbye."},
+    {q:"What does <b>Comme ci, comme ça</b> mean?",
+     o:["So so","Very well, thank you","Not too badly","Goodnight"],
+     a:0, why:"Comme ci, comme ça means so so, when you are feeling neither good nor bad."},
+    {q:"How do you answer <b>Very well, thank you</b>?",
+     o:["Très bien, merci","Ça va mal","Je suis triste","Bonne nuit"],
+     a:0, why:"Très bien, merci means very well, thank you. Très means very and merci means thank you."},
+    {q:"What does <b>Pas mal, merci</b> mean?",
+     o:["Not too badly, thank you","Very well, thank you","So so","Goodnight"],
+     a:0, why:"Pas mal, merci means not too badly, thank you."},
+    {q:"What does <b>Papa</b> mean?",
+     o:["Daddy","Mummy","Grandma","Grandpa"],
+     a:0, why:"Papa means daddy. Maman means mummy."},
+    {q:"How do you say <b>mummy</b> in French?",
+     o:["Maman","Papa","Mami","Papi"],
+     a:0, why:"Maman means mummy, and Papa means daddy."},
+    {q:"What does <b>Mami</b> mean?",
+     o:["Grandma","Mummy","Auntie","Sister"],
+     a:0, why:"Mami means grandma. Pépé or papi means grandpa."},
+    {q:"How do you say <b>grandpa</b> in French?",
+     o:["Pépé or papi","Mami","Maman","Papa"],
+     a:0, why:"Grandpa is pépé or papi. Grandma is mami."},
+    {q:"What does <b>Ça va bien</b> mean?",
+     o:["I am fine","I am sick","I am sad","I am tired"],
+     a:0, why:"Ça va bien means I am fine. Ça va mal means I am feeling down."},
+    {q:"What does <b>Ça va mal</b> mean?",
+     o:["I am feeling down","I am fine","I am happy","I am tired"],
+     a:0, why:"Ça va mal means I am feeling down. Mal means badly."},
+    {q:"How do you say <b>I am sick</b> in French?",
+     o:["Je suis malade","Je suis triste","Je suis fatigué","Ça va bien"],
+     a:0, why:"Je suis malade means I am sick. Je suis means I am."},
+    {q:"What does <b>J'ai mal à la tête</b> mean?",
+     o:["I have a headache","I have a belly ache","I have a flu","I am tired"],
+     a:0, why:"J'ai mal à la tête means I have a headache. La tête means the head."},
+    {q:"What does <b>J'ai mal au ventre</b> mean?",
+     o:["I have a belly ache","I have a headache","I am sad","I have a flu"],
+     a:0, why:"J'ai mal au ventre means I have a belly ache. Le ventre means the tummy."},
+    {q:"How do you say <b>I have a flu</b> in French?",
+     o:["J'ai la grippe","J'ai mal à la tête","Je suis malade","Ça va mal"],
+     a:0, why:"J'ai la grippe means I have a flu. J'ai means I have."},
+    {q:"What does <b>Je suis content(e)</b> mean?",
+     o:["I am happy","I am sad","I am tired","I am sick"],
+     a:0, why:"Je suis content(e) means I am happy. A girl writes contente with an e on the end."},
+    {q:"What does <b>Je suis triste</b> mean?",
+     o:["I am sad","I am happy","I am fine","I have a flu"],
+     a:0, why:"Je suis triste means I am sad."},
+    {q:"How do you say <b>I am tired</b> in French?",
+     o:["Je suis fatigué","Je suis triste","Je suis malade","Ça va bien"],
+     a:0, why:"Je suis fatigué means I am tired."}
   ]
 },
 {
