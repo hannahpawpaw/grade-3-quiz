@@ -39,6 +39,7 @@ img{max-width:100%}
   --symbols:#7A9E1F;
   --memory:#C9811B;
   --french:#3F4FA3;
+  --weather:#4A7389;
   --good:#0E9D53;
   --good-bg:#E0F7EA;
   --oops:#D64550;
@@ -68,6 +69,7 @@ img{max-width:100%}
     --symbols:#C3DB72;
     --memory:#F3C889;
     --french:#93A2F0;
+    --weather:#96BDD4;
     --good:#45D98C;
     --good-bg:#10341F;
     --oops:#FF8A90;
@@ -97,6 +99,7 @@ img{max-width:100%}
   --symbols:#C3DB72;
   --memory:#F3C889;
   --french:#93A2F0;
+  --weather:#96BDD4;
   --good:#45D98C;
   --good-bg:#10341F;
   --oops:#FF8A90;
@@ -331,6 +334,10 @@ h1 .pop{color:var(--math)}
     <path d="M3.4 6.6A2.4 2.4 0 0 1 5.8 4.2h9.6a2.4 2.4 0 0 1 2.4 2.4v4.8a2.4 2.4 0 0 1-2.4 2.4H9.2L5 17.2v-3.4a2.4 2.4 0 0 1-1.6-2.4z"/>
     <path d="M19.2 9.4h1.4a2 2 0 0 1 2 2v3.8a2 2 0 0 1-2 2v2.6l-3-2.6h-2.4" stroke-width="1.6"/>
   </symbol>
+  <symbol id="ic-weather" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7.4 16.4h9a4 4 0 0 0 .5-7.96 5.6 5.6 0 0 0-10.6 1.1 3.5 3.5 0 0 0 1.1 6.86z"/>
+    <path d="M8.6 19.4l-.8 2M12.4 19.4l-.8 2.6M16.2 19.4l-.8 2"/>
+  </symbol>
   <symbol id="ic-star" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2.2l2.9 6.1 6.6.9-4.8 4.7 1.2 6.7-5.9-3.2-5.9 3.2 1.2-6.7L2.5 9.2l6.6-.9z"/>
   </symbol>
@@ -495,6 +502,62 @@ var SUBJECTS = [
     {q:"Rubber can produce different sounds when it is...",
      o:["Stretched and plucked","Frozen and melted","Painted and dried","Folded and cut"],
      a:0, why:"Rubber can produce different sounds when it is stretched and plucked, like a rubber band around a box."}
+  ]
+},
+{
+  id:"weather", group:"Science", name:"Weather", topic:"Elements of weather and wind", color:"var(--weather)", icon:"ic-weather",
+  q:[
+    {q:"What is weather?",
+     o:["The conditions we experience in our atmosphere","The shape of the land around us","The time of year","The plants that grow on an island"],
+     a:0, why:"Weather refers to the conditions we experience in our atmosphere."},
+    {q:"Which one is an ELEMENT of weather?",
+     o:["Temperature","Mountains","Rivers","Soil"],
+     a:0, why:"The main elements of weather are air, temperature, water vapour, precipitation and clouds."},
+    {q:"Which list gives the main elements of weather?",
+     o:["Air, temperature, water vapour, precipitation and clouds","Rocks, soil, sand and water","Trees, grass, flowers and leaves","Sun, Moon, stars and planets"],
+     a:0, why:"The elements of weather are the things we can observe and measure in the atmosphere: air, temperature, water vapour, precipitation and clouds."},
+    {q:"What are the elements of weather?",
+     o:["Things we can observe and measure in the atmosphere","Things we can only read about in books","Things that happen under the ground","Things that happen once a year"],
+     a:0, why:"They are the different things we can observe and measure in the atmosphere that tell us what the weather is like."},
+    {q:"What is PRECIPITATION?",
+     o:["Any moisture that falls from the sky","Air that is moving quickly","Water that turns into a gas","A cloud that stays still"],
+     a:0, why:"Precipitation refers to any moisture that falls from the sky."},
+    {q:"Which one is an example of precipitation?",
+     o:["Rain falling from the sky","The sun shining","A breeze blowing","A cloud sitting still"],
+     a:0, why:"Precipitation is any moisture that falls from the sky, so falling rain is precipitation."},
+    {q:"What is WATER VAPOUR?",
+     o:["Water that has turned into a gas and gone up into the air","Water that falls from the sky","Water frozen into ice","Water in a river"],
+     a:0, why:"Water vapour is water that has turned into a gas and gone up into the air."},
+    {q:"What is WIND?",
+     o:["Moving air","Falling rain","A kind of cloud","Warm sunshine"],
+     a:0, why:"Wind is moving air."},
+    {q:"Why does wind happen?",
+     o:["Air moves from place to place because of changes in temperature and air pressure","The Earth shakes","Clouds bump into each other","The sea gets deeper"],
+     a:0, why:"Wind happens when air moves from one place to another because of changes in temperature and air pressure."},
+    {q:"Which is a HELPFUL thing that wind does?",
+     o:["Turns windmills and wind turbines to make electricity","Knocks down power lines","Blows away crops","Causes hurricanes"],
+     a:0, why:"Wind turns windmills and wind turbines to make electricity. That is one of the helpful things it does."},
+    {q:"Wind helps to move...",
+     o:["Sailboats and kites","Cars and buses","Trains and trams","Rocks and stones"],
+     a:0, why:"Wind helps move sailboats and kites."},
+    {q:"How does wind help new plants to grow?",
+     o:["It spreads seeds and pollen","It waters them","It warms the soil","It gives them light"],
+     a:0, why:"Wind spreads seeds and pollen, which helps new plants grow."},
+    {q:"How does wind help us on a hot day?",
+     o:["It helps cool us down","It makes the sun brighter","It dries up the sea","It makes us sleepy"],
+     a:0, why:"Wind helps cool us down on a hot day."},
+    {q:"Which is a HARMFUL thing that strong wind can do?",
+     o:["Knock down trees and power lines","Turn a wind turbine","Spread pollen","Move a sailboat"],
+     a:0, why:"Strong winds can knock down trees and power lines."},
+    {q:"Strong winds can cause...",
+     o:["Big waves, storms, tornadoes or hurricanes","Earthquakes","Volcanoes","Droughts only"],
+     a:0, why:"Strong wind can cause big waves, storms, or even tornadoes and hurricanes."},
+    {q:"How can strong wind damage farms?",
+     o:["By blowing away soil or crops","By making the soil too wet","By planting the wrong seeds","By cooling the animals"],
+     a:0, why:"Wind can blow away soil or crops, damaging farms."},
+    {q:"In bad weather, strong wind can make it hard to...",
+     o:["Travel or stay safe","Read a book indoors","Sleep in the afternoon","Hear the radio"],
+     a:0, why:"Strong wind makes it hard to travel or to stay safe during bad weather."}
   ]
 },
 {
@@ -1755,7 +1818,13 @@ var SUBJECTS = [
      a:0, why:"The Holy Spirit uses God's Word to strengthen our faith so that we do not reject Jesus."},
     {q:"In the lesson Jesus Is Rejected in Nazareth, how do we keep our faith strong?",
      o:["We hear God's Word often and pray","We stay away from God's Word","We only listen to it once","We keep it a secret"],
-     a:0, why:"We hear God's Word often and pray that the Holy Spirit will use that Word to strengthen our faith."}
+     a:0, why:"We hear God's Word often and pray that the Holy Spirit will use that Word to strengthen our faith."},
+    {q:"Why did Jesus show Peter the fisherman his power?",
+     o:["To prepare Peter to gather souls for his kingdom","To teach Peter how to sail","To show Peter he was stronger","To send Peter away"],
+     a:0, why:"Jesus showed Peter his power to prepare Peter to gather souls for his kingdom. Jesus also shows his power to prepare us to spread the good news of salvation."},
+    {q:"What do we trust as we tell others about Jesus?",
+     o:["That Jesus is with us, using his power to help us","That it will always be easy","That we must do it alone","That others will already know"],
+     a:0, why:"We trust that Jesus is with us, using his power to help us as we tell others about him."}
   ]
 },
 {
@@ -1793,7 +1862,10 @@ var SUBJECTS = [
      a:0, why:"Mark 16:16: Whoever believes and is baptised will be saved, but whoever does not believe will be condemned."},
     {q:"Which Memory Treasure says: Whoever believes and is baptised will be saved?",
      o:["Mark 16:16","John 3:16","John 1:29","Ephesians 3:20"],
-     a:0, why:"That one is Mark 16:16. Do not mix it up with John 3:16, which also has 16 in it."}
+     a:0, why:"That one is Mark 16:16. Do not mix it up with John 3:16, which also has 16 in it."},
+    {q:"Memory Treasure, Mark 16:15: Go into all the world and preach the ___ to all creation.",
+     o:["Gospel","Promise","Psalm","Blessing"],
+     a:0, why:"Mark 16:15. He said to them, Go into all the world and preach the Gospel to all creation."}
   ]
 }
 ];
@@ -1802,6 +1874,27 @@ var SUBJECTS = [
 var BEST_KEY="qq-best-v2", SND_KEY="qq-sound-v1";
 var ROUND_MAX=14;
 function roundLen(s){ return Math.min(ROUND_MAX, s.q.length); }
+var BAG_KEY="qq-bag-v1";
+function loadBags(){ try{ var b=JSON.parse(localStorage.getItem(BAG_KEY)||"{}"); return (b&&typeof b==="object")?b:{}; }catch(e){ return {}; } }
+function saveBags(b){ try{ localStorage.setItem(BAG_KEY, JSON.stringify(b)); }catch(e){} }
+var bags = loadBags();
+/* Deal the next round out of this deck's bag. Every question in the bank is
+   served once before any of them comes round again. */
+function dealRound(s){
+  var want=roundLen(s), pool=s.q.length, picked=[];
+  var bag = Object.prototype.toString.call(bags[s.id])==="[object Array]" ? bags[s.id] : [];
+  bag = bag.filter(function(i){ return typeof i==="number" && i>=0 && i<pool; });
+  var guard=0;
+  while(picked.length<want && guard++<100){
+    if(!bag.length){
+      bag = shuffle(s.q.map(function(_,i){ return i; })).filter(function(i){ return picked.indexOf(i)<0; });
+      if(!bag.length) break;
+    }
+    picked.push(bag.shift());
+  }
+  bags[s.id]=bag; saveBags(bags);
+  return picked;
+}
 function loadBest(){ try{ return JSON.parse(localStorage.getItem(BEST_KEY)||"{}")||{}; }catch(e){ return {}; } }
 function saveBest(b){ try{ localStorage.setItem(BEST_KEY, JSON.stringify(b)); }catch(e){} }
 var best = loadBest();
@@ -1874,7 +1967,7 @@ function renderMenu(){
     return '<button class="card" style="--c:'+s.color+'" data-go="'+s.id+'">'+
       '<span class="ic">'+svg(s.icon)+'</span>'+
       '<span class="name">'+s.name+'</span>'+
-      '<p class="meta">'+s.topic+'<br>'+(s.q.length>ROUND_MAX ? roundLen(s)+' each time, from '+s.q.length : s.q.length+' questions')+'</p>'+
+      '<p class="meta">'+s.topic+'<br>'+(s.q.length>ROUND_MAX ? roundLen(s)+' each time, from a bank of '+s.q.length : s.q.length+' questions')+'</p>'+
       (b!==undefined ? '<span class="best">'+svg("ic-star")+'Best: '+b+' / '+roundLen(s)+'</span>' : '')+
     '</button>';
   }
@@ -1891,7 +1984,7 @@ function renderMenu(){
     '<h1>Quiz <span class="pop">Quest</span></h1>'+
     '<p class="sub">Pick a subject and collect stars. Every question comes straight from your own class notes, so this is real practice.</p>'+
     sections+
-    '<div class="tipbar"><span><b>Word Study test: Friday 6th.</b><br>It also covers the words from October, so go back over the soft g, wa and silent k decks too.</span>'+
+    '<div class="tipbar"><span><b>New: Weather in Science.</b><br>Questions are dealt from a bank now, so you work right through it before any question comes round again.</span>'+
       '<button class="ghost" data-snd>Sound: '+(soundOn?"on":"off")+'</button></div>';
   scrollTo(0,0);
 }
@@ -1899,7 +1992,7 @@ function renderMenu(){
 /* ---------- quiz ---------- */
 function startQuiz(id){
   S = SUBJECTS.filter(function(s){ return s.id===id; })[0];
-  order = shuffle(S.q.map(function(_,i){ return i; })).slice(0, roundLen(S));
+  order = dealRound(S);
   qi=0; score=0;
   renderQuestion();
 }
