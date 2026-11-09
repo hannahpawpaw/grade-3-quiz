@@ -2041,27 +2041,41 @@ var SUBJECTS = [
 /* ---------- storage ---------- */
 var BEST_KEY="qq-best-v2", SND_KEY="qq-sound-v1";
 var ROUND_MAX=14;
-function roundLen(s){ return Math.min(ROUND_MAX, s.q.length); }
-var BAG_KEY="qq-bag-v1";
+function topicsOf(s){
+  if(!s._topics){
+    var m={}, list=[];
+    s.q.forEach(function(q,i){ var k=q.t||"General"; if(!m[k]){ m[k]=[]; list.push(k); } m[k].push(i); });
+    s._topics={names:list, map:m};
+  }
+  return s._topics;
+}
+function roundLen(s){ return Math.max(Math.min(ROUND_MAX, s.q.length), topicsOf(s).names.length); }
+var BAG_KEY="qq-bag-v2";
 function loadBags(){ try{ var b=JSON.parse(localStorage.getItem(BAG_KEY)||"{}"); return (b&&typeof b==="object")?b:{}; }catch(e){ return {}; } }
 function saveBags(b){ try{ localStorage.setItem(BAG_KEY, JSON.stringify(b)); }catch(e){} }
 var bags = loadBags();
-/* Deal the next round out of this deck's bag. Every question in the bank is
-   served once before any of them comes round again. */
-function dealRound(s){
-  var want=roundLen(s), pool=s.q.length, picked=[];
-  var bag = Object.prototype.toString.call(bags[s.id])==="[object Array]" ? bags[s.id] : [];
-  bag = bag.filter(function(i){ return typeof i==="number" && i>=0 && i<pool; });
-  var guard=0;
-  while(picked.length<want && guard++<100){
-    if(!bag.length){
-      bag = shuffle(s.q.map(function(_,i){ return i; })).filter(function(i){ return picked.indexOf(i)<0; });
-      if(!bag.length) break;
-    }
-    picked.push(bag.shift());
+/* Take the next index from a named bag; refill (shuffled) when empty.
+   Within each topic, every question is used once before any repeats. */
+function fromBag(key, all, avoid){
+  var bag = Object.prototype.toString.call(bags[key])==="[object Array]" ? bags[key] : [];
+  bag = bag.filter(function(i){ return all.indexOf(i)>=0; });
+  for(var tries=0; tries<2; tries++){
+    for(var j=0;j<bag.length;j++){ if(avoid.indexOf(bag[j])<0){ var v=bag.splice(j,1)[0]; bags[key]=bag; return v; } }
+    bag = shuffle(all.slice());
   }
-  bags[s.id]=bag; saveBags(bags);
-  return picked;
+  bags[key]=bag; return null;
+}
+function dealRound(s){
+  var T=topicsOf(s), picked=[], want=roundLen(s);
+  T.names.forEach(function(name){
+    var v=fromBag(s.id+"|"+name, T.map[name], picked); if(v!==null) picked.push(v);
+  });
+  var all=s.q.map(function(_,i){ return i; }), guard=0;
+  while(picked.length<want && guard++<200){
+    var v=fromBag(s.id+"|*", all, picked); if(v===null) break; picked.push(v);
+  }
+  saveBags(bags);
+  return shuffle(picked);
 }
 function loadBest(){ try{ return JSON.parse(localStorage.getItem(BEST_KEY)||"{}")||{}; }catch(e){ return {}; } }
 function saveBest(b){ try{ localStorage.setItem(BEST_KEY, JSON.stringify(b)); }catch(e){} }
@@ -2135,7 +2149,7 @@ function renderMenu(){
     return '<button class="card" style="--c:'+s.color+'" data-go="'+s.id+'">'+
       '<span class="ic">'+svg(s.icon)+'</span>'+
       '<span class="name">'+s.name+'</span>'+
-      '<p class="meta">'+s.topic+'<br>'+(s.q.length>ROUND_MAX ? roundLen(s)+' each time, from a bank of '+s.q.length : s.q.length+' questions')+'</p>'+
+      '<p class="meta">'+s.topic+'<br>'+(s.q.length>roundLen(s) ? roundLen(s)+' each time, covering all '+topicsOf(s).names.length+' topics, from a bank of '+s.q.length : s.q.length+' questions')+'</p>'+
       (b!==undefined ? '<span class="best">'+svg("ic-star")+'Best: '+b+' / '+roundLen(s)+'</span>' : '')+
     '</button>';
   }
@@ -2152,7 +2166,7 @@ function renderMenu(){
     '<h1>Quiz <span class="pop">Quest</span></h1>'+
     '<p class="sub">Pick a subject and collect stars. Every question comes straight from your own class notes, so this is real practice.</p>'+
     sections+
-    '<div class="tipbar"><span><b>New: Water Bodies of Grenada in My Caribbean, and more on the Coat of Arms and pledge in National Symbols.</b><br>Questions are dealt from a bank, so you work right through it before any question comes round again.</span>'+
+    '<div class="tipbar"><span><b>New: 41 fresh English questions, including verbs, capital letters, end marks and context clues.</b><br>Every round now asks about every topic in the subject, and questions rotate so you work right through the bank.</span>'+
       '<button class="ghost" data-snd>Sound: '+(soundOn?"on":"off")+'</button></div>';
   scrollTo(0,0);
 }
