@@ -36,6 +36,7 @@ img{max-width:100%}
   --sound:#D63A2F;
   --carib:#0E7C9E;
   --times:#A32FB5;
+  --subtr:#A0522D;
   --symbols:#7A9E1F;
   --memory:#C9811B;
   --french:#3F4FA3;
@@ -66,6 +67,7 @@ img{max-width:100%}
     --sound:#FF8A80;
     --carib:#5AC8E8;
     --times:#DE8CF0;
+    --subtr:#E59A6B;
     --symbols:#C3DB72;
     --memory:#F3C889;
     --french:#93A2F0;
@@ -96,6 +98,7 @@ img{max-width:100%}
   --sound:#FF8A80;
   --carib:#5AC8E8;
   --times:#DE8CF0;
+  --subtr:#E59A6B;
   --symbols:#C3DB72;
   --memory:#F3C889;
   --french:#93A2F0;
@@ -324,6 +327,9 @@ h1 .pop{color:var(--math)}
   <symbol id="ic-times" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <rect x="3" y="3" width="18" height="18" rx="5"/><path d="M8.6 8.6l6.8 6.8M15.4 8.6l-6.8 6.8"/>
   </symbol>
+  <symbol id="ic-subtr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="5"/><path d="M7.5 12h9"/>
+  </symbol>
   <symbol id="ic-symbols" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M5.2 3.2v17.6"/><path d="M5.2 4.6h13.4l-2.7 4 2.7 4H5.2z" fill="currentColor" stroke="none"/>
   </symbol>
@@ -505,7 +511,7 @@ var SUBJECTS = [
   ]
 },
 {
-  id:"weather", group:"Science", name:"Weather", topic:"Elements of weather and wind", color:"var(--weather)", icon:"ic-weather",
+  id:"weather", group:"Science", name:"Weather", topic:"Weather, wind and the water cycle", color:"var(--weather)", icon:"ic-weather",
   q:[
     {t:"What weather is", q:"What is weather?",
      o:["The conditions we experience in our atmosphere","The shape of the land around us","The time of year","The plants that grow on an island"],
@@ -557,7 +563,49 @@ var SUBJECTS = [
      a:0, why:"Wind can blow away soil or crops, damaging farms."},
     {t:"How wind harms", q:"In bad weather, strong wind can make it hard to...",
      o:["Travel or stay safe","Read a book indoors","Sleep in the afternoon","Hear the radio"],
-     a:0, why:"Strong wind makes it hard to travel or to stay safe during bad weather."}
+     a:0, why:"Strong wind makes it hard to travel or to stay safe during bad weather."},
+    {t:"The water cycle", q:"What is the water cycle?",
+     o:["The continuous movement of water on the earth's surface and in the atmosphere","Water that stays still in a lake","A machine that cleans water","Rain that falls only once a year"],
+     a:0, why:"The water cycle is the continuous movement of water on the earth's surface and in the atmosphere. Continuous means it never stops."},
+    {t:"The water cycle", q:"The water cycle begins with...",
+     o:["Collection","Precipitation","Clouds","Condensation"],
+     a:0, why:"The water cycle begins with collection, where water collects on the Earth's surface."},
+    {t:"The water cycle", q:"In collection, water collects on the Earth's surface from...",
+     o:["Oceans, seas, lakes and rivers","Clouds and wind","Trees and grass","Rocks and sand"],
+     a:0, why:"Collection is where water from oceans, seas, lakes and rivers collects on the Earth's surface."},
+    {t:"The water cycle", q:"Which list puts the water cycle in the right order?",
+     o:["Collection, evaporation, condensation, precipitation","Precipitation, collection, condensation, evaporation","Condensation, evaporation, collection, precipitation","Evaporation, precipitation, collection, condensation"],
+     a:0, why:"Water collects, the sun heats it so it evaporates, the vapour cools and condenses into clouds, then it falls as precipitation. Then it all starts again."},
+    {t:"Evaporation", q:"What is evaporation?",
+     o:["When water changes from a liquid to a gas","When water changes from a gas to a liquid","When water falls from the sky","When water freezes into ice"],
+     a:0, why:"Evaporation is the process that occurs when water changes from a liquid state to a gas."},
+    {t:"Evaporation", q:"What makes the collected water evaporate?",
+     o:["The sun heats it up","The wind cools it down","The clouds push it down","The fish swim in it"],
+     a:0, why:"When the sun heats up the collected water, it changes from a liquid into water vapour and rises into the air."},
+    {t:"Evaporation", q:"When water evaporates, it rises into the air as...",
+     o:["Water vapour, a gas","Hail","Tiny stones","Snow"],
+     a:0, why:"Evaporated water changes into water vapour (a gas) and rises into the air."},
+    {t:"Condensation", q:"What is condensation?",
+     o:["The cooling of water in the atmosphere, changing it from a gas to a liquid","Water heating up and turning into a gas","Water soaking into the ground","Water flowing down a river"],
+     a:0, why:"Condensation is the cooling of water in the atmosphere, changing water from a gas to a liquid."},
+    {t:"Condensation", q:"As water vapour rises higher, the air gets...",
+     o:["Cooler","Hotter","Saltier","Darker"],
+     a:0, why:"As the water vapour rises higher, the air gets cooler, and the vapour changes back into tiny water droplets."},
+    {t:"Condensation", q:"When water vapour cools, it changes back into...",
+     o:["Tiny water droplets","Sand","Wind","Sunlight"],
+     a:0, why:"When the vapour cools it changes back into tiny water droplets. That is condensation."},
+    {t:"Condensation", q:"Condensation changes water from...",
+     o:["A gas to a liquid","A liquid to a gas","A solid to a gas","A liquid to sand"],
+     a:0, why:"Condensation changes water from a gas to a liquid. Evaporation is the opposite: liquid to gas."},
+    {t:"Clouds and precipitation", q:"Tiny water droplets come together to form...",
+     o:["Clouds","Rivers","Rainbows","Wind"],
+     a:0, why:"The tiny water droplets come together to form clouds."},
+    {t:"Clouds and precipitation", q:"What happens when clouds become too heavy with water droplets?",
+     o:["The water falls back to Earth as precipitation","The clouds turn into the sun","The water turns into wind","The clouds float away into space"],
+     a:0, why:"When the clouds become too heavy with water droplets, the water falls back to the Earth as precipitation."},
+    {t:"Clouds and precipitation", q:"Which of these is a kind of precipitation?",
+     o:["Hail","Water vapour","Clouds","Wind"],
+     a:0, why:"Precipitation can be rain, snow, sleet or hail."}
   ]
 },
 {
@@ -834,6 +882,59 @@ var SUBJECTS = [
     {t:"Word problems", q:"A nutmeg tree has 4 branches with 9 nutmegs on each branch. How many nutmegs?",
      o:["36","32","13","40"],
      a:0, why:"4 branches &times; 9 nutmegs = 36 nutmegs."}
+  ]
+},
+{
+  id:"subtr", group:"Maths", name:"Subtraction", topic:"Subtraction words and regrouping", color:"var(--subtr)", icon:"ic-subtr",
+  q:[
+    {t:"Subtraction words", q:"Which of these is a SUBTRACTION word?",
+     o:["Take away","Plus","Add","Times"],
+     a:0, why:"Subtraction words include less than, minus, subtract, take away, difference and remaining."},
+    {t:"Subtraction words", q:"Which of these is a SUBTRACTION word?",
+     o:["Difference","Sum","Altogether","Groups of"],
+     a:0, why:"Difference is a subtraction word. The others are subtraction language too: less than, minus, subtract, take away, remaining."},
+    {t:"Subtraction words", q:"Which of these is a SUBTRACTION word?",
+     o:["Remaining","Plus","Total","Times"],
+     a:0, why:"Remaining is a subtraction word: it tells you what is left."},
+    {t:"Subtraction words", q:"Which list has ONLY subtraction words?",
+     o:["Minus, take away, difference","Plus, add, total","Times, groups of, add","Altogether, sum, plus"],
+     a:0, why:"Less than, minus, subtract, take away, difference and remaining are all subtraction words."},
+    {t:"Subtraction words", q:"The sign &minus; is read as...",
+     o:["Minus","Plus","Times","Equals"],
+     a:0, why:"We read the &minus; sign as minus. Minus is one of our subtraction words."},
+    {t:"Without regrouping", q:"58 &minus; 23 = ?",
+     o:["35","81","25","45"],
+     a:0, why:"Ones first: 8 &minus; 3 = 5. Then tens: 5 &minus; 2 = 3. So the answer is 35."},
+    {t:"Without regrouping", q:"476 &minus; 152 = ?",
+     o:["324","628","326","314"],
+     a:0, why:"Ones: 6 &minus; 2 = 4. Tens: 7 &minus; 5 = 2. Hundreds: 4 &minus; 1 = 3. So the answer is 324."},
+    {t:"Without regrouping", q:"What is 12 take away 5?",
+     o:["7","17","6","8"],
+     a:0, why:"12 take away 5 leaves 7."},
+    {t:"Without regrouping", q:"What is the difference between 80 and 30?",
+     o:["50","110","40","60"],
+     a:0, why:"Difference means subtract: 80 &minus; 30 = 50."},
+    {t:"With regrouping", q:"52 &minus; 17 = ?",
+     o:["35","45","69","25"],
+     a:0, why:"You cannot take 7 from 2, so regroup: take 1 ten from the 5 tens to make 12 ones. 12 &minus; 7 = 5, and 4 tens &minus; 1 ten = 3 tens. So 35."},
+    {t:"With regrouping", q:"91 &minus; 46 = ?",
+     o:["45","55","137","35"],
+     a:0, why:"You cannot take 6 from 1, so regroup: 1 ten becomes 10 ones, making 11 ones. 11 &minus; 6 = 5, and 8 tens &minus; 4 tens = 4 tens. So 45."},
+    {t:"With regrouping", q:"340 &minus; 126 = ?",
+     o:["214","226","224","466"],
+     a:0, why:"You cannot take 6 from 0, so regroup a ten: 10 &minus; 6 = 4. Tens: 3 &minus; 2 = 1. Hundreds: 3 &minus; 1 = 2. So 214."},
+    {t:"With regrouping", q:"When do you need to REGROUP in subtraction?",
+     o:["When the top digit is smaller than the digit you are taking away","When both numbers are the same","Every time you subtract","When the answer is zero"],
+     a:0, why:"If the top digit is too small to take the bottom digit from, you regroup: borrow 1 from the next place."},
+    {t:"Word problems", q:"Willow has 25 stickers. She gives 9 to her friend. How many stickers are remaining?",
+     o:["16","34","14","26"],
+     a:0, why:"Remaining means subtract: 25 &minus; 9 = 16."},
+    {t:"Word problems", q:"A bus has 43 people. 18 get off. How many people are left on the bus?",
+     o:["25","61","35","26"],
+     a:0, why:"Getting off is taking away: 43 &minus; 18 = 25. Regroup because you cannot take 8 from 3."},
+    {t:"Word problems", q:"There are 60 nutmegs. 24 are sold. How many nutmegs are left?",
+     o:["36","84","44","46"],
+     a:0, why:"60 &minus; 24 = 36. Regroup because you cannot take 4 from 0."}
   ]
 },
 {
@@ -1120,28 +1221,28 @@ var SUBJECTS = [
     {t:"attention", q:"Which one is spelled correctly?",
      o:["attention","attension","atention","attentchion"],
      a:0, why:"Attention has two t letters in the middle and ends in tion."},
-    {t:"tion", q:"Which letters are missing?   <b>sta____</b>",
+    {t:"station", q:"Which letters are missing?   <b>sta____</b>",
      o:["tion","shun","sion","cion"],
      a:0, why:"Station. The shun sound is spelled tion, never shun."},
-    {t:"tion", q:"Which letters are missing?   <b>inven____</b>",
+    {t:"invention", q:"Which letters are missing?   <b>inven____</b>",
      o:["tion","shun","sion","cion"],
      a:0, why:"Invention. An invention is a new thing somebody has made for the first time."},
-    {t:"ci", q:"Which letters are missing?   <b>vac__nation</b>",
+    {t:"vaccination", q:"Which letters are missing?   <b>vac__nation</b>",
      o:["ci","si","ce","sh"],
      a:0, why:"Vaccination. It has two c letters together, then an i: vac-ci-nation."},
-    {t:"ca", q:"Which letters are missing?   <b>multipli__tion</b>",
+    {t:"multiplication", q:"Which letters are missing?   <b>multipli__tion</b>",
      o:["ca","ka","cu","que"],
      a:0, why:"Multiplication: mul-ti-pli-ca-tion."},
-    {t:"ca", q:"Which letters are missing?   <b>edu__tion</b>",
+    {t:"education", q:"Which letters are missing?   <b>edu__tion</b>",
      o:["ca","ka","cu","que"],
      a:0, why:"Education: ed-u-ca-tion."},
-    {t:"ti", q:"Which letters are missing?   <b>compe__tion</b>",
+    {t:"competition", q:"Which letters are missing?   <b>compe__tion</b>",
      o:["ti","shi","ci","si"],
      a:0, why:"Competition: com-pe-ti-tion. There are three t letters in the whole word."},
-    {t:"ti", q:"Which letters are missing?   <b>descrip__on</b>",
+    {t:"description", q:"Which letters are missing?   <b>descrip__on</b>",
      o:["ti","sh","ci","ssi"],
      a:0, why:"Description: des-crip-ti-on."},
-    {t:"tion", q:"In all of this week's words, the sound SHUN at the end is spelled...",
+    {t:"Spelling rule", q:"In all of this week's words, the sound SHUN at the end is spelled...",
      o:["tion","shun","sion","cion"],
      a:0, why:"It sounds like shun but it is spelled t-i-o-n: station, nation, attention, invention."},
     {t:"nation", q:"Which word means a country and its people?",
@@ -1174,7 +1275,7 @@ var SUBJECTS = [
     {t:"operation", q:"Which word means what a doctor does in hospital to make a patient better?",
      o:["operation","education","competition","description"],
      a:0, why:"An operation is what a doctor or surgeon does in hospital to make a patient better."},
-    {t:"ti", q:"Which letters are missing?   <b>opera__on</b>",
+    {t:"operation", q:"Which letters are missing?   <b>opera__on</b>",
      o:["ti","sh","ci","ssi"],
      a:0, why:"Operation: op-er-a-ti-on. The shun sound is spelled tion."},
     {t:"invention", q:"Which word means a new thing that somebody has made for the very first time?",
@@ -1317,22 +1418,22 @@ var SUBJECTS = [
     {t:"water", q:"Finish the sentence: Please drink some ___ .",
      o:["water","wallet","wander","wasp"],
      a:0, why:"Water is what we drink. The a after w sounds like o."},
-    {t:"a", q:"Which letter is missing?   <b>w__sp</b>",
+    {t:"wasp", q:"Which letter is missing?   <b>w__sp</b>",
      o:["a","o","au","aw"],
      a:0, why:"Wasp. It sounds like wosp, but after a w the letter is an a."},
-    {t:"a", q:"Which letter is missing?   <b>sw__mp</b>",
+    {t:"swamp", q:"Which letter is missing?   <b>sw__mp</b>",
      o:["a","o","au","ou"],
      a:0, why:"Swamp. It sounds like swomp, but after a w the letter is an a."},
-    {t:"a", q:"Which letter is missing?   <b>squ__sh</b>",
+    {t:"squash", q:"Which letter is missing?   <b>squ__sh</b>",
      o:["a","o","au","ou"],
      a:0, why:"Squash. After qu the letter is an a, even though it sounds like o."},
-    {t:"a", q:"Which letter is missing?   <b>w__rm</b>",
+    {t:"warm", q:"Which letter is missing?   <b>w__rm</b>",
      o:["a","o","au","er"],
      a:0, why:"Warm. After a w, ar sounds like the or in for, but it is still spelled a-r."},
-    {t:"a", q:"Which letter is missing?   <b>w__llet</b>",
+    {t:"wallet", q:"Which letter is missing?   <b>w__llet</b>",
      o:["a","o","e","au"],
      a:0, why:"Wallet, with an a and a double l."},
-    {t:"u", q:"Which letter is missing?   <b>q__antity</b>",
+    {t:"quantity", q:"Which letter is missing?   <b>q__antity</b>",
      o:["u","w","oo","ou"],
      a:0, why:"Quantity. In English, q is almost always followed by a u."}
   ]
@@ -1361,7 +1462,7 @@ var SUBJECTS = [
     {t:"fudge", q:"Which one is spelled correctly?",
      o:["fudge","fuge","fudje","fudg"],
      a:0, why:"Fudge is spelled with dge. Fudge is a soft, sweet treat."},
-    {t:"dge", q:"After a SHORT vowel sound, as in bridge and judge, which ending do we use?",
+    {t:"Spelling rule", q:"After a SHORT vowel sound, as in bridge and judge, which ending do we use?",
      o:["dge","ge","j","gg"],
      a:0, why:"After a short vowel sound we use dge: edge, ledge, bridge, judge, fudge. Otherwise we use ge: cage, page, wage, garage."},
     {t:"page", q:"Which word ends in 'ge', NOT 'dge'?",
@@ -1370,7 +1471,7 @@ var SUBJECTS = [
     {t:"ridge", q:"Which word ends in 'dge'?",
      o:["ridge","wage","cage","garage"],
      a:0, why:"Ridge ends in dge. Wage, cage and garage all end in ge."},
-    {t:"j", q:"In all of this week's words, the letter g sounds like...",
+    {t:"Spelling rule", q:"In all of this week's words, the letter g sounds like...",
      o:["j","the g in go","k","s"],
      a:0, why:"A soft g sounds like j, as in judge, cage and garage. A hard g sounds like the g in go."},
     {t:"lodger", q:"Which word means a person who pays to live in someone else's house?",
@@ -1400,22 +1501,22 @@ var SUBJECTS = [
     {t:"fudge", q:"Finish the sentence: Grandma made chocolate ___ for the party.",
      o:["fudge","judge","ridge","lodge"],
      a:0, why:"Fudge is a soft, sweet treat made with sugar. It is spelled with dge."},
-    {t:"dg", q:"Which letters are missing?   <b>bri__e</b>",
+    {t:"bridge", q:"Which letters are missing?   <b>bri__e</b>",
      o:["dg","g","j","dj"],
      a:0, why:"Bridge. After a short vowel sound we use dge, so the missing letters are d and g."},
-    {t:"dg", q:"Which letters are missing?   <b>ju__e</b>",
+    {t:"judge", q:"Which letters are missing?   <b>ju__e</b>",
      o:["dg","g","j","ge"],
      a:0, why:"Judge. The u is a short vowel sound, so it takes dge."},
-    {t:"dg", q:"Which letters are missing?   <b>fu__e</b>",
+    {t:"fudge", q:"Which letters are missing?   <b>fu__e</b>",
      o:["dg","g","j","dj"],
      a:0, why:"Fudge. Short vowel sound, so dge."},
-    {t:"ge", q:"Which letters are missing?   <b>gara__</b>",
+    {t:"garage", q:"Which letters are missing?   <b>gara__</b>",
      o:["ge","dge","j","gue"],
      a:0, why:"Garage ends in ge, not dge."},
-    {t:"ge", q:"Which letters are missing?   <b>dama__</b>",
+    {t:"damage", q:"Which letters are missing?   <b>dama__</b>",
      o:["ge","dge","je","gue"],
      a:0, why:"Damage ends in ge, not dge."},
-    {t:"ge", q:"Which letters are missing?   <b>ca__</b>",
+    {t:"cage", q:"Which letters are missing?   <b>ca__</b>",
      o:["ge","dge","je","g"],
      a:0, why:"Cage ends in ge. Compare it with badge and bridge, which take dge."}
   ]
@@ -1456,10 +1557,10 @@ var SUBJECTS = [
     {t:"knit", q:"Which one is spelled correctly?",
      o:["knit","nitt","knitt","kniet"],
      a:0, why:"Knit begins with a silent k. To knit is to make clothes from wool using needles."},
-    {t:"b", q:"Which letter is SILENT in the word lamb?",
+    {t:"lamb", q:"Which letter is SILENT in the word lamb?",
      o:["b","l","a","m"],
      a:0, why:"The b at the end of lamb is silent, so we say lam. Comb, climb, crumb and thumb all have a silent b too."},
-    {t:"k", q:"Which letter is SILENT in the word knee?",
+    {t:"knee", q:"Which letter is SILENT in the word knee?",
      o:["k","n","e","None of them"],
      a:0, why:"The k at the start of knee is silent, so we say nee. Kneel, knew, knife, knit, knot and knock all have a silent k too."},
     {t:"lamb", q:"Which group of words ALL have a silent b?",
@@ -1483,22 +1584,22 @@ var SUBJECTS = [
     {t:"knit", q:"Finish the sentence: Grandma likes to ___ scarves out of wool.",
      o:["knit","knot","knee","knew"],
      a:0, why:"To knit is to make clothes from wool using needles. The k at the start is silent."},
-    {t:"k", q:"Which letter is missing?   <b>__nife</b>",
+    {t:"knife", q:"Which letter is missing?   <b>__nife</b>",
      o:["k","c","n","g"],
      a:0, why:"Knife begins with a silent k. You cannot hear it, but you must write it."},
-    {t:"k", q:"Which letter is missing?   <b>__nock</b>",
+    {t:"knock", q:"Which letter is missing?   <b>__nock</b>",
      o:["k","c","g","h"],
      a:0, why:"Knock begins with a silent k."},
-    {t:"k", q:"Which letter is missing?   <b>__neel</b>",
+    {t:"kneel", q:"Which letter is missing?   <b>__neel</b>",
      o:["k","c","n","g"],
      a:0, why:"Kneel begins with a silent k."},
-    {t:"b", q:"Which letter is missing?   <b>lam__</b>",
+    {t:"lamb", q:"Which letter is missing?   <b>lam__</b>",
      o:["b","m","p","d"],
      a:0, why:"Lamb ends with a silent b. We say lam, but we write lamb."},
-    {t:"b", q:"Which letter is missing?   <b>clim__</b>",
+    {t:"climb", q:"Which letter is missing?   <b>clim__</b>",
      o:["b","m","p","d"],
      a:0, why:"Climb ends with a silent b."},
-    {t:"b", q:"Which letter is missing?   <b>thum__</b>",
+    {t:"thumb", q:"Which letter is missing?   <b>thum__</b>",
      o:["b","m","p","d"],
      a:0, why:"Thumb ends with a silent b."}
   ]
@@ -1566,22 +1667,22 @@ var SUBJECTS = [
     {t:"sandal", q:"Finish the sentence: She wore a ___ on each foot to the beach.",
      o:["sandal","signal","stall","pedal"],
      a:0, why:"A sandal is an open shoe with straps. Two of them are a pair of sandals."},
-    {t:"l", q:"Which letter is missing?   <b>a__ways</b>",
+    {t:"always", q:"Which letter is missing?   <b>a__ways</b>",
      o:["l","w","b","d"],
      a:0, why:"Always has only ONE l: al-ways. Allways is wrong."},
-    {t:"l", q:"Which letter is missing?   <b>a__though</b>",
+    {t:"although", q:"Which letter is missing?   <b>a__though</b>",
      o:["l","w","b","d"],
      a:0, why:"Although has only ONE l: al-though."},
-    {t:"l", q:"Which letter is missing?   <b>a__most</b>",
+    {t:"almost", q:"Which letter is missing?   <b>a__most</b>",
      o:["l","w","b","d"],
      a:0, why:"Almost has only ONE l: al-most."},
-    {t:"al", q:"Which letters are missing?   <b>hospit__</b>",
+    {t:"hospital", q:"Which letters are missing?   <b>hospit__</b>",
      o:["al","el","ol","le"],
      a:0, why:"Hospital ends in al, like capital, signal, sandal and pedal."},
-    {t:"al", q:"Which letters are missing?   <b>sign__</b>",
+    {t:"signal", q:"Which letters are missing?   <b>sign__</b>",
      o:["al","el","ol","le"],
      a:0, why:"Signal ends in al. A signal is a sign that tells you something."},
-    {t:"al", q:"Which letters are missing?   <b>speci__</b>",
+    {t:"special", q:"Which letters are missing?   <b>speci__</b>",
      o:["al","el","ol","le"],
      a:0, why:"Special ends in al, even though it sounds like shul."}
   ]
@@ -1992,7 +2093,28 @@ var SUBJECTS = [
      a:0, why:"Jesus showed Peter his power to prepare Peter to gather souls for his kingdom. Jesus also shows his power to prepare us to spread the good news of salvation."},
     {t:"Christ Light lessons", q:"What do we trust as we tell others about Jesus?",
      o:["That Jesus is with us, using his power to help us","That it will always be easy","That we must do it alone","That others will already know"],
-     a:0, why:"We trust that Jesus is with us, using his power to help us as we tell others about him."}
+     a:0, why:"We trust that Jesus is with us, using his power to help us as we tell others about him."},
+    {t:"The farmer and the seed", q:"In The Parable of the Farmer and the Seed, how do people respond to God's Word?",
+     o:["Some reject it, but the Holy Spirit leads others to believe it","Everyone believes it straight away","Nobody listens to it","People only hear it on Christmas"],
+     a:0, why:"Some people reject God's Word, but the Holy Spirit leads other people to believe God's Word and to do good works."},
+    {t:"The farmer and the seed", q:"Who leads people to believe God's Word and do good works?",
+     o:["The Holy Spirit","The farmer","The disciples","The people of Nazareth"],
+     a:0, why:"The Holy Spirit leads people to believe God's Word and to do good works."},
+    {t:"The farmer and the seed", q:"What does the Holy Spirit use to give us faith?",
+     o:["God's Word","Seeds from a farm","Good luck","Money"],
+     a:0, why:"The Holy Spirit uses God's Word to give us faith and lead us to do good works."},
+    {t:"The farmer and the seed", q:"Why do we do good works?",
+     o:["Out of thanks to God","To be famous","So people will pay us","Because we have to"],
+     a:0, why:"We hear God's Word often and do good works out of thanks to God."},
+    {t:"Jesus calms the storm", q:"In Jesus Calms the Storm, what did the disciples do in a time of trouble?",
+     o:["They went to Jesus for help","They hid in the boat","They swam to shore","They blamed each other"],
+     a:0, why:"The disciples went to Jesus for help in a time of trouble."},
+    {t:"Jesus calms the storm", q:"What will Jesus use his power to do for us?",
+     o:["Help us in every trouble","Make us rich","Stop all rain forever","Take away our homework"],
+     a:0, why:"Jesus will use his power to help us in every trouble."},
+    {t:"Jesus calms the storm", q:"What do we do in times of trouble?",
+     o:["Pray to Jesus for help","Keep it a secret","Give up","Wait for it to go away"],
+     a:0, why:"Like the disciples, we pray to Jesus for help in times of trouble."}
   ]
 },
 {
@@ -2033,7 +2155,22 @@ var SUBJECTS = [
      a:0, why:"That one is Mark 16:16. Do not mix it up with John 3:16, which also has 16 in it."},
     {t:" Mark 16:15", q:"Memory Treasure, Mark 16:15: Go into all the world and preach the ___ to all creation.",
      o:["Gospel","Promise","Psalm","Blessing"],
-     a:0, why:"Mark 16:15. He said to them, Go into all the world and preach the Gospel to all creation."}
+     a:0, why:"Mark 16:15. He said to them, Go into all the world and preach the Gospel to all creation."},
+    {t:"John 6:68", q:"Memory Treasure, John 6:68: Lord, to whom shall we go? You have the words of ___ .",
+     o:["eternal life","great power","the prophets","the kingdom"],
+     a:0, why:"John 6:68: Simon Peter answered him, Lord, to whom shall we go? You have the words of eternal life."},
+    {t:"John 6:68", q:"In John 6:68, who answered Jesus: Lord, to whom shall we go?",
+     o:["Simon Peter","John the Baptist","Nicodemus","Zechariah"],
+     a:0, why:"John 6:68: Simon Peter answered him, Lord, to whom shall we go? You have the words of eternal life."},
+    {t:"Genesis 1:1", q:"Memory Treasure, Genesis 1:1: In the beginning God created the ___ .",
+     o:["heavens and the earth","sun and the moon","land and the sea","animals and the people"],
+     a:0, why:"Genesis 1:1: In the beginning God created the heavens and the earth."},
+    {t:"Genesis 1:1", q:"Which Memory Treasure says: In the beginning God created the heavens and the earth?",
+     o:["Genesis 1:1","John 3:16","Mark 16:15","John 6:68"],
+     a:0, why:"That is Genesis 1:1, the very first verse of the Bible."},
+    {t:" Mark 16:15", q:"Which Memory Treasure says: Go into all the world and preach the Gospel to all creation?",
+     o:["Mark 16:15","Mark 16:16","John 3:16","Genesis 1:1"],
+     a:0, why:"That is Mark 16:15. Mark 16:16 comes next: Whoever believes and is baptised will be saved."}
   ]
 }
 ];
@@ -2166,7 +2303,7 @@ function renderMenu(){
     '<h1>Quiz <span class="pop">Quest</span></h1>'+
     '<p class="sub">Pick a subject and collect stars. Every question comes straight from your own class notes, so this is real practice.</p>'+
     sections+
-    '<div class="tipbar"><span><b>New: 41 fresh English questions, including verbs, capital letters, end marks and context clues.</b><br>Every round now asks about every topic in the subject, and questions rotate so you work right through the bank.</span>'+
+    '<div class="tipbar"><span><b>New: the water cycle in Weather, a Subtraction deck, and the latest Christ Light lessons and Memory Treasures.</b><br>Every round now asks about every topic in the subject, and questions rotate so you work right through the bank.</span>'+
       '<button class="ghost" data-snd>Sound: '+(soundOn?"on":"off")+'</button></div>';
   scrollTo(0,0);
 }
